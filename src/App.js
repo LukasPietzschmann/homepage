@@ -13,9 +13,17 @@ const projects = [
 function App() {
 	const [repos, setRepos] = useState([]);
 
+	const handleError = (response) => {
+		if(!response.ok)
+			throw new Error(response.status);
+		return response;
+	}
+
 	const getRepoData = async (url_tail) => {
 		const data = await fetch('https://api.github.com/repos/' + url_tail)
-			.then(res => res.json());
+			.then(handleError)
+			.then(response => response.json())
+			.catch(error => console.log(error));
 		return data;
 	}
 
