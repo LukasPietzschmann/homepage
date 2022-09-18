@@ -28,9 +28,9 @@ function App() {
 	return (<>
 		<header>
 			<img style={{
-				border: '1px solid rgba(0,0,0,0.2)',
+				border: '1px solid var(--highlight)',
 				borderRadius: '100%',
-				boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+				boxShadow: '0 4px 8px var(--highlight)'
 			}} src={avatar} width='120' height='auto'/>
 		</header>
 		<p>
