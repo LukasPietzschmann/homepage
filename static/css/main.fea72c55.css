@@ -1,0 +1,2 @@
+body{flex-direction:column;font-family:Source Code Pro;font-size:1.2rem;line-height:1.7;margin:auto;max-width:800px}body,footer{display:flex}footer{justify-content:center}header>img{display:block;margin:50px auto}.cards{grid-gap:1.5rem 1.5rem;display:grid;gap:1.5rem 1.5rem;grid-template-columns:repeat(auto-fill,minmax(350px,1fr))}.card{border:1px solid rgba(0,0,0,.1);border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.1);display:grid;font-size:1rem;grid-template-rows:2rem auto 2.5rem;padding:1rem}
+/*# sourceMappingURL=main.fea72c55.css.map*/
