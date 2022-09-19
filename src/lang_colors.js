@@ -2324,6 +2324,6 @@ const languages = JSON.parse(`{
         "color": "#d67711",
         "url": "https://github.com/trending?l=Zimpl"
     }
-}`)
+}`);
 
 export default languages;
