@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {isMobile} from 'react-device-detect';
 import ProjectCard from './ProjectCard';
 import avatar from './images/avatar.png';
 import cat from './images/cat.png';
@@ -43,6 +44,8 @@ function App() {
 	};
 
 	useEffect(() => {
+		if (isMobile) return;
+
 		const mouse_moved = ({clientX, clientY}) => {
 			const cat = document.getElementById('cat');
 			const rect = cat.getBoundingClientRect();
@@ -114,43 +117,47 @@ function App() {
 					LinkedIn
 				</a>
 			</footer>
-			<div>
-				<img
-					style={{
-						position: 'fixed',
-						bottom: -20,
-						left: 20
-					}}
-					id="cat"
-					src={cat}
-					width="100"
-					height="auto"
-				/>
+			{isMobile ? (
+				''
+			) : (
 				<div>
 					<img
 						style={{
 							position: 'fixed',
-							bottom: 45,
-							left: 76
+							bottom: -20,
+							left: 20
 						}}
-						src={cat_eye}
-						id="eye"
-						width="18"
+						id="cat"
+						src={cat}
+						width="100"
 						height="auto"
 					/>
-					<img
-						style={{
-							position: 'fixed',
-							bottom: 44,
-							left: 41
-						}}
-						src={cat_eye}
-						id="eye"
-						width="18"
-						height="auto"
-					/>
+					<div>
+						<img
+							style={{
+								position: 'fixed',
+								bottom: 45,
+								left: 76
+							}}
+							src={cat_eye}
+							id="eye"
+							width="18"
+							height="auto"
+						/>
+						<img
+							style={{
+								position: 'fixed',
+								bottom: 44,
+								left: 41
+							}}
+							src={cat_eye}
+							id="eye"
+							width="18"
+							height="auto"
+						/>
+					</div>
 				</div>
-			</div>
+			)}
 		</>
 	);
 }
