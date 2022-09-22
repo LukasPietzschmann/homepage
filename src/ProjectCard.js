@@ -2,7 +2,7 @@ import './App.css';
 import languages from './lang_colors';
 
 const ProjectCard = ({url_tail, desc, language, stars, license}) => {
-	const color = languages[language].color;
+	const color = languages[language]?.color || '#181818';
 
 	return (
 		<div className="card">

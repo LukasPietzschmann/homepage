@@ -17,9 +17,13 @@ const projects = [
 function App() {
 	const [repos, setRepos] = useState([]);
 	const [cat_clicked, set_cat_clicked] = useState(0);
+	const [error, set_error] = useState(false);
 
 	const handleError = response => {
-		if (!response.ok) throw new Error(response.status);
+		if (!response.ok) {
+			set_error(true);
+			throw new Error(response.status);
+		}
 		return response;
 	};
 
@@ -101,20 +105,51 @@ function App() {
 				Generally, I enjoy coding in various languages. C++ and C being the ones I am most experienced with.
 				Currently, I'm trying to get more into hardware-near programming and compilers.
 			</p>
-			<p>Here are some projects I enjoy(ed) working on:</p>
+			<p>
+				Here are some projects I enjoy(ed) working on
+				{error ? (
+					<div
+						style={{display: 'inline', cursor: 'help'}}
+						onClick={() =>
+							alert(
+								'Limited information is provided, as there was an error talking to the friendly GitHub servers :('
+							)
+						}>
+						 (?)
+					</div>
+				) : (
+					''
+				)}
+				:
+			</p>
 			<div className="cards">
-				{Object.entries(repos).map(([key, {full_name, description, license, language, stargazers_count}]) => {
-					return (
-						<ProjectCard
-							key={key}
-							url_tail={full_name}
-							desc={description}
-							language={language}
-							stars={stargazers_count}
-							license={license?.spdx_id ?? 'Unlicensed'}
-						/>
-					);
-				})}
+				{error
+					? projects.map((project, i) => {
+							return (
+								<ProjectCard
+									key={i}
+									url_tail={project}
+									desc=""
+									language="???"
+									stars="???"
+									license="???"
+								/>
+							);
+					  })
+					: Object.entries(repos).map(
+							([key, {full_name, description, license, language, stargazers_count}]) => {
+								return (
+									<ProjectCard
+										key={key}
+										url_tail={full_name}
+										desc={description}
+										language={language}
+										stars={stargazers_count}
+										license={license?.spdx_id ?? 'Unlicensed'}
+									/>
+								);
+							}
+					  )}
 			</div>
 			<div style={{margin: '50px 0px'}} />
 			<footer>
