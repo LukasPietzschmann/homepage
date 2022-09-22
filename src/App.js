@@ -3,6 +3,7 @@ import {isMobile} from 'react-device-detect';
 import ProjectCard from './ProjectCard';
 import avatar from './images/avatar.png';
 import cat from './images/cat.png';
+import cat_sad from './images/cat_sad.png';
 import cat_eye from './images/cat_eye.png';
 import './App.css';
 
@@ -15,6 +16,7 @@ const projects = [
 
 function App() {
 	const [repos, setRepos] = useState([]);
+	const [cat_clicked, set_cat_clicked] = useState(0);
 
 	const handleError = response => {
 		if (!response.ok) throw new Error(response.status);
@@ -35,6 +37,15 @@ function App() {
 		Promise.all(all_repos).then(repos => setRepos(repos));
 	}, []);
 
+	const miau = () => {
+		if (cat_clicked == 5) {
+			alert('Bye');
+			window.close();
+		}
+		set_cat_clicked(cat_clicked + 1);
+		alert(cat_clicked ? 'Stop it' + '!'.repeat(cat_clicked) : 'Miau! That hurt :(');
+	};
+
 	const angle = (cx, cy, ex, ey) => {
 		const dy = ey - cy;
 		const dx = ex - cx;
@@ -47,6 +58,8 @@ function App() {
 		if (isMobile) return;
 
 		const mouse_moved = ({clientX, clientY}) => {
+			if (cat_clicked > 0) return;
+
 			const cat = document.getElementById('cat');
 			const rect = cat.getBoundingClientRect();
 			const cat_x = rect.left + rect.width / 2;
@@ -60,7 +73,7 @@ function App() {
 		return () => {
 			window.removeEventListener('mousemove', mouse_moved);
 		};
-	}, []);
+	}, [cat_clicked]);
 
 	return (
 		<>
@@ -128,13 +141,15 @@ function App() {
 							left: 20
 						}}
 						id="cat"
-						src={cat}
+						src={cat_clicked > 0 ? cat_sad : cat}
 						width="100"
 						height="auto"
+						onClick={miau}
 					/>
 					<div>
 						<img
 							style={{
+								display: cat_clicked > 0 ? 'none' : 'block',
 								position: 'fixed',
 								bottom: 45,
 								left: 76
@@ -143,9 +158,11 @@ function App() {
 							id="eye"
 							width="18"
 							height="auto"
+							onClick={miau}
 						/>
 						<img
 							style={{
+								display: cat_clicked > 0 ? 'none' : 'block',
 								position: 'fixed',
 								bottom: 44,
 								left: 41
@@ -154,6 +171,7 @@ function App() {
 							id="eye"
 							width="18"
 							height="auto"
+							onClick={miau}
 						/>
 					</div>
 				</div>
