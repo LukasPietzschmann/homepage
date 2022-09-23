@@ -42,10 +42,6 @@ function App() {
 	}, []);
 
 	const miau = () => {
-		if (cat_clicked == 5) {
-			alert('Bye');
-			window.close();
-		}
 		set_cat_clicked(cat_clicked + 1);
 		alert(cat_clicked ? 'Stop it' + '!'.repeat(cat_clicked) : 'Miau! That hurt :(');
 	};
@@ -115,7 +111,7 @@ function App() {
 								'Limited information is provided, as there was an error talking to the friendly GitHub servers :('
 							)
 						}>
-						 (?)
+						(?)
 					</div>
 				) : (
 					''
