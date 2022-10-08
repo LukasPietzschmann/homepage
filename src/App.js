@@ -11,7 +11,7 @@ const projects = [
 	'LukasPietzschmann/Kyra',
 	'LukasPietzschmann/PL0-Compiler',
 	'LukasPietzschmann/Bachelorarbeit',
-	'LukasPietzschmann/sessions.nvim'
+	'LukasPietzschmann/telescope-tabs'
 ];
 
 function App() {
