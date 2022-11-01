@@ -90,8 +90,8 @@ function App() {
 				/>
 			</header>
 			<p>
-				I'm a german developer based in Aalen and currently studying Computer Science for my master's degree at
-				the{' '}
+				I'm a german developer based in Langenau and I'm currently studying Computer Science for my master's
+				degree at the{' '}
 				<a target="_blank" href="https://www.uni-ulm.de/en/">
 					University of Ulm
 				</a>
