@@ -10,8 +10,10 @@ import './App.css';
 const projects = [
 	'LukasPietzschmann/Kyra',
 	'LukasPietzschmann/PL0-Compiler',
+	'LukasPietzschmann/awesome-beamer',
+	'LukasPietzschmann/telescope-tabs',
 	'LukasPietzschmann/Bachelorarbeit',
-	'LukasPietzschmann/telescope-tabs'
+	'LukasPietzschmann/Projektarbeit'
 ];
 
 function App() {
