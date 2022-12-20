@@ -99,9 +99,10 @@ function App() {
 				</a>
 				.
 			</p>
-			<p>
-				Generally, I enjoy coding in various languages. C++ and C being the ones I am most experienced with.
-				Currently, I'm trying to get more into hardware-near programming and compilers.
+			<p align="justify">
+				Generally, I enjoy coding in various languages, but C and C++ are probably the ones I am most experienced with.
+				While I'm interested in various things, you can always get my attention by talking about Compilers and hardware-near stuff.
+				I'm currently also trying to get more into typesetting using (La)TeX.
 			</p>
 			<p>
 				Here are some projects I enjoy(ed) working on
