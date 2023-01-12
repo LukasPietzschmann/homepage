@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './index.css';
 import App from './App';
+import Uni from './Uni';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<App />
+		<Router basemname={`/${process.env.PUBLIC_URL || 'localhost'}`}>
+			<Routes>
+				<Route exact path="/" element={<App />} />
+				<Route exact path="/uni" element={<Uni />} />
+			</Routes>
+		</Router>
+		<div style={{margin: '50px 0px'}} />
 		<footer>
 			<a href="mailto:lukas.pietzschmann@outlook.de" target="_blank">
 				Email

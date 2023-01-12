@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import {isMobile} from 'react-device-detect';
 import ProjectCard from './ProjectCard';
 import avatar from './images/avatar.png';
@@ -11,9 +12,9 @@ const projects = [
 	'LukasPietzschmann/Kyra',
 	'LukasPietzschmann/PL0-Compiler',
 	'LukasPietzschmann/awesome-beamer',
-	'LukasPietzschmann/telescope-tabs',
-	'LukasPietzschmann/Bachelorarbeit',
-	'LukasPietzschmann/Projektarbeit'
+	'LukasPietzschmann/telescope-tabs'
+	// 'LukasPietzschmann/Bachelorarbeit',
+	// 'LukasPietzschmann/Projektarbeit'
 ];
 
 function App() {
@@ -100,9 +101,10 @@ function App() {
 				.
 			</p>
 			<p align="justify">
-				Generally, I enjoy coding in various languages, but C and C++ are probably the ones I am most experienced with.
-				While I'm interested in various things, you can always get my attention by talking about compilers and hardware-near stuff.
-				I'm currently also trying to get more into typesetting using (La)TeX.
+				Generally, I enjoy coding in various languages, but C and C++ are probably the ones I am most
+				experienced with. While I'm interested in various things, you can always get my attention by talking
+				about compilers and hardware-near stuff. I'm currently also trying to get more into typesetting using
+				(La)TeX.
 			</p>
 			<p>
 				Here are some projects I enjoy(ed) working on
@@ -152,6 +154,7 @@ function App() {
 			</div>
 			<div style={{margin: '50px 0px'}} />
 			<footer>
+				<Link to="/uni">Stuff I made at University</Link>
 			</footer>
 			{isMobile ? (
 				''
