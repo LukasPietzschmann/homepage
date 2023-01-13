@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Uni from './Uni';
+import NotFound from './NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
 			<Routes>
 				<Route exact path="/" element={<App />} />
 				<Route exact path="/uni" element={<Uni />} />
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</Router>
 		<div style={{margin: '50px 0px'}} />
