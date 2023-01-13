@@ -76,3 +76,39 @@ th:last-child,
 td:last-child {
 	border-right: none;
 }
+
+@media screen and (max-width: 750px) {
+	tr:first-child {
+		display: none;
+	}
+
+	th {
+		text-transform: uppercase;
+	}
+
+	tr {
+		display: block;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid;
+	}
+
+	td {
+		border-right: none;
+		border-bottom: none;
+		display: block;
+		font-size: 0.8em;
+		text-align: left;
+	}
+
+	tr:last-child {
+		border-bottom: none;
+	}
+
+	td::before {
+		white-space: pre-wrap;
+		content: attr(data-label) ': ';
+		float: left;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}

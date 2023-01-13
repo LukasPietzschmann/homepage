@@ -18,56 +18,58 @@ function Uni() {
 					<th>Link</th>
 				</tr>
 				<tr>
-					<td>Term paper</td>
-					<td>
+					<td data-label="Thing">Term paper</td>
+					<td data-label="Description">
 						For the course "computer networks" I wrote a short paper about HTTP and how it works. This is
 						only a 10 page summary of everything so don't expect anything to advanced.
 					</td>
-					<td>
+					<td data-label="Link">
 						<a href={RN} target="_blank">
 							Paper
 						</a>
 					</td>
 				</tr>
 				<tr>
-					<td>Project paper</td>
-					<td>
+					<td data-label="Thing">Project paper</td>
+					<td data-label="Description">
 						The prject paper I wrote was all about the MOSTflexiPL compilation process. I developed a TUI
 						that lets you view the compilers internal state during the whole process.
 					</td>
-					<td>
+					<td data-label="Link">
 						<a href="https://github.com/LukasPietzschmann/Projektarbeit" target="_blank">
 							Code and paper
 						</a>
 					</td>
 				</tr>
 				<tr>
-					<td>Bachelor thesis</td>
-					<td>
+					<td data-label="Thing">Bachelor thesis</td>
+					<td data-label="Description">
 						My bachelor thesis also extended the MOSTflexiPL project. This time I implemented a
 						compiler-backend that compiled MOSTflexiPl code into machine code using LLVM.
 					</td>
-					<td>
+					<td data-label="Link">
 						<a href="https://github.com/LukasPietzschmann/Bachelorarbeit" target="_blank">
 							Code and thesis
 						</a>
 					</td>
 				</tr>
 				<tr>
-					<td>In-Memory Processing Lecture</td>
-					<td>
+					<td data-label="Thing">In-Memory Processing Lecture</td>
+					<td data-label="Description">
 						For the course "distributed computing platforms in practice" I held a lecture about in-memory
 						processing and how Apache Spark implements this paradigm. I also provided a short exercise sheet
 						that covers the most important concepts.
 					</td>
-					<td>
+					<td data-label="Link">
 						<a href={Lecture} target="_blank">
 							Lecture
-						</a>,
+						</a>
+						,
 						<br />
 						<a href={Exercise} target="_blank">
 							Exercise
-						</a>,
+						</a>
+						,
 						<br />
 						<a href={CheatSheet} target="_blank">
 							Cheat-Sheet
