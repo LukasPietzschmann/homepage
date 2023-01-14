@@ -154,7 +154,7 @@ function App() {
 			</div>
 			<div style={{margin: '50px 0px'}} />
 			<footer>
-				<Link to="/uni">Stuff I made at University</Link>
+				<Link reloadDocument to="/uni">Stuff I made at University</Link>
 			</footer>
 			{isMobile ? (
 				''
