@@ -67,23 +67,7 @@ function App() {
 				about compilers and hardware-near stuff. I'm currently also trying to get more into typesetting using
 				(La)TeX.
 			</p>
-			<p>
-				Here are some projects I enjoy(ed) working on
-				{error ? (
-					<div
-						style={{display: 'inline', cursor: 'help'}}
-						onClick={() =>
-							alert(
-								'Limited information is provided, as there was an error talking to the friendly GitHub servers :('
-							)
-						}>
-						(?)
-					</div>
-				) : (
-					''
-				)}
-				:
-			</p>
+			<p>Here are some projects I enjoy(ed) working on:</p>
 			<div className="cards">
 				{error
 					? projects.map((project, i) => {
