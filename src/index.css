@@ -78,12 +78,8 @@ td:last-child {
 }
 
 @media screen and (max-width: 750px) {
-	tr:first-child {
+	thead {
 		display: none;
-	}
-
-	th {
-		text-transform: uppercase;
 	}
 
 	tr {

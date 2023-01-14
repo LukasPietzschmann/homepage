@@ -39,28 +39,32 @@ function Uni() {
 			This is a little collection of things I wrote or made for various uni-courses. But unfortunately they are
 			all in german.
 			<table style={{marginTop: '2rem'}}>
-				<tr>
-					<th>Thing</th>
-					<th>Description</th>
-					<th>Link</th>
-				</tr>
-				{data.map(({thing, desc, links}) => {
-					return (
-						<tr>
-							<td data-label="Thing">{thing}</td>
-							<td data-label="Description">{desc}</td>
-							<td data-label="Link">
-								{links
-									.map(({name, link}) => (
-										<a href={link} target="_blank">
-											{name}
-										</a>
-									))
-									.reduce((acc, elem) => (acc === null ? [elem] : [acc, ', ', elem]), null)}
-							</td>
-						</tr>
-					);
-				})}
+				<thead>
+					<tr>
+						<th>Thing</th>
+						<th>Description</th>
+						<th>Link</th>
+					</tr>
+				</thead>
+				<tbody>
+					{data.map(({thing, desc, links}, i) => {
+						return (
+							<tr key={i}>
+								<td data-label="Thing">{thing}</td>
+								<td data-label="Description">{desc}</td>
+								<td data-label="Link">
+									{links
+										.map(({name, link}, j) => (
+											<a key={j} href={link} target="_blank">
+												{name}
+											</a>
+										))
+										.reduce((acc, elem) => (acc === null ? [elem] : [acc, ', ', elem]), null)}
+								</td>
+							</tr>
+						);
+					})}
+				</tbody>
 			</table>
 		</>
 	);
