@@ -36,8 +36,10 @@ function Uni() {
 	return (
 		<>
 			<header>Stuff I made at University</header>
-			This is a little collection of things I wrote or made for various uni-courses. But unfortunately they are
-			all in german.
+			<p>
+				This is a little collection of things I wrote or made for various uni-courses. But unfortunately they are
+				all in german.
+			</p>
 			<table style={{marginTop: '2rem'}}>
 				<thead>
 					<tr>

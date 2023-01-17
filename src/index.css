@@ -30,6 +30,9 @@ body {
 a {
 	color: #62a0ea;
 }
+p {
+	text-align: justify;
+}
 
 header {
 	display: flex;

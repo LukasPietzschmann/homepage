@@ -61,13 +61,17 @@ function App() {
 				</a>
 				.
 			</p>
-			<p align="justify">
+			<p>
 				Generally, I enjoy coding in various languages, but C and C++ are probably the ones I am most
 				experienced with. While I'm interested in various things, you can always get my attention by talking
 				about compilers and hardware-near stuff. I'm currently also trying to get more into typesetting using
 				(La)TeX.
 			</p>
-			<p>Here are some projects I enjoy(ed) working on:</p>
+			<p>
+				Click <Link reloadDocument to="/uni">here</Link> to view some stuff I made at University.
+				This inclues papers and code I wrote.
+			</p>
+			<p>Here are some other projects I enjoy(ed) working on:</p>
 			<div className="cards">
 				{error
 					? projects.map((project, i) => {
@@ -98,11 +102,6 @@ function App() {
 					  )}
 			</div>
 			<div style={{margin: '50px 0px'}} />
-			<footer>
-				<Link reloadDocument to="/uni">
-					Stuff I made at University
-				</Link>
-			</footer>
 			{isMobile ? '' : <Cat />}
 		</>
 	);
