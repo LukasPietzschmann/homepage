@@ -69,7 +69,7 @@ function App() {
 			</p>
 			<p>
 				Click <Link reloadDocument to="/uni">here</Link> to view some stuff I made at University.
-				This inclues papers and code I wrote.
+				This includes papers and code I wrote.
 			</p>
 			<p>Here are some other projects I enjoy(ed) working on:</p>
 			<div className="cards">
