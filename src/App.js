@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {isMobile} from 'react-device-detect';
 import ProjectCard from './ProjectCard';
-import Cat from './Cat';
 import avatar from './images/avatar.png';
 import './App.css';
 
@@ -101,8 +99,6 @@ function App() {
 							}
 					  )}
 			</div>
-			<div style={{margin: '50px 0px'}} />
-			{isMobile ? '' : <Cat />}
 		</>
 	);
 }
