@@ -63,7 +63,7 @@ function App() {
 				Generally, I enjoy coding in various languages, but C and C++ are probably the ones I am most
 				experienced with. While I'm interested in various things, you can always get my attention by talking
 				about compilers and hardware-near stuff. I'm currently also trying to get more into typesetting using
-				(La)TeX.
+				(La)TeX and functional programming with Haskell.
 			</p>
 			<p>
 				Click <Link reloadDocument to="/uni">here</Link> to view some stuff I made at University.
