@@ -10,7 +10,7 @@
 		--text: white;
 		--background: #303030;
 		--card-background: #2b2b2b;
-		--highlight: rgba(0, 0, 0, 0.2);
+		--highlight: rgba(0, 0, 0, 0.4);
 	}
 }
 
@@ -55,7 +55,7 @@ table {
 	background-color: var(--card-background);
 	border-collapse: separate;
 	border-spacing: 0;
-	border: 1px solid var(--text);
+	border: 1px solid var(--highlight);
 	border-radius: 8px;
 }
 
@@ -74,6 +74,7 @@ table,
 th,
 td {
 	padding: 5px;
+	border-color: var(--highlight);
 }
 
 th:last-child,
