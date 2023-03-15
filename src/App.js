@@ -83,12 +83,13 @@ function App() {
 									desc=""
 									language="???"
 									stars="???"
+									forks="???"
 									license="???"
 								/>
 							);
 					  })
 					: Object.entries(repos).map(
-							([key, {full_name, description, license, language, stargazers_count}]) => {
+							([key, {full_name, description, license, language, stargazers_count, forks}]) => {
 								return (
 									<ProjectCard
 										key={key}
@@ -96,6 +97,7 @@ function App() {
 										desc={description}
 										language={language}
 										stars={stargazers_count}
+										forks={forks}
 										license={license?.spdx_id ?? 'Unlicensed'}
 									/>
 								);
