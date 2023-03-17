@@ -91,6 +91,7 @@ td:last-child {
 		display: block;
 		margin-bottom: 1rem;
 		border-bottom: 1px solid;
+		border-color: var(--highlight);
 	}
 
 	td {

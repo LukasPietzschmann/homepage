@@ -25,7 +25,7 @@ const ProjectCard = ({url_tail, desc, language, stars, forks, license}) => {
 			</div>
 			<div style={{padding: '5px 0px'}}>{desc}</div>
 			<div>
-				<hr style={{color: 'rgba(0,0,0,0.2)'}} />
+				<hr style={{color: 'var(--highlight)'}} />
 				<div style={{display: 'flex'}}>
 					<div>
 						<span
