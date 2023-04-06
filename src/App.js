@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import ProjectCard from './ProjectCard';
+import Hover from './Hover';
 import avatar from './images/avatar.png';
 import './App.css';
 
@@ -77,29 +78,33 @@ function App() {
 				{error
 					? projects.map((project, i) => {
 							return (
-								<ProjectCard
-									key={i}
-									url_tail={project}
-									desc=""
-									language="???"
-									stars="???"
-									forks="???"
-									license="???"
-								/>
+								<Hover>
+									<ProjectCard
+										key={i}
+										url_tail={project}
+										desc=""
+										language="???"
+										stars="???"
+										forks="???"
+										license="???"
+									/>
+								</Hover>
 							);
 					  })
 					: Object.entries(repos).map(
 							([key, {full_name, description, license, language, stargazers_count, forks}]) => {
 								return (
-									<ProjectCard
-										key={key}
-										url_tail={full_name}
-										desc={description}
-										language={language}
-										stars={stargazers_count}
-										forks={forks}
-										license={license?.spdx_id ?? 'Unlicensed'}
-									/>
+									<Hover>
+										<ProjectCard
+											key={key}
+											url_tail={full_name}
+											desc={description}
+											language={language}
+											stars={stargazers_count}
+											forks={forks}
+											license={license?.spdx_id ?? 'Unlicensed'}
+										/>
+									</Hover>
 								);
 							}
 					  )}
