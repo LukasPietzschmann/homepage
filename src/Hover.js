@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react';
+import {isMobile} from 'react-device-detect';
 
 function Hover({children}) {
 	const [tilt_styles, set_tilt_styles] = useState({
@@ -109,6 +110,7 @@ function Hover({children}) {
 		}
 	}
 
+	if (isMobile) return children;
 	return (
 		<div
 			style={tilt_styles}
