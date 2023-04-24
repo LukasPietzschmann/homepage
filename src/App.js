@@ -49,7 +49,8 @@ function App() {
 					}}
 					src={avatar}
 					width="120"
-					height="auto"
+					height="120"
+					alt="Avatar"
 				/>
 			</header>
 			<p>
