@@ -4,15 +4,17 @@
 }
 
 .contentWrapper {
-	margin-top: 10px;
-	/* background-color: #fafafa; */
+	margin-top: 20px;
 	background-color: var(--card-background);
 	border-radius: 8px;
+	box-shadow: 0 4px 8px var(--highlight);
 }
 
 .buttonWrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px var(--highlight);
 }
 
 button {
@@ -26,11 +28,14 @@ button {
 }
 
 button:hover {
-	background-color: var(--highlight);
+	font-weight: bold;
+	letter-spacing: 2px;
 }
 
 button.active {
-	background-color: var(--highlight);
+	background-color: var(--card-background);
+	letter-spacing: 2px;
+	font-weight: bold;
 }
 
 .content {

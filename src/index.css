@@ -18,13 +18,16 @@ body {
 	color: var(--text);
 	background: var(--background);
 	max-width: 800px;
-	font-family: 'Source Code Pro';
 	font-size: 1.2rem;
 	line-height: 1.7;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
 	padding: 0px 20px;
+}
+
+body * {
+	font-family: 'Source Code Pro';
 }
 
 a {
@@ -48,7 +51,6 @@ footer {
 }
 
 table {
-	box-shadow: 0 4px 8px var(--highlight);
 	width: 100%;
 	max-width: 100%;
 	margin-bottom: 15px;

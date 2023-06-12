@@ -50,13 +50,12 @@ function PersonalProjects() {
 										language="???"
 										stars="???"
 										forks="???"
-										license="???"
 									/>
 								</Hover>
 							);
 					  })
 					: Object.entries(repos).map(
-							([key, {full_name, description, license, language, stargazers_count, forks}]) => {
+							([key, {full_name, description, language, stargazers_count, forks}]) => {
 								return (
 									<Hover>
 										<ProjectCard
@@ -66,7 +65,6 @@ function PersonalProjects() {
 											language={language}
 											stars={stargazers_count}
 											forks={forks}
-											license={license?.spdx_id ?? 'Unlicensed'}
 										/>
 									</Hover>
 								);
