@@ -47,11 +47,10 @@ function Uni() {
 	];
 	return (
 		<>
-			<header>Stuff I made at University</header>
-			<p>
+			<div>
 				This is a little collection of things I wrote or made for various uni-courses, sorted by date
 				(descending). But unfortunately most of them are in german.
-			</p>
+			</div>
 			<table style={{marginTop: '2rem'}}>
 				<thead>
 					<tr>

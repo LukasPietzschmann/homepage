@@ -1,0 +1,43 @@
+.wrapper {
+	margin: auto;
+	border-radius: 8px;
+}
+
+.contentWrapper {
+	margin-top: 10px;
+	/* background-color: #fafafa; */
+	background-color: var(--card-background);
+	border-radius: 8px;
+}
+
+.buttonWrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+button {
+	color: var(--text);
+	border: none;
+	padding: 10px;
+	background-color: var(--card-background);
+	font-size: 1rem;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+button:hover {
+	background-color: var(--highlight);
+}
+
+button.active {
+	background-color: var(--highlight);
+}
+
+.content {
+	display: none;
+	padding: 10px 10px;
+}
+
+.content.active {
+	display: block;
+}

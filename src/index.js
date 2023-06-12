@@ -6,7 +6,6 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import {isMobile} from 'react-device-detect';
 import './index.css';
 import App from './App';
-import Uni from './Uni';
 import NotFound from './NotFound';
 import Cat from './Cat';
 import Imprint from './Imprint';
@@ -18,7 +17,6 @@ root.render(
 		<Router basemname={`/${process.env.PUBLIC_URL || 'localhost'}`}>
 			<Routes>
 				<Route exact path="/" element={<App />} />
-				<Route exact path="/uni" element={<Uni />} />
 				<Route exact path="/imprint" element={<Imprint />} />
 				<Route exact path="/privacy" element={<Privacy />} />
 				<Route path="*" element={<NotFound />} />
