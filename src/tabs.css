@@ -5,7 +5,7 @@
 
 .contentWrapper {
 	margin-top: 20px;
-	background-color: var(--card-background);
+	background-color: var(--highlight-background);
 	border-radius: 8px;
 	box-shadow: 0 4px 8px var(--highlight);
 }
@@ -21,21 +21,20 @@ button {
 	color: var(--text);
 	border: none;
 	padding: 10px;
-	background-color: var(--card-background);
+	background-color: var(--highlight-background);
 	font-size: 1rem;
 	cursor: pointer;
 	transition: 0.5s;
 }
 
 button:hover {
-	font-weight: bold;
-	letter-spacing: 2px;
+	background-color: white;
 }
 
 button.active {
-	background-color: var(--card-background);
-	letter-spacing: 2px;
-	font-weight: bold;
+	background-color: var(--highlight-background);
+	background-color: white;
+	cursor: default;
 }
 
 .content {
