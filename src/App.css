@@ -9,7 +9,7 @@ header > img {
 }
 
 .card {
-	background: var(--card-background);
+	background: var(--background);
 	font-size: 1rem;
 	border: 1px solid var(--highlight);
 	border-radius: 8px;
