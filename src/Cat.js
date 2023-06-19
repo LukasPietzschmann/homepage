@@ -51,6 +51,7 @@ function Cat() {
 				width="100"
 				height="auto"
 				onClick={miau}
+				alt="Cat"
 			/>
 			<div>
 				<img
@@ -65,6 +66,7 @@ function Cat() {
 					width="18"
 					height="auto"
 					onClick={miau}
+					alt="Cats left eye"
 				/>
 				<img
 					style={{
@@ -78,6 +80,7 @@ function Cat() {
 					width="18"
 					height="auto"
 					onClick={miau}
+					alt="Cats right eye"
 				/>
 			</div>
 		</div>
