@@ -6,9 +6,15 @@ import Lecture from './data/lecture.pdf';
 import Report from './data/report.pdf';
 import BA from './data/ba.pdf';
 import PA from './data/pa.pdf';
+import ADIS from './data/ADIS.pdf'
 
 function Uni() {
 	const data = [
+		{
+			thing: 'Distributed config stores',
+			desc: 'Two friends and I prepared a small talk about highly available distributed configuration stores.',
+			links: [{name: 'Slides', link: ADIS}]
+		},
 		{
 			thing: 'Spark Paper',
 			desc: 'After the course "distributed computing platforms in practice" I wrote a small report summarizing the most important concepts of Apache Spark.',
