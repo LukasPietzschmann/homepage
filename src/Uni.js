@@ -6,14 +6,14 @@ import Lecture from './data/lecture.pdf';
 import Report from './data/report.pdf';
 import BA from './data/ba.pdf';
 import PA from './data/pa.pdf';
-import ADIS from './data/ADIS.pdf'
+import SIMD from './data/SIMD.pdf'
 
 function Uni() {
 	const data = [
 		{
-			thing: 'Distributed config stores',
-			desc: 'Two friends and I prepared a small talk about highly available distributed configuration stores.',
-			links: [{name: 'Slides', link: ADIS}]
+			thing: 'C++ SIMD Intrinsics',
+			desc: 'I prepared a small talk about SIMD intrinsics in C++ for a small grade bonus.',
+			links: [{name: 'Slides', link: SIMD}]
 		},
 		{
 			thing: 'Spark Paper',
