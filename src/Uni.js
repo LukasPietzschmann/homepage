@@ -7,9 +7,15 @@ import Report from './data/report.pdf';
 import BA from './data/ba.pdf';
 import PA from './data/pa.pdf';
 import SIMD from './data/SIMD.pdf'
+import Poster from './data/poster.pdf'
 
 function Uni() {
 	const data = [
+		{
+			thing: 'Project Poster',
+			desc: 'I prepared a poster for a project I did. The project is about creating a data flow graph for java and the poster shows a small portion of the work I did.',
+			links: [{name: 'Poster', link: Poster}]
+		},
 		{
 			thing: 'C++ SIMD Intrinsics',
 			desc: 'I prepared a small talk about SIMD intrinsics in C++ for a small grade bonus.',
