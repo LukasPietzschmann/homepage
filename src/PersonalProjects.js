@@ -3,10 +3,10 @@ import ProjectCard from './ProjectCard';
 import Hover from './Hover';
 
 const projects = [
-	'LukasPietzschmann/Kyra',
-	'LukasPietzschmann/PL0-Compiler',
 	'LukasPietzschmann/awesome-beamer',
-	'LukasPietzschmann/telescope-tabs'
+	'LukasPietzschmann/telescope-tabs',
+	'LukasPietzschmann/PL0-Compiler',
+	'LukasPietzschmann/LZip',
 ];
 
 function PersonalProjects() {

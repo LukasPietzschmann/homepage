@@ -56,8 +56,7 @@ function App() {
 			<p>
 				Generally, I enjoy coding in various languages, but C and C++ are probably the ones I am most
 				experienced with. While I'm interested in various things, you can always get my attention by talking
-				about compilers and hardware-near stuff. I'm currently also getting more into typesetting using (La)TeX
-				and functional programming.
+				about compilers, functional programming and typesetting.
 			</p>
 			<div className="wrapper">
 				<div className="buttonWrapper">
