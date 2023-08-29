@@ -61,7 +61,7 @@ function Uni() {
 		<>
 			<div>
 				This is a little collection of things I wrote or made for various uni-courses, sorted by date
-				(descending). But unfortunately most of them are in german.
+				(descending).
 			</div>
 			<table style={{marginTop: '2rem'}}>
 				<thead>

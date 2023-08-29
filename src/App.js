@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import {Link} from 'react-router-dom';
 import avatar from './images/avatar.png';
 import './App.css';
 import './tabs.css';
@@ -48,18 +47,18 @@ function App() {
 			<p>
 				I'm a german developer based in Langenau and I'm currently studying Computer Science for my master's
 				degree at the{' '}
-				<a target="_blank" href="https://www.uni-ulm.de/en/">
+				<a target="_blank" href="https://www.uni-ulm.de/en/" rel="noreferrer">
 					University of Ulm
 				</a>
 				.
 			</p>
 			<p>
 				Generally, I enjoy coding in various languages, but C and C++ are probably the ones I am most
-				experienced with. While I'm interested in various things, you can always get my attention by talking
+				experienced with. While I'm interested in many different things, you can always get my attention by talking
 				about compilers, functional programming and typesetting.
 			</p>
 			<div className="wrapper">
-				<div className="buttonWrapper">
+				<div className="buttonWrapper" style={{border:'1px solid var(--highlight)'}}>
 					<button
 						className="tab-button active"
 						style={{borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px'}}
