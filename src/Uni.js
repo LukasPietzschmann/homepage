@@ -80,7 +80,7 @@ function Uni() {
 								<td data-label="Link">
 									{links
 										.map(({name, link}, j) => (
-											<a key={j} href={link} target="_blank">
+											<a key={j} href={link} target="_blank" rel="noreferrer">
 												{name}
 											</a>
 										))

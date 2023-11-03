@@ -23,7 +23,7 @@ root.render(
 			</Routes>
 			<div style={{margin: '50px 0px'}} />
 			<footer>
-				<a href="mailto:lukas.pietzschmann@outlook.de" target="_blank">
+				<a href="mailto:lukas@pietzschmann.org" target="_blank">
 					Email
 				</a>
 				<div style={{margin: '0px 15px'}}>•</div>
