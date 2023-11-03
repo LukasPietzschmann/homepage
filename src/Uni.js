@@ -8,13 +8,14 @@ import BA from './data/ba.pdf';
 import PA from './data/pa.pdf';
 import SIMD from './data/SIMD.pdf'
 import Poster from './data/poster.pdf'
+import DFG from './data/dfg.pdf'
 
 function Uni() {
 	const data = [
 		{
-			thing: 'Project Poster',
-			desc: 'I prepared a poster for a project I did. The project is about creating a data flow graph for java and the poster shows a small portion of the work I did.',
-			links: [{name: 'Poster', link: Poster}]
+			thing: 'Java dataflow graph',
+			desc: 'I built a module for an existing research project, that can generate dataflow graphs for java. To explain the stuff, I prepared some slides and a poster.',
+			links: [{name: 'Slides', link: DFG}, {name: 'Poster', link: Poster}]
 		},
 		{
 			thing: 'C++ SIMD Intrinsics',
@@ -28,8 +29,7 @@ function Uni() {
 		},
 		{
 			thing: 'Spark Lecture',
-			desc: 'For the course "distributed computing platforms in practice" I held a lecture about Apache Spark and in memory processing.\
-					I also provided a short exercise sheet.',
+			desc: 'For the course "distributed computing platforms in practice" I held a lecture about Apache Spark and in memory processing. I also provided a short exercise sheet.',
 			links: [
 				{name: 'Slides', link: Lecture},
 				{name: 'Exercise', link: Exercise}
