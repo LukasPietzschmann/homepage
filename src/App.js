@@ -45,7 +45,10 @@ function App() {
 				/>
 			</header>
 			<p>
-				I'm a german developer based in Langenau and I'm currently studying Computer Science for my master's
+				Hey! You just stumpled over my little corner on the internet :)
+			</p>
+			<p>
+				I'm Lukas, a german computer science student based near Ulm and I'm currently studying for my master's
 				degree at the{' '}
 				<a target="_blank" href="https://www.uni-ulm.de/en/" rel="noreferrer">
 					University of Ulm
@@ -53,9 +56,9 @@ function App() {
 				.
 			</p>
 			<p>
-				Generally, I enjoy coding in various languages, but C and C++ are probably the ones I am most
-				experienced with. While I'm interested in many different things, you can always get my attention by talking
-				about compilers, functional programming and typesetting.
+				I enjoy coding in all kinds of languages, but C and C++ (and <span class="tex">T<sub>e</sub>X</span> &#128521;) are probably the ones I am most
+				experienced with. While many different things spark my interest, you can always get my attention by talking
+				about compilers, functional programming, and typesetting.
 			</p>
 			<div className="wrapper">
 				<div className="buttonWrapper" style={{border:'1px solid var(--highlight)'}}>

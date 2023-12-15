@@ -37,7 +37,7 @@ function PersonalProjects() {
 
 	return (
 		<>
-			<div>Here are some personal projects I enjoy(ed) working on:</div>
+			<div>Check out some personal projects I enjoy(ed) working on:</div>
 			<p className="cards">
 				{error
 					? projects.map((project, i) => {
