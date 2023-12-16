@@ -1,45 +1,45 @@
 import './Uni.css';
 
-import RN from './data/rn.pdf';
-import Exercise from './data/exercise.pdf';
-import Lecture from './data/lecture.pdf';
-import Report from './data/report.pdf';
-import BA from './data/ba.pdf';
-import PA from './data/pa.pdf';
-import SIMD from './data/SIMD.pdf'
-import Poster from './data/poster.pdf'
-import DFG from './data/dfg.pdf'
+const computerNetworks = `${process.env.PUBLIC_URL}/PDFs/computer_networks.pdf`
+const sparkExercise = `${process.env.PUBLIC_URL}/PDFs/spark_exercise.pdf`;
+const sparkLecture = `${process.env.PUBLIC_URL}/PDFs/spark_lecture.pdf`;
+const sparkReport = `${process.env.PUBLIC_URL}/PDFs/spark_report.pdf`;
+const bachelor = `${process.env.PUBLIC_URL}/PDFs/bachelor.pdf`
+const termPaper = `${process.env.PUBLIC_URL}/PDFs/term_paper.pdf`
+const simdPresentation = `${process.env.PUBLIC_URL}/PDFs/simd_presentation.pdf`
+const dfgPoster = `${process.env.PUBLIC_URL}/PDFs/dfg_poster.pdf`
+const dfgPresentation = `${process.env.PUBLIC_URL}/PDFs/dfg_presentation.pdf`
 
 function Uni() {
 	const data = [
 		{
 			thing: 'Java dataflow graph',
 			desc: 'I built a module for an existing research project, that can generate dataflow graphs for java. To explain the stuff, I prepared some slides and a poster.',
-			links: [{name: 'Slides', link: DFG}, {name: 'Poster', link: Poster}]
+			links: [{name: 'Slides', link: dfgPresentation}, {name: 'Poster', link: dfgPoster}]
 		},
 		{
 			thing: 'C++ SIMD Intrinsics',
 			desc: 'I prepared a small talk about SIMD intrinsics in C++ for a small grade bonus.',
-			links: [{name: 'Slides', link: SIMD}]
+			links: [{name: 'Slides', link: simdPresentation}]
 		},
 		{
 			thing: 'Spark Paper',
 			desc: 'After the course "distributed computing platforms in practice" I wrote a small report summarizing the most important concepts of Apache Spark.',
-			links: [{name: 'Report', link: Report}]
+			links: [{name: 'Report', link: sparkReport}]
 		},
 		{
 			thing: 'Spark Lecture',
 			desc: 'For the course "distributed computing platforms in practice" I held a lecture about Apache Spark and in memory processing. I also provided a short exercise sheet.',
 			links: [
-				{name: 'Slides', link: Lecture},
-				{name: 'Exercise', link: Exercise}
+				{name: 'Slides', link: sparkLecture},
+				{name: 'Exercise', link: sparkExercise}
 			]
 		},
 		{
 			thing: 'Bachelor thesis',
 			desc: 'My bachelor thesis extended the MOSTflexiPL project. This time I implemented a compiler-backend that compiled MOSTflexiPl code into machine code using LLVM.',
 			links: [
-				{name: 'Thesis', link: BA},
+				{name: 'Thesis', link: bachelor},
 				{name: 'Code', link: 'https://github.com/LukasPietzschmann/Bachelorarbeit'}
 			]
 		},
@@ -47,14 +47,14 @@ function Uni() {
 			thing: 'Project paper',
 			desc: 'The project paper I wrote was all about the MOSTflexiPL compilation process. I developed a TUI that lets you view the compilers internal state during the whole process.',
 			links: [
-				{name: 'Paper', link: PA},
+				{name: 'Paper', link: termPaper},
 				{name: 'Code', link: 'https://github.com/LukasPietzschmann/Projektarbeit'}
 			]
 		},
 		{
 			thing: 'Term paper',
 			desc: 'For the course "computer networks" I wrote a short paper about HTTP and how it works. This is only a 10 page summary of everything so don\'t expect anything to advanced.',
-			links: [{name: 'Paper', link: RN}]
+			links: [{name: 'Paper', link: computerNetworks}]
 		}
 	];
 	return (

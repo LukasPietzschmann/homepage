@@ -23,23 +23,23 @@ root.render(
 			</Routes>
 			<div style={{margin: '50px 0px'}} />
 			<footer>
-				<a href="mailto:lukas@pietzschmann.org" target="_blank">
+				<a href="mailto:lukas@pietzschmann.org" target="_blank" rel="noreferrer">
 					Email
 				</a>
 				<div style={{margin: '0px 15px'}}>•</div>
-				<a href="https://github.com/LukasPietzschmann" target="_blank">
+				<a href="https://github.com/LukasPietzschmann" target="_blank" rel="noreferrer">
 					GitHub
 				</a>
 				<div style={{margin: '0px 15px'}}>•</div>
-				<a href="https://www.linkedin.com/in/lukas-p-83aa261a3" target="_blank">
+				<a href="https://www.linkedin.com/in/lukas-p-83aa261a3" target="_blank" rel="noreferrer">
 					LinkedIn
 				</a>
 				<div style={{margin: '0px 15px'}}>•</div>
-				<Link reloadDocument to="/imprint">
+				<Link to="/imprint">
 					Imprint
 				</Link>
 				<div style={{margin: '0px 15px'}}>•</div>
-				<Link reloadDocument to="/privacy">
+				<Link to="/privacy">
 					Privacy Policy
 				</Link>
 			</footer>
