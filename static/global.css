@@ -1,0 +1,60 @@
+:root {
+    --text: black;
+    --background: white;
+    --highlight-background: #f1f1f1;
+    --highlight: rgba(0, 0, 0, 0.2);
+    --box-shadow: 0 4px 8px var(--highlight);
+    --radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: white;
+        --background: #303030;
+        --highlight-background: #2b2b2b;
+        --highlight: rgba(0, 0, 0, 0.4);
+    }
+}
+
+body {
+    color: var(--text);
+    background: var(--background);
+    max-width: 800px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+body * {
+    font-family: 'Source Code Pro', monospace;
+}
+
+@media screen and (max-width: 750px) {
+    body {
+        font-size: 1rem;
+    }
+}
+
+a {
+    color: #62a0ea;
+}
+
+p {
+    text-align: justify;
+}
+
+
+footer {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
