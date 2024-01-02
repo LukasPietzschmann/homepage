@@ -1,24 +1,123 @@
+<script lang="ts">
+    import {FontAwesomeIcon} from '@fortawesome/svelte-fontawesome';
+    import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+    import {faHome, faBars, faXmark, faEnvelope} from "@fortawesome/free-solid-svg-icons";
+    import {config} from '@fortawesome/fontawesome-svg-core'
+    import '@fortawesome/fontawesome-svg-core/styles.css'
+
+    config.autoAddCss = false
+
+    let responsive = false;
+</script>
+
 <style>
     .dot {
         margin: 0 15px;
     }
+
+    nav {
+        margin-top: 1rem;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--text);
+    }
+
+    nav .nav-link {
+        float: right;
+        margin-left: 2rem;
+    }
+
+    nav .nav-logo {
+        display: inline-block;
+    }
+
+    nav #nav-toggle {
+        display: none;
+        user-select: none;
+        color: var(--text);
+    }
+
+    @media screen and (max-width: 520px) {
+        nav {
+            overflow: hidden;
+            max-height: 2rem;
+            transition: all 0.6s cubic-bezier(0.5, 0.5, 0, 1);
+        }
+
+        nav.responsive {
+            max-height: 10rem;
+            border: 1px solid var(--highlight);
+            border-radius: var(--radius);
+            padding: 1rem;
+            box-shadow: var(--box-shadow);
+            background-color: var(--highlight-background);
+        }
+
+        nav .nav-link {
+            display: none;
+            margin-left: 0;
+            margin-top: 1rem;
+        }
+
+        nav.responsive .nav-link {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        nav .nav-logo {
+            display: block;
+        }
+
+        nav #nav-toggle {
+            display: block;
+            float: right;
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
+    }
 </style>
+
+<header>
+    <nav class:responsive>
+        <div class="nav-logo">
+            <a href="/" style="width: fit-content">
+                <FontAwesomeIcon icon={faHome}/>
+                Home
+            </a>
+            <button type="button" id="nav-toggle" on:click={() => responsive = !responsive}>
+                {#if responsive}
+                    <FontAwesomeIcon icon={faXmark}/>
+                {:else}
+                    <FontAwesomeIcon icon={faBars}/>
+                {/if}
+            </button>
+        </div>
+        <a class="nav-link" href="https://github.com/LukasPietzschmann" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithub}/>
+            GitHub
+        </a>
+        <a class="nav-link" href="https://www.linkedin.com/in/lukas-p-83aa261a3" target="_blank"
+           rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faLinkedin}/>
+            LinkedIn
+        </a>
+        <a class="nav-link" href="mailto:lukas@pietzschmann.org">
+            <FontAwesomeIcon icon={faEnvelope}/>
+            Email
+        </a>
+    </nav>
+</header>
 
 <slot/>
 
 <footer>
-    <a href="mailto:lukas@pietzschmann.org" target="_blank" rel="noreferrer">
-        Email
-    </a>
-    <div class="dot">•</div>
-    <a href="https://github.com/LukasPietzschmann" target="_blank" rel="noreferrer">
-        GitHub
-    </a>
-    <div class="dot">•</div>
-    <a href="https://www.linkedin.com/in/lukas-p-83aa261a3" target="_blank" rel="noreferrer">
-        LinkedIn
-    </a>
-    <div class="dot">•</div>
     <a href="/imprint">
         Imprint
     </a>

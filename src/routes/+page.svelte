@@ -61,14 +61,15 @@
 </script>
 
 <style>
-    header {
+    .avatar-container {
         display: flex;
         justify-content: center;
         font-size: 2rem;
-        margin: 2rem;
+        margin-bottom: 2rem;
+        margin-top: 3rem;
     }
 
-    .avatar {
+    .avatar-img {
         background-color: var(--highlight-background);
         border: 1px solid var(--highlight);
         border-radius: 100%;
@@ -135,9 +136,10 @@
     <title>Lukas Pietzschmann</title>
 </svelte:head>
 
-<header>
-    <enhanced:img class="avatar" src={avatar} alt="Avatar"/>
-</header>
+<div class="avatar-container">
+    <enhanced:img class="avatar-img" src={avatar} alt="Avatar"/>
+</div>
+
 <p>Hey! You just stumbled over my little corner on the internet :)</p>
 <p>
     I'm Lukas, a german computer science student based near Ulm and I'm
