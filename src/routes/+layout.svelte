@@ -4,6 +4,7 @@
     import {faHome, faBars, faXmark, faEnvelope} from "@fortawesome/free-solid-svg-icons";
     import {config} from '@fortawesome/fontawesome-svg-core'
     import '@fortawesome/fontawesome-svg-core/styles.css'
+    import Card from "$lib/components/Card.svelte";
 
     config.autoAddCss = false
 
@@ -121,6 +122,12 @@
         </a>
     </nav>
 </header>
+
+<noscript>
+    <Card hover={false} style="border: 1px solid darkred; background-color: rgba(255,0,0,0.1); margin-top: 2rem">
+        Whoops! It looks like you disabled JavaScript. Turn it back on for this site to function properly.
+    </Card>
+</noscript>
 
 <slot/>
 
