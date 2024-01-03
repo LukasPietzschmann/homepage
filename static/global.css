@@ -46,14 +46,6 @@ p {
     text-align: justify;
 }
 
-
-footer {
-    margin: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .center {
     display: flex;
     justify-content: center;

@@ -11,6 +11,13 @@
 </script>
 
 <style>
+    footer {
+        margin: 2rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     .dot {
         margin: 0 15px;
     }
