@@ -139,4 +139,8 @@
     <a href="/privacy">
         Privacy Policy
     </a>
+    <div class="dot">•</div>
+    <a href="https://uptime.pietzschmann.org/status/public" target="_blank" rel="noopener noreferrer">
+        Uptime
+    </a>
 </footer>
