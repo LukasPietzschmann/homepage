@@ -155,10 +155,10 @@
 
 <div>
     <div class="tab-button-wrapper">
-        <button id="tab1" class="tab-button" class:active={activeTab === 0} on:click={() => activeTab = 0}>
+        <button id="tab1" class="tab-button" data-umami-event="Personal Projects" class:active={activeTab === 0} on:click={() => activeTab = 0}>
             Personal Projects
         </button>
-        <button id="tab2" class="tab-button" class:active={activeTab === 1} on:click={() => activeTab = 1}>
+        <button id="tab2" class="tab-button" data-umami-event="Uni Projects" class:active={activeTab === 1} on:click={() => activeTab = 1}>
             University Stuff
         </button>
     </div>

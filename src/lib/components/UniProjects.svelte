@@ -90,7 +90,7 @@
             <td data-label="Description">{desc}</td>
             <td data-label="Link">
                 {#each links as {link, name}, i}
-                    {#if i !== 0},{/if}<a href={link} target="_blank">{name}</a>
+                    {#if i !== 0},{/if}<a href={link} data-umami-event={`${thing}: ${name}`} target="_blank">{name}</a>
                 {/each}
             </td>
         </tr>
