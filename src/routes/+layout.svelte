@@ -1,7 +1,7 @@
 <script lang="ts">
     import {FontAwesomeIcon} from '@fortawesome/svelte-fontawesome';
     import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-    import {faHome, faBars, faXmark, faEnvelope} from "@fortawesome/free-solid-svg-icons";
+    import {faHome, faBars, faXmark, faEnvelope, faKey} from "@fortawesome/free-solid-svg-icons";
     import {config} from '@fortawesome/fontawesome-svg-core'
     import '@fortawesome/fontawesome-svg-core/styles.css'
     import Card from "$lib/components/Card.svelte";
@@ -47,7 +47,7 @@
         color: var(--text);
     }
 
-    @media screen and (max-width: 520px) {
+    @media screen and (max-width: 610px) {
         nav {
             overflow: hidden;
             max-height: 2rem;
@@ -55,7 +55,7 @@
         }
 
         nav.responsive {
-            max-height: 10rem;
+            max-height: 12.5rem;
             border: 1px solid var(--highlight);
             border-radius: var(--radius);
             padding: 1rem;
@@ -107,6 +107,10 @@
                 {/if}
             </button>
         </div>
+        <a class="nav-link" href="/keys">
+            <FontAwesomeIcon icon={faKey}/>
+            Keys
+        </a>
         <a class="nav-link" href="https://github.com/LukasPietzschmann" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub}/>
             GitHub
