@@ -111,16 +111,16 @@
             <FontAwesomeIcon icon={faKey}/>
             Keys
         </a>
-        <a class="nav-link" href="https://github.com/LukasPietzschmann" target="_blank" rel="noopener noreferrer">
+        <a class="nav-link" data-umami-event="GitHub" href="https://github.com/LukasPietzschmann" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub}/>
             GitHub
         </a>
-        <a class="nav-link" href="https://www.linkedin.com/in/lukas-p-83aa261a3" target="_blank"
+        <a class="nav-link" data-umami-event="LinkedIn" href="https://www.linkedin.com/in/lukas-p-83aa261a3" target="_blank"
            rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin}/>
             LinkedIn
         </a>
-        <a class="nav-link" href="mailto:lukas@pietzschmann.org">
+        <a class="nav-link" data-umami-event="Email" href="mailto:lukas@pietzschmann.org">
             <FontAwesomeIcon icon={faEnvelope}/>
             Email
         </a>
