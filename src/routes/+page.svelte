@@ -5,6 +5,11 @@
 
     const uniProjects: ProjectData[] = [
         {
+            thing: 'The Anatomy of R code',
+            desc: 'I coauthored a paper about the anatomy of real-world R code. The paper conducts a large-scale, static analysis of more than 50 million lines of R code to identify their characteristics and the features that are actually used.',
+            links: [{name: 'Paper', link: 'https://arxiv.org/pdf/2401.16228.pdf'}]
+        },
+        {
             thing: 'Java dataflow graph',
             desc: 'I built a module for an existing research project, that can generate dataflow graphs for java. To explain the stuff, I prepared some slides and a poster.',
             links: [{name: 'Slides', link: '/dfg_presentation.pdf'}, {name: 'Poster', link: '/dfg_poster.pdf'}]
