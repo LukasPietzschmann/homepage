@@ -10,6 +10,11 @@
             links: [{name: 'Paper', link: 'https://arxiv.org/pdf/2401.16228.pdf'}]
         },
         {
+            thing: 'Abstract Interpretation',
+            desc: 'I extended the existing research project flowR by adding an abstract interpretation module. Here you can see a poster that I prepared for the interim fair.',
+            links: [{name: 'Poster', link: '/ai_poster.pdf'}]
+        },
+        {
             thing: 'Java dataflow graph',
             desc: 'I built a module for an existing research project, that can generate dataflow graphs for java. To explain the stuff, I prepared some slides and a poster.',
             links: [{name: 'Slides', link: '/dfg_presentation.pdf'}, {name: 'Poster', link: '/dfg_poster.pdf'}]
