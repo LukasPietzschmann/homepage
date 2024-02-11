@@ -1,7 +1,10 @@
 <script lang="ts">
-    import avatar from '$lib/assets/avatar.png?enhanced';
+    import {page} from "$app/stores";
+    import {goto} from "$app/navigation";
+    import avatar from "$lib/assets/avatar.png?enhanced";
     import PersonalProjects, {type ProjectId} from "$lib/components/PersonalProjects.svelte";
     import UniProjects, {type ProjectData} from "$lib/components/UniProjects.svelte";
+    import {onMount} from "svelte";
 
     const uniProjects: ProjectData[] = [
         {
@@ -67,7 +70,33 @@
         'LukasPietzschmann/LZip',
     ];
 
-    let activeTab = 0;
+    const UNI_HASH = '#uni';
+    const PERSONAL_HASH = '#personal';
+
+    let activeTab: number;
+    $: {
+        switch (activeTab) {
+            case 0:
+                goto(PERSONAL_HASH, {replaceState: true});
+                break;
+            case 1:
+                goto(UNI_HASH, {replaceState: true});
+                break;
+        }
+    }
+    onMount(async () => {
+        if ($page.url.hash === '') {
+            await goto(PERSONAL_HASH, {replaceState: true});
+        }
+        switch ($page.url.hash) {
+            case UNI_HASH:
+                activeTab = 1;
+                break;
+            case PERSONAL_HASH:
+                activeTab = 0;
+                break;
+        }
+    })
 </script>
 
 <style>
@@ -165,10 +194,12 @@
 
 <div>
     <div class="tab-button-wrapper">
-        <button id="tab1" class="tab-button" data-umami-event="Personal Projects" class:active={activeTab === 0} on:click={() => activeTab = 0}>
+        <button id="tab1" class="tab-button" data-umami-event="Personal Projects" class:active={activeTab === 0}
+                on:click={() => activeTab = 0}>
             Personal Projects
         </button>
-        <button id="tab2" class="tab-button" data-umami-event="Uni Projects" class:active={activeTab === 1} on:click={() => activeTab = 1}>
+        <button id="tab2" class="tab-button" data-umami-event="Uni Projects" class:active={activeTab === 1}
+                on:click={() => activeTab = 1}>
             University Stuff
         </button>
     </div>
