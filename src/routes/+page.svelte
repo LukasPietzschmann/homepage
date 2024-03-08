@@ -183,7 +183,7 @@
 
 <p>Hey! You just stumbled over my little corner on the internet :)</p>
 <p>
-    I'm Lukas, a german computer science student based near Ulm and I'm
+    I'm Lukas, a German computer science student based near Ulm and I'm
     currently studying for my master's degree at the
     <a href="https://www.uni-ulm.de/en/">University of Ulm</a>.
 </p>
