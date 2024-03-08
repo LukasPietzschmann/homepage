@@ -95,6 +95,8 @@
             case PERSONAL_HASH:
                 activeTab = 0;
                 break;
+            default:
+                activeTab = 0;
         }
     })
 </script>
