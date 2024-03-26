@@ -16,5 +16,5 @@
 <p>
     Phone: +49 157 82943873
     <br/>
-    E-Mail: lukas@pietzschmann.org
+    E-Mail: lukas.pietzschmann@outlook.de
 </p>
