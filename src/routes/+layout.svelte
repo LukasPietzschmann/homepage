@@ -144,7 +144,11 @@
         Privacy Policy
     </a>
     <div class="dot">•</div>
-    <a href="https://uptime.pietzschmann.org/status/public" target="_blank" rel="noopener noreferrer">
+    <a data-umami-event="Uptime" href="https://uptime.pietzschmann.org/status/public" target="_blank" rel="noopener noreferrer">
         Uptime
+    </a>
+    <div class="dot">•</div>
+    <a data-umami-event="Analytics" href="https://analytics.pietzschmann.org/share/rpUDid7d9z2Cuzxm/lukas.pietzschmann.org" target="_blank" rel="noopener noreferrer">
+        Analytics
     </a>
 </footer>
