@@ -1,5 +1,6 @@
 <svelte:head>
     <title>Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Lukas' website">
 </svelte:head>
 
 <h1>Privacy Policy</h1>

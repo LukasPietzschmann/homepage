@@ -183,6 +183,7 @@
 
 <svelte:head>
     <title>Lukas Pietzschmann</title>
+    <meta name="description" content="Lukas' personal home page"/>
 </svelte:head>
 
 <div class="avatar-container">

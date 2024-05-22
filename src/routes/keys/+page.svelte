@@ -1,5 +1,6 @@
 <svelte:head>
     <title>Keys</title>
+    <meta name="description" content="Lukas' public keys">
 </svelte:head>
 
 <h1>Keys</h1>
