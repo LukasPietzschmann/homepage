@@ -151,4 +151,8 @@
     <a data-umami-event="Analytics" href="https://analytics.pietzschmann.org/share/rpUDid7d9z2Cuzxm/lukas.pietzschmann.org" target="_blank" rel="noopener noreferrer">
         Analytics
     </a>
+    <div class="dot">•</div>
+    <a data-umami-event="512kb" href="https://512kb.club" target="_blank" rel="noopener noreferrer">
+        <img src="https://512kb.club/assets/images/blue-team.gif" alt="a proud member of the blue team of 512KB club"/>
+    </a>
 </footer>
