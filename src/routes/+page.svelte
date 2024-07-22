@@ -74,7 +74,7 @@
     const personalProjects: ProjectId[] = [
         'LukasPietzschmann/awesome-beamer',
         'LukasPietzschmann/telescope-tabs',
-        'LukasPietzschmann/PL0-Compiler',
+        'LukasPietzschmann/Haskellator9000',
         'LukasPietzschmann/LZip',
     ];
 
