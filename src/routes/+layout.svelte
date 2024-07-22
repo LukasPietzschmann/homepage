@@ -90,6 +90,11 @@
             outline: inherit;
         }
     }
+
+    #last-modified {
+        color: var(--text-muted);
+        margin-top: 2rem;
+    }
 </style>
 
 <header>
@@ -155,4 +160,6 @@
     <a data-umami-event="512kb" href="https://512kb.club" target="_blank" rel="noopener noreferrer">
         <img src="https://512kb.club/assets/images/blue-team.gif" alt="a proud member of the blue team of 512KB club"/>
     </a>
+    <br />
+    <div id="last-modified"> Website last modified: {__BUILD_DATE__}</div>
 </footer>

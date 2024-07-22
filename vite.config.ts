@@ -6,5 +6,8 @@ export default defineConfig({
     plugins: [
         enhancedImages(),
         sveltekit()
-    ]
+    ],
+    define: {
+        __BUILD_DATE__: JSON.stringify(new Date().toLocaleDateString())
+    }
 });
