@@ -161,5 +161,5 @@
         <img src="https://512kb.club/assets/images/blue-team.gif" alt="a proud member of the blue team of 512KB club"/>
     </a>
     <br />
-    <div id="last-modified"> Website last modified: {__BUILD_DATE__}</div>
+    <div id="last-modified">Last modified: {__BUILD_DATE__}</div>
 </footer>
