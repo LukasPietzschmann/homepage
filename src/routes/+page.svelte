@@ -72,10 +72,10 @@
         }
     ];
     const personalProjects: ProjectId[] = [
-        'LukasPietzschmann/awesome-beamer',
-        'LukasPietzschmann/telescope-tabs',
-        'LukasPietzschmann/Haskellator9000',
-        'LukasPietzschmann/LZip',
+        {owner: 'LukasPietzschmann', repo: 'awesome-beamer'},
+        {owner: 'LukasPietzschmann', repo: 'telescope-tabs'},
+        {owner: 'LukasPietzschmann', repo: 'Haskellator9000'},
+        {owner: 'LukasPietzschmann', repo: 'LZip'}
     ];
 
     const UNI_HASH = '#uni';

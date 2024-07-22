@@ -1,5 +1,8 @@
 <script context="module" lang="ts">
-    export type ProjectId = string;
+    export interface ProjectId {
+        owner: string;
+        repo: string;
+    }
 </script>
 
 <script lang="ts">
@@ -19,17 +22,18 @@
 </style>
 
 <div class="card-wrapper">
-    {#each projectIds as id (id)}
-        {#await fetchAndReturnJson(`https://api.pietzschmann.org/gh/repos/${id}`)}
+    {#each projectIds as {owner, repo} (owner + repo)}
+        {@const slug = `${owner}/${repo}`}
+        {#await fetchAndReturnJson(`https://api.pietzschmann.org/gh/repos/${slug}`)}
             <Card>
                 <div style="margin: 1rem" class="center">Loading ...</div>
             </Card>
         {:then result}
             {@const {description, language, stargazers_count: stars, forks} = result}
-            <ProjectCard urlTail={id} description={description} language={language} stars={stars} forks={forks}/>
+            <ProjectCard owner={owner} repo={repo} description={description} language={language} stars={stars} forks={forks}/>
         {:catch message}
             <Card>
-                <div>{id}</div>
+                <div>{repo}</div>
                 <div style="margin-top: 1rem">
                     <span style="color: red">&#10008;</span>
                     {message}

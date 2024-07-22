@@ -9,11 +9,14 @@
 
     config.autoAddCss = false
 
-    export let urlTail: string;
+    export let owner: string;
+    export let repo: string;
     export let description: string;
     export let language: string;
     export let stars: number;
     export let forks: number;
+
+    const slug = `${owner}/${repo}`;
 </script>
 
 <style>
@@ -27,7 +30,9 @@
 <Card>
     <div style="display: flex; align-items: center">
         <FontAwesomeIcon style="margin-right: 8px" icon={faBookmark}/>
-        <a target="_blank" rel="noopener noreferrer" data-umami-event={urlTail} href="https://github.com/{urlTail}">{urlTail}</a>
+        <a target="_blank" rel="noopener noreferrer" data-umami-event={slug} href="https://github.com/{slug}">
+            <span>{owner}</span><wbr/><span>/</span><wbr/><span>{repo}</span>
+        </a>
     </div>
     {description}
     <hr style="color: var(--highlight)"/>
