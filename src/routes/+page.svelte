@@ -1,10 +1,10 @@
 <script lang="ts">
-    import {page} from "$app/stores";
-    import {goto} from "$app/navigation";
     import avatar from "$lib/assets/avatar.png?enhanced";
-    import PersonalProjects, {type ProjectId} from "$lib/components/PersonalProjects.svelte";
+    import PersonalProjects, {
+        type ProjectId
+    } from "$lib/components/PersonalProjects.svelte";
     import UniProjects, {type ProjectData} from "$lib/components/UniProjects.svelte";
-    import {onMount} from "svelte";
+    import Accordion from "$lib/components/Accordion.svelte";
 
     const uniProjects: ProjectData[] = [
         {
@@ -77,154 +77,67 @@
         {owner: 'LukasPietzschmann', repo: 'Haskellator9000'},
         {owner: 'LukasPietzschmann', repo: 'LZip'}
     ];
-
-    const UNI_HASH = '#uni';
-    const PERSONAL_HASH = '#personal';
-
-    let activeTab: number;
-    $: {
-        switch (activeTab) {
-            case 0:
-                goto(PERSONAL_HASH, {replaceState: true});
-                break;
-            case 1:
-                goto(UNI_HASH, {replaceState: true});
-                break;
-        }
-    }
-    onMount(async () => {
-        if ($page.url.hash === '') {
-            await goto(PERSONAL_HASH, {replaceState: true});
-        }
-        switch ($page.url.hash) {
-            case UNI_HASH:
-                activeTab = 1;
-                break;
-            case PERSONAL_HASH:
-                activeTab = 0;
-                break;
-            default:
-                activeTab = 0;
-        }
-    })
 </script>
 
 <style>
-    .avatar-container {
-        display: flex;
-        justify-content: center;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        margin-top: 3rem;
-    }
+	.avatar-container {
+		display: flex;
+		justify-content: center;
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		margin-top: 3rem;
+	}
 
-    .avatar-img {
-        background-color: var(--highlight-background);
-        border: 1px solid var(--highlight);
-        border-radius: 100%;
-        box-shadow: var(--box-shadow);
-        width: 120px;
-        height: 120px;
-    }
-
-    .tab-button-wrapper {
-        margin: 1.5rem auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        border-radius: 8px;
-        box-shadow: var(--box-shadow);
-    }
-
-    .tab-button-wrapper > #tab1 {
-        border-top-left-radius: var(--radius);
-        border-bottom-left-radius: var(--radius);
-    }
-
-    .tab-button-wrapper > #tab2 {
-        border-top-right-radius: var(--radius);
-        border-bottom-right-radius: var(--radius);
-    }
-
-    .tab-content-wrapper {
-        padding: 1rem;
-        background-color: var(--highlight-background);
-        border-radius: var(--radius);
-        box-shadow: var(--box-shadow);
-        border: 1px solid var(--highlight);
-    }
-
-    .tab-button {
-        color: var(--text);
-        padding: 10px;
-        background-color: var(--highlight-background);
-        font-size: 1rem;
-        transition: background-color 0.2s ease-in-out;
-        cursor: pointer;
-        border: 1px solid var(--highlight);
-    }
-
-    .tab-button:hover {
-        background-color: var(--highlight);
-    }
-
-    .tab-button.active {
-        background-color: var(--background);
-        cursor: default;
-    }
-
-    .tab-content {
-        display: none;
-    }
-
-    .tab-content.active {
-        display: block;
-    }
+	.avatar-img {
+		background-color: var(--highlight-background);
+		border: 1px solid var(--highlight);
+		border-radius: 100%;
+		box-shadow: var(--box-shadow);
+		width: 120px;
+		height: 120px;
+	}
 </style>
 
 <svelte:head>
-    <title>Lukas Pietzschmann</title>
-    <meta name="description" content="Lukas' personal home page"/>
+	<title>Lukas Pietzschmann</title>
+	<meta name="description" content="Lukas' personal home page"/>
 </svelte:head>
 
 <div class="avatar-container">
-    <enhanced:img class="avatar-img" src={avatar} alt="Avatar"/>
+	<enhanced:img class="avatar-img" src={avatar} alt="Avatar"/>
 </div>
 
 <p>Hey! You just stumbled over my little corner on the internet :)</p>
 <p>
-    I'm Lukas, a German computer science student based near Ulm and I'm
-    currently studying for my master's degree at the
-    <a href="https://www.uni-ulm.de/en/">University of Ulm</a>.
+	I'm Lukas, a German computer science student based near Ulm and I'm
+	currently studying for my master's degree at the
+	<a href="https://www.uni-ulm.de/en/">University of Ulm</a>.
 </p>
 <p>
-    I enjoy coding in all kinds of languages, but C and C++ (and TeX &#128521)
-    are probably the ones I am most experienced with. While many different
-    things spark my interest, you can always get my attention by talking about
-    compilers, functional programming, and typesetting.
+	I enjoy coding in all kinds of languages, but C and C++ (and TeX &#128521)
+	are probably the ones I am most experienced with. While many different
+	things spark my interest, you can always get my attention by talking about
+	compilers, functional programming, and typesetting.
 </p>
-
-<div>
-    <div class="tab-button-wrapper">
-        <button id="tab1" class="tab-button" data-umami-event="Personal Projects" class:active={activeTab === 0}
-                on:mousedown={() => activeTab = 0}>
-            Personal Projects
-        </button>
-        <button id="tab2" class="tab-button" data-umami-event="Uni Projects" class:active={activeTab === 1}
-                on:mousedown={() => activeTab = 1}>
-            University Stuff
-        </button>
-    </div>
-    <div class="tab-content-wrapper">
-        <div class="tab-content" class:active={activeTab === 0}>
-            <div style="margin-bottom: 1rem">Check out some personal projects I enjoy(ed) working on:</div>
-            <PersonalProjects projectIds={personalProjects}/>
-        </div>
-        <div class="tab-content" class:active={activeTab === 1}>
-            <div style="margin-bottom: 1rem">
-                This is a little collection of things I wrote or made for various uni-courses, sorted by date
-                (descending).
-            </div>
-            <UniProjects data={uniProjects}/>
-        </div>
-    </div>
-</div>
+<p>
+	<Accordion>
+		<span slot="head">Personal Projects</span>
+		<div slot="details">
+			<div style="margin-bottom: 1rem">Check out some personal projects I
+				enjoy(ed) working on:
+			</div>
+			<PersonalProjects projectIds={personalProjects}/>
+		</div>
+	</Accordion>
+	<Accordion>
+		<span slot="head">University Stuff</span>
+		<div slot="details">
+			<div style="margin-bottom: 1rem">
+				This is a little collection of things I wrote or made for various
+				uni-courses, sorted by date
+				(descending).
+			</div>
+			<UniProjects data={uniProjects}/>
+		</div>
+	</Accordion>
+</p>
