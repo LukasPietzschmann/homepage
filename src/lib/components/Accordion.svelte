@@ -20,6 +20,7 @@
 		border-radius: var(--radius);
 		border: 1px solid var(--highlight);
 		box-shadow: var(--box-shadow);
+		color: var(--text);
 		font-size: 1rem;
 		margin-bottom: 1rem;
 		padding: 10px;
