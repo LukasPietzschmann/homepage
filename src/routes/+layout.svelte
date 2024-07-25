@@ -5,6 +5,7 @@
     import {config} from '@fortawesome/fontawesome-svg-core'
     import '@fortawesome/fontawesome-svg-core/styles.css'
     import Card from "$lib/components/Card.svelte";
+    import ScrollToTop from "$lib/components/ScrollToTop.svelte";
 
     config.autoAddCss = false
 
@@ -139,6 +140,8 @@
 </noscript>
 
 <slot/>
+
+<ScrollToTop/>
 
 <footer>
     <a href="/imprint">
