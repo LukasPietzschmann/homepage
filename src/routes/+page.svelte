@@ -122,7 +122,7 @@
 	compilers, functional programming, and typesetting.
 </p>
 <p>
-	<Accordion>
+	<Accordion name="Personal Projects">
 		<span slot="head">Personal Projects</span>
 		<div slot="details">
 			<div style="margin-bottom: 1rem">Check out some personal projects I
@@ -131,7 +131,7 @@
 			<PersonalProjects projectIds={personalProjects}/>
 		</div>
 	</Accordion>
-	<Accordion>
+	<Accordion name="Uni Projects">
 		<span slot="head">University Stuff</span>
 		<div slot="details">
 			<div style="margin-bottom: 1rem">

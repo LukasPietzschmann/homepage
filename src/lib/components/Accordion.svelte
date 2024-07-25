@@ -1,11 +1,12 @@
-<script>
-	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
+<script lang="ts">
+    import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
 
-	export let open = false;
-	import {slide, fade} from 'svelte/transition';
-	import {faCaretDown, faCaretRight} from "@fortawesome/free-solid-svg-icons";
+    export let open = false;
+    export let name: string;
+    import {slide, fade} from 'svelte/transition';
+    import {faCaretDown, faCaretRight} from "@fortawesome/free-solid-svg-icons";
 
-	const toggleOpen = () => open = !open
+    const toggleOpen = () => open = !open
 </script>
 
 <style>
@@ -23,6 +24,7 @@
 		margin-bottom: 1rem;
 		padding: 10px;
 		transition: background-color 0.2s ease-in-out;
+		width: 100%;
 	}
 
 	.header.active {
@@ -53,17 +55,15 @@
 </style>
 
 <div class="accordion">
-	<div class="header" class:active={open} on:mousedown={toggleOpen} role="button"
-	     tabindex="0">
+	<button class="header" class:active={open} on:mousedown={toggleOpen}
+	        data-umami-event={`${name} ${open ? 'open' : 'close'}`}>
 		<slot name="head"/>
-		<div class="expand">
-			{#if open}
-				<span in:fade><FontAwesomeIcon icon={faCaretDown}/></span>
-			{:else}
-				<span in:fade><FontAwesomeIcon icon={faCaretRight}/></span>
-			{/if}
-		</div>
-	</div>
+		{#if open}
+			<span class="expand" in:fade><FontAwesomeIcon icon={faCaretDown}/></span>
+		{:else}
+			<span class="expand" in:fade><FontAwesomeIcon icon={faCaretRight}/></span>
+		{/if}
+	</button>
 
 	{#if open}
 		<div class="details" transition:slide>
