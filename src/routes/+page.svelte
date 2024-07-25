@@ -28,7 +28,10 @@
         {
             thing: 'Java dataflow graph',
             desc: 'I built a module for an existing research project, that can generate dataflow graphs for java. To explain the stuff, I prepared some slides and a poster.',
-            links: [{name: 'Slides', link: '/dfg_presentation.pdf'}, {name: 'Poster', link: '/dfg_poster.pdf'}]
+            links: [
+                {name: 'Slides', link: '/dfg_presentation.pdf'},
+                {name: 'Poster', link: '/dfg_poster.pdf'}
+            ]
         },
         {
             thing: 'C++ SIMD Intrinsics',
@@ -53,11 +56,10 @@
             desc: 'My bachelor thesis extended the MOSTflexiPL project. This time I implemented a compiler-backend that compiled MOSTflexiPl code into machine code using LLVM.',
             links: [
                 {name: 'Thesis', link: '/bachelor.pdf'},
-                {name: 'Code', link: 'https://github.com/LukasPietzschmann/Bachelorarbeit'}
+                {name: 'Code', link: 'https://github.com/LukasPietzschmann/Bachelorarbeit' }
             ]
         },
         {
-
             thing: 'Project paper',
             desc: 'The project paper I wrote was all about the MOSTflexiPL compilation process. I developed a TUI that lets you view the compilers internal state during the whole process.',
             links: [
