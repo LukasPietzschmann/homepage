@@ -136,8 +136,7 @@
 		<div slot="details">
 			<div style="margin-bottom: 1rem">
 				This is a little collection of things I wrote or made for various
-				uni-courses, sorted by date
-				(descending).
+				uni-courses, sorted by date (descending).
 			</div>
 			<UniProjects data={uniProjects}/>
 		</div>
