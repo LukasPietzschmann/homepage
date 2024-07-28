@@ -32,11 +32,9 @@
 		<FontAwesomeIcon style="margin-right: 8px" icon={faBookmark}/>
 		<a target="_blank" rel="noopener noreferrer" data-umami-event={slug}
 		   href="https://github.com/{slug}">
-			<span>{owner}</span>
-			<wbr/>
-			<span>/</span>
-			<wbr/>
-			<span>{repo}</span>
+			<!-- @formatter:off -->
+			<span>{owner}</span><wbr/><span>/</span><wbr/><span>{repo}</span>
+			<!-- @formatter:on -->
 		</a>
 	</div>
 	{description}

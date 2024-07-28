@@ -25,7 +25,9 @@
 			{thing}</div>
 		<p>{desc}</p>
 		{#each links as {link, name}, i}
+			<!-- @formatter:off -->
 			<a href={link} data-umami-event={`${thing}: ${name}`} target="_blank">{name}</a>{#if i !== links.length - 1},{" "}{/if}
+			<!-- @formatter:on -->
 		{/each}
 	</Card>
 {/each}
