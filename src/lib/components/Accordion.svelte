@@ -1,12 +1,12 @@
 <script lang="ts">
-    import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
+	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
 
-    export let open = false;
-    export let name: string;
-    import {slide, fade} from 'svelte/transition';
-    import {faCaretDown, faCaretRight} from "@fortawesome/free-solid-svg-icons";
+	export let open = false;
+	export let name: string;
+	import {slide, fade} from 'svelte/transition';
+	import {faCaretDown, faCaretRight} from "@fortawesome/free-solid-svg-icons";
 
-    const toggleOpen = () => open = !open
+	const toggleOpen = () => open = !open
 </script>
 
 <style>
