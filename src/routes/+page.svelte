@@ -5,61 +5,63 @@
     } from "$lib/components/PersonalProjects.svelte";
     import UniProjects, {type ProjectData} from "$lib/components/UniProjects.svelte";
     import Accordion from "$lib/components/Accordion.svelte";
+    import {faFileLines, faGraduationCap} from "@fortawesome/free-solid-svg-icons";
 
-    const uniProjects: ProjectData[] = [
-        {
-            thing: "Haskell's lenses",
-            desc: 'For the course "functional programming 2" I held a lecture about lenses in Haskell. I also provided an exercise sheet.',
-            links: [
-                {name: 'Slides', link: '/lenses_lecture.pdf'},
-                {name: 'Exercise', link: '/lenses_exercise.pdf'}
-            ]
-        },
+    const academicWork: ProjectData[] = [
         {
             thing: 'The Anatomy of R code',
             desc: 'I coauthored a paper about the anatomy of real-world R code. The paper conducts a large-scale, static analysis of more than 50 million lines of R code to identify their characteristics and the features that are actually used.',
             links: [{name: 'Paper', link: 'https://doi.org/10.1145/3643991.3644911'}]
         },
         {
-            thing: 'Abstract Interpretation',
+            thing: 'Bachelor Thesis',
+            desc: 'My bachelor thesis extended the MOSTflexiPL project by adding a backend to the compiler that uses LLVM to lower MOSTflexiPL to machine code.',
+            links: [
+                {name: 'Thesis', link: '/bachelor.pdf'},
+                {
+                    name: 'Code',
+                    link: 'https://github.com/LukasPietzschmann/Bachelorarbeit'
+                }
+            ]
+        },
+    ];
+    const uniProjects: ProjectData[] = [
+        {
+            thing: "Haskell’s Lenses Lecture",
+            desc: 'For the course "Functional programming 2", I held a lecture about lenses in Haskell. I also provided an exercise sheet.',
+            links: [
+                {name: 'Slides', link: '/lenses_lecture.pdf'},
+                {name: 'Exercise', link: '/lenses_exercise.pdf'}
+            ]
+        },
+        {
+            thing: 'Abstract Interpretation Poster',
             desc: 'I extended the existing research project flowR by adding an abstract interpretation module. Here you can see a poster that I prepared for the interim fair.',
             links: [{name: 'Poster', link: '/ai_poster.pdf'}]
         },
         {
-            thing: 'Java dataflow graph',
-            desc: 'I built a module for an existing research project, that can generate dataflow graphs for java. To explain the stuff, I prepared some slides and a poster.',
+            thing: 'Java dataflow graph Presentation',
+            desc: 'I built a module for an existing research project, that can generate dataflow graphs for java. To explain hwo it works, I prepared some slides and a poster.',
             links: [
                 {name: 'Slides', link: '/dfg_presentation.pdf'},
                 {name: 'Poster', link: '/dfg_poster.pdf'}
             ]
         },
         {
-            thing: 'C++ SIMD Intrinsics',
-            desc: 'I prepared a small talk about SIMD intrinsics in C++ for a small grade bonus.',
+            thing: 'SIMD Intrinsics Lightning Talk',
+            desc: 'I prepared a small talk about SIMD intrinsics in C++ for the lecture "Concepts of concurrent, parallel, and distributed programming".',
             links: [{name: 'Slides', link: '/simd_presentation.pdf'}]
         },
         {
-            thing: 'Spark Paper',
-            desc: 'After the course "distributed computing platforms in practice" I wrote a small report summarizing the most important concepts of Apache Spark.',
-            links: [{name: 'Report', link: '/spark_report.pdf'}]
-        },
-        {
-            thing: 'Spark Lecture',
-            desc: 'For the course "distributed computing platforms in practice" I held a lecture about Apache Spark and in memory processing. I also provided a short exercise sheet.',
+            thing: 'Apache Spark Lecture',
+            desc: 'For the course "Distributed computing platforms in practice", I held a lecture about Apache Spark and in memory processing.',
             links: [
                 {name: 'Slides', link: '/spark_lecture.pdf'},
-                {name: 'Exercise', link: '/spark_exercise.pdf'}
+                {name: 'Exercise', link: '/spark_exercise.pdf'},
+                {name: 'Report', link: '/spark_report.pdf'}
             ]
         },
-        {
-            thing: 'Bachelor thesis',
-            desc: 'My bachelor thesis extended the MOSTflexiPL project. This time I implemented a compiler-backend that compiled MOSTflexiPl code into machine code using LLVM.',
-            links: [
-                {name: 'Thesis', link: '/bachelor.pdf'},
-                {name: 'Code', link: 'https://github.com/LukasPietzschmann/Bachelorarbeit' }
-            ]
-        },
-        {
+        /*{
             thing: 'Project paper',
             desc: 'The project paper I wrote was all about the MOSTflexiPL compilation process. I developed a TUI that lets you view the compilers internal state during the whole process.',
             links: [
@@ -71,7 +73,7 @@
             thing: 'Term paper',
             desc: 'For the course "computer networks" I wrote a short paper about HTTP and how it works. This is only a 10 page summary of everything so don\'t expect anything to advanced.',
             links: [{name: 'Paper', link: '/computer_networks.pdf'}]
-        }
+        }*/
     ];
     const personalProjects: ProjectId[] = [
         {owner: 'LukasPietzschmann', repo: 'awesome-beamer'},
@@ -132,13 +134,22 @@
 		</div>
 	</Accordion>
 	<Accordion name="Uni Projects">
-		<span slot="head">University Stuff</span>
+		<span slot="head">University Projects</span>
 		<div slot="details">
 			<div style="margin-bottom: 1rem">
 				This is a little collection of things I wrote or made for various
-				uni-courses, sorted by date (descending).
+				uni-courses.
 			</div>
-			<UniProjects data={uniProjects}/>
+			<UniProjects icon={faFileLines} data={uniProjects}/>
+		</div>
+	</Accordion>
+	<Accordion name="Academic Work">
+		<span slot="head">Academic Work</span>
+		<div slot="details">
+			<div style="margin-bottom: 1rem">
+				Here you can find some of the academic work I did during my studies.
+			</div>
+			<UniProjects icon={faGraduationCap} data={academicWork}/>
 		</div>
 	</Accordion>
 </p>

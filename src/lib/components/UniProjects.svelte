@@ -9,9 +9,10 @@
 <script lang="ts">
     import Card from "$lib/components/Card.svelte";
     import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
-    import {faGraduationCap} from "@fortawesome/free-solid-svg-icons";
+    import type {IconDefinition} from "@fortawesome/fontawesome-common-types";
 
     export let data: ProjectData[];
+    export let icon: IconDefinition
 </script>
 
 <style>
@@ -20,13 +21,12 @@
 {#each data as {thing, desc, links}}
 	<Card hover={false} style="margin: 1rem 0">
 		<div>
-			<FontAwesomeIcon icon={faGraduationCap}/>
+			<FontAwesomeIcon icon={icon}/>
 			{thing}</div>
 		<p>{desc}</p>
 		{#each links as {link, name}, i}
 			<a href={link} data-umami-event={`${thing}: ${name}`}
-			   target="_blank">{name}</a>
-			{#if i !== links.length - 1},{" "}{/if}
+			   target="_blank">{name}</a>{#if i !== links.length - 1},{" "}{/if}
 		{/each}
 	</Card>
 {/each}
