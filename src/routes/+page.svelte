@@ -136,6 +136,11 @@
 	compilers, functional programming, and typesetting.
 </p>
 <p>
+	When I'm not coding, I also enjoy self-hosting services and tinkering around
+	with my server. If you want to know more about the services I host and how I
+	do it, you can look <a href="/services">here</a>.
+</p>
+<p>
 	<Accordion name="Personal Projects">
 		<span slot="head">Personal Projects</span>
 		<div slot="details">
