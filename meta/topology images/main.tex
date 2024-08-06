@@ -1,0 +1,87 @@
+\documentclass[tikz]{standalone}
+
+\usepackage[sfdefault]{FiraSans}
+\usepackage{fontawesome5}
+\usepackage[tikz,color]{smile}
+
+\tikzset{
+	background/.style={roundednode,fill=darkgrayx,draw=gray,loosely dashed,inner sep=4mm,lcr},
+	service/.style={roundednode,fill=lightgray,draw=darkgray,minimum width=3cm,minimum height=3cm},
+	sservice/.style={service,minimum width=1cm,minimum height=1cm},
+	sarrow/.style={arrow,short=1mm}
+}
+
+\makeatletter
+\smile@linewidth2px
+\smile@rounding2mm
+\makeatother
+
+\def\service#1#2{\begin{tikzpicture}[node distance=0]
+	\node[scale=3] (I) {\color{black}#1};
+	\node[below=of I,text width=3cm,align=center] (T) {\color{black}#2};
+\end{tikzpicture}}
+
+\begin{document}
+\pagecolor{white}
+\begin{tikzpicture}
+	\node[service] (H) {};
+	\node at (H) {\service{\faFile*[regular]}{Homepage}};
+
+	\node[right=of H,service] (A) {};
+	\node at (A) {\service{\faGlobe}{API}};
+
+	\node[right=of A,service] (N) {};
+	\node at (N) {\service{\faGlobe}{NextCloud}};
+	\node[below=of N,sservice] (N2) {};
+	\node at (N2) {\color{black}\ldots};
+	\node[left=of N2,sservice] (N1) {};
+	\node at (N1) {\color{black}\ldots};
+	\node[right=of N2,sservice] (N3) {};
+	\node at (N3) {\color{black}\ldots};
+
+	\node[right=of N,service] (S) {};
+	\node at (S) {\service{\faGlobe}{Search}};
+
+	\node[right=of S,service] (O) {};
+	\node at (O) {\scalebox{3}{\color{black}\ldots}};
+
+	\node[above=of S,service] (P) {};
+	\node at (P) {\service{\faGlobe}{Caddy\\reverse proxy}};
+	\coordinate (Pl) at ([yshift=-4mm]P.west);
+	\coordinate (Pu) at ([yshift=4mm]P.west);
+
+	\node[above=of O,service] (M) {};
+	\node at (M) {\service{\faGlobe}{Minecraft}};
+
+	\node[node on layer=background,fit=(H)(A)(N)(S)(O)(P)(M)(N1)(N2)(N3),background] (FIT) {};
+	\node[anchor=north west,shift={(3mm,-3mm)}] at (FIT.north west) {\color{darkgray!50!black}\scalebox{3}{\faServer}};
+
+	\draw[gray,lw,loosely dashed,short=4mm+2px,lcr] ([yshift=1cm]FIT.west) -- ([yshift=1.1cm]FIT.east);
+
+	\node[cloud,draw=black,above=of P,minimum width=3cm,minimum height=2cm,lw] (C) {};
+
+	\draw[sarrow] (C) to (P);
+	\draw[sarrow] (C) to[out=0,in=90] (M);
+
+	\draw[sarrow] (Pu) to[out=180,in=40] (H.north);
+	\draw[sarrow] (Pl) to[out=180,in=40] (A.north);
+	\draw[sarrow] (P) to (N);
+	\draw[sarrow] (P) to (S);
+	\draw[sarrow] (P) to (O);
+
+	\draw[sarrow] (N) to (N1);
+	\draw[sarrow] (N) to (N2);
+	\draw[sarrow] (N) to (N3);
+
+	\node[xshift=2mm,darkgray!50!black] at (H.north west) {\scalebox{2}{\faDocker}};
+	\node[xshift=2mm,darkgray!50!black] at (A.north west) {\scalebox{2}{\faDocker}};
+	\node[xshift=2mm,darkgray!50!black] at (N.north west) {\scalebox{2}{\faDocker}};
+	\node[xshift=2mm,darkgray!50!black] at (S.north west) {\scalebox{2}{\faDocker}};
+	\node[xshift=2mm,darkgray!50!black] at (O.north west) {\scalebox{2}{\faDocker}};
+	\node[xshift=2mm,darkgray!50!black] at (P.north west) {\scalebox{2}{\faDocker}};
+	\node[xshift=2mm,darkgray!50!black] at (M.north west) {\scalebox{2}{\faDocker}};
+	\node[xshift=2mm,darkgray!50!black] at (N1.north west) {\scalebox{1.3}{\faDocker}};
+	\node[xshift=2mm,darkgray!50!black] at (N2.north west) {\scalebox{1.3}{\faDocker}};
+	\node[xshift=2mm,darkgray!50!black] at (N3.north west) {\scalebox{1.3}{\faDocker}};
+\end{tikzpicture}
+\end{document}

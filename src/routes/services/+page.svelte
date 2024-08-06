@@ -4,7 +4,8 @@
 </svelte:head>
 
 <script lang="ts">
-	import topology from "$lib/assets/topology.svg";
+	import darkTopology from "$lib/assets/darkTopology.png?enhanced";
+	import lightTopology from "$lib/assets/lightTopology.png?enhanced";
 	import {faBoxOpen} from "@fortawesome/free-solid-svg-icons";
 	import Accordion from "$lib/components/Accordion.svelte";
 	import Card from "$lib/components/Card.svelte";
@@ -53,10 +54,34 @@
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		gap: 1.5rem 1.5rem;
 	}
+
+	.topology {
+		width: 100%;
+		height: auto;
+	}
+
+	.light {
+		display: block;
+	}
+
+	.dark {
+		display: none;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.light {
+			display: none;
+		}
+
+		.dark {
+			display: block;
+		}
+	}
 </style>
 
 <h1>Services</h1>
-<img src={topology} alt="Services"/>
+<enhanced:img class="topology dark" src={darkTopology} alt="Services"/>
+<enhanced:img class="topology light" src={lightTopology} alt="Services"/>
 <p>
 	I host all my services as Docker containers on a VPS at
 	<a target="_blank" rel="noreferrer noopener" data-umami-event="NetCup"
