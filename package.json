@@ -8,7 +8,8 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"postbuild": "npx svelte-sitemap --domain https://lukas.pietzschmann.org"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.1",
@@ -21,6 +22,7 @@
 		"eslint-plugin-svelte": "^2.30.0",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
+		"svelte-sitemap": "^2.6.0",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"vite": "^5.0.12"
