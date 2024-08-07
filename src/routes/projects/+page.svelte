@@ -20,7 +20,7 @@
 
 <p>
 	Outside of my studies, I like to implement fun little things,
-	hack on some LaTeX code, or dump way to many hours
+	hack on some LaTeX code, or dump way too many hours
 	into my NeoVim config. For example, last year I
 	reimplemented GZip decompression in good old C. I also
 	open-source most of my personal work, so check out my

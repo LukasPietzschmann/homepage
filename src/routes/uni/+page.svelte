@@ -93,7 +93,7 @@
 <h1>University Work</h1>
 
 <p>
-	During my bachelor's and master's studies I produced a variety of
+	During my bachelor's and master's studies, I produced a variety of
 	stuff. This, among others, includes slides, projects, papers, and theses.
 	I compiled a little list of the more interesting things:
 </p>
