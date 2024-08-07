@@ -19,7 +19,7 @@
 </style>
 
 {#each data as {thing, desc, links}}
-	<Card hover={false} style="margin: 1rem 0">
+	<Card style="margin: 1rem 0">
 		<div>
 			<FontAwesomeIcon icon={icon}/>
 			{thing}</div>

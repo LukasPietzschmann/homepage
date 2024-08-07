@@ -106,7 +106,7 @@
 		</div>
 		<div class="card-wrapper">
 			{#each services as {thing, desc, link} (thing)}
-				<Card hover={false}>
+				<Card>
 					<div>
 						<FontAwesomeIcon icon={faBoxOpen}/>
 						<a target="_blank" data-umami-event={`Service ${thing}`}

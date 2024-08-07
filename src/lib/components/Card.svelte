@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let hover = true;
+	export let hover = false;
 	export let style = '';
 	export let classes = '';
 </script>
