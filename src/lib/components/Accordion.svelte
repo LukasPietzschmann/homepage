@@ -16,33 +16,31 @@
 	}
 
 	.header {
-		background: var(--highlight-background);
+		background: var(--background-200);
 		border-radius: var(--radius);
 		border: 1px solid var(--highlight);
-		box-shadow: var(--box-shadow);
 		color: var(--text);
 		font-size: 1rem;
-		margin-bottom: 1rem;
 		padding: 10px;
-		transition: background-color 0.2s ease-in-out;
+		transition: all .2s ease-in-out;
 		width: 100%;
+
+		margin-top: 1rem;
 	}
 
 	.header.active {
-		background: var(--highlight);
+		box-shadow: var(--box-shadow);
 	}
 
-	.details {
-		margin-bottom: 1rem;
+	.header:hover {
+		background: var(--highlight);
+		box-shadow: var(--box-shadow);
 	}
 
 	@media screen and (min-width: 750px) {
 		.details {
 			padding: 1rem;
-			background: var(--highlight-background);
 			border-radius: var(--radius);
-			border: 1px solid var(--highlight);
-			box-shadow: var(--box-shadow);
 		}
 	}
 

@@ -12,7 +12,7 @@
 	}
 
 	.avatar-img {
-		background-color: var(--highlight-background);
+		background-color: var(--background-200);
 		border: 1px solid var(--highlight);
 		border-radius: 100%;
 		box-shadow: var(--box-shadow);
@@ -30,17 +30,17 @@
 	.button-container a {
 		text-decoration: none;
 		color: var(--text);
-		background-color: var(--highlight-background);
+		background-color: var(--background-200);
 		text-align: center;
 		font-size: .9rem;
 
 		flex: 1 auto;
 
 		border-radius: var(--radius);
-		border: none;
+		border: 1px solid var(--highlight);
 		padding: 1rem;
 
-		transition: background-color .2s, box-shadow .2s;
+		transition: all .2s ease-in-out;
 	}
 
 	.button-container a:hover {

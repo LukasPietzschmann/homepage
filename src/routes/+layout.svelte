@@ -61,7 +61,7 @@
             border-radius: var(--radius);
             padding: 1rem;
             box-shadow: var(--box-shadow);
-            background-color: var(--highlight-background);
+            background-color: var(--background-200);
         }
 
         nav .nav-link {

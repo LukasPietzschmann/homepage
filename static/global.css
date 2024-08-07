@@ -1,10 +1,12 @@
 :root {
 	--text: black;
 	--text-muted: #BFBFBF;
-	--background: white;
-	--highlight-background: #f1f1f1;
-	--highlight: rgba(0, 0, 0, 0.2);
-	--box-shadow: 0 4px 8px var(--highlight);
+	--background-100: white;
+	--background-200: #f1f1f1;
+	--background-300: rgba(0, 0, 0, 0.2);
+	--box-shadow: 0 4px 8px var(--background-300);
+	--highlight: #b6d2cd;
+	--accent: #59ada1;
 	--radius: 8px;
 }
 
@@ -12,15 +14,17 @@
 	:root {
 		--text: white;
 		--text-muted: #646464;
-		--background: #303030;
-		--highlight-background: #2b2b2b;
-		--highlight: rgba(0, 0, 0, 0.4);
+		--background-100: #303030;
+		--background-200: #444444;
+		--background-300: rgba(0, 0, 0, 0.4);
+		--highlight: #5a615f;
+		--accent: #009688;
 	}
 }
 
 body {
 	color: var(--text);
-	background: var(--background);
+	background: var(--background-100);
 	max-width: 800px;
 	font-size: 1.2rem;
 	line-height: 1.7;
@@ -32,6 +36,7 @@ body {
 
 body * {
 	font-family: 'Source Code Pro', monospace;
+	accent-color: var(--accent);
 }
 
 @media screen and (max-width: 750px) {
@@ -41,7 +46,7 @@ body * {
 }
 
 a {
-	color: #62a0ea;
+	color: var(--accent);
 }
 
 p {
