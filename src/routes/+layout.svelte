@@ -57,7 +57,7 @@
 
         nav.responsive {
             max-height: 12.5rem;
-            border: 1px solid var(--highlight);
+            border: var(--border);
             border-radius: var(--radius);
             padding: 1rem;
             box-shadow: var(--box-shadow);

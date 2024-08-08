@@ -34,7 +34,8 @@
 			             language={language} stars={stars} forks={forks}/>
 		{:catch message}
 			<Card>
-				<div>{repo}</div>
+				<div>{owner}/{repo}</div>
+				<hr/>
 				<div style="margin-top: 1rem">
 					<span style="color: red">&#10008;</span>
 					{message}

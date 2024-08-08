@@ -38,7 +38,7 @@
 		</a>
 	</div>
 	{description}
-	<hr style="color: var(--highlight)"/>
+	<hr/>
 	<div style="display: flex">
 		<div class="info-block">
 			<span style="margin-right: 4px; background-color: {languages[language]}; width: 0.6em; height: 0.6em; display: inline-block; border-radius: 50%;"/>

@@ -8,11 +8,11 @@
 	.card {
 		font-size: 1rem;
 		background: var(--background-200);
-		border: 1px solid var(--highlight);
+		border: var(--border);
 		border-radius: var(--radius);
 		padding: 1rem;
 		transform: scale(1);
-		transition: all .2s ease-in-out;
+		transition: var(--transition);
 	}
 
 	.hover-card:hover {

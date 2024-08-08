@@ -18,11 +18,11 @@
 	.header {
 		background: var(--background-200);
 		border-radius: var(--radius);
-		border: 1px solid var(--highlight);
+		border: var(--border);
 		color: var(--text);
 		font-size: 1rem;
 		padding: 10px;
-		transition: all .2s ease-in-out;
+		transition: var(--transition);
 		width: 100%;
 
 		margin-top: 1rem;

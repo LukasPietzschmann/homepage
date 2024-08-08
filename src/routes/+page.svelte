@@ -13,7 +13,7 @@
 
 	.avatar-img {
 		background-color: var(--background-200);
-		border: 1px solid var(--highlight);
+		border: var(--border);
 		border-radius: 100%;
 		box-shadow: var(--box-shadow);
 		width: 120px;
@@ -37,10 +37,10 @@
 		flex: 1 auto;
 
 		border-radius: var(--radius);
-		border: 1px solid var(--highlight);
+		border: var(--border);
 		padding: 1rem;
 
-		transition: all .2s ease-in-out;
+		transition: var(--transition);
 	}
 
 	.button-container a:hover {
