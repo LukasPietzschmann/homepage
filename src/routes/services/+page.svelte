@@ -25,10 +25,6 @@
 			desc: 'I host a SearXNG instance to keep my searches private and have better control over the results.',
 			link: 'https://search.pietzschmann.org'
 		}, {
-			thing: 'Speedtest',
-			desc: 'I host a speedtest server to check my internet connection speed, ping, and jitter.',
-			link: 'https://speed.pietzschmann.org'
-		}, {
 			thing: 'API',
 			desc: 'A simple REST API that I currently only use to cache GitHub API responses for this site.',
 			link: 'https://api.pietzschmann.org'
