@@ -54,6 +54,11 @@ a {
 	color: var(--accent);
 	text-decoration-thickness: var(--thickness);
 	text-decoration-color: var(--highlight);
+	transition: var(--transition);
+}
+
+a:hover {
+	text-decoration-color: var(--accent);
 }
 
 p {
