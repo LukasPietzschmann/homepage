@@ -86,10 +86,9 @@
 	I host all my services as Docker containers on a VPS at
 	<a target="_blank" rel="noreferrer noopener" data-umami-event="NetCup"
 	   href="https://netcup.eu">NetCup</a>.
-	Among these, only two containers are exposed to the public: Caddy and Minecraft.
-	Connections to the Minecraft container are direct and not proxied or relayed. In
-	contrast, all other requests are routed through Caddy, which either forwards them
-	to the appropriate container or serves static files directly.
+	Among these, only a single container is exposed to the public: Caddy. Because of
+	that, all requests &mdash; HTTP(S) and UDP/TCP &mdash; are routed through Caddy, which
+	either forwards them to the appropriate container or serves static files directly.
 </p>
 <p>
 	To facilitate this setup, the Caddy container is configured to share a network with
