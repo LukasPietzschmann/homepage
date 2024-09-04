@@ -6,4 +6,4 @@
 <h1>Constrained Zig</h1>
 <h2>Zigtoberfest 2024</h2>
 
-<p>This website is still being built. Stay tuned for what is to come :)</p>
+<p>I'm not yet done preparing the talk and this site. Stay tuned for what is to come :)</p>
