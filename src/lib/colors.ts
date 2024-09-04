@@ -1,4 +1,4 @@
-{
+const colors: {[key: string]: string} = {
 	"Mercury": "#ff2b2b",
 	"TypeScript": "#2b7489",
 	"PureBasic": "#5a6986",
@@ -198,4 +198,6 @@
 	"AGS Script": "#B9D9FF",
 	"Dogescript": "#cca760",
 	"nesC": "#94B0C7"
-}
+};
+
+export default colors;

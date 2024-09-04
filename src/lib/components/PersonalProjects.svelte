@@ -10,7 +10,7 @@
 	import {fetchAndReturnJson} from "$lib/helper";
 	import CardGrid from "$lib/components/CardGrid.svelte";
 	import {faBookmark, faStar} from "@fortawesome/free-regular-svg-icons";
-	import languages from "$lib/colors.json";
+	import colors from "$lib/colors";
 	import {faCodeFork} from "@fortawesome/free-solid-svg-icons";
 	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
 	import {config} from '@fortawesome/fontawesome-svg-core'
@@ -51,7 +51,7 @@
 				<hr/>
 				<div style="display: flex">
 					<div class="info-block">
-						<span style="margin-right: 4px; background-color: {languages[language]}; width: 0.6em; height: 0.6em; display: inline-block; border-radius: 50%;"/>
+						<span style="margin-right: 4px; background-color: {colors[language]}; width: 0.6em; height: 0.6em; display: inline-block; border-radius: 50%;"/>
 						{language}
 					</div>
 					<div class="info-block">
