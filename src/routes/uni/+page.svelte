@@ -2,6 +2,7 @@
 	import Accordion from "$lib/components/Accordion.svelte";
 	import UniProjects, {type ProjectData} from "$lib/components/UniProjects.svelte";
 	import {faFileLines, faGraduationCap} from "@fortawesome/free-solid-svg-icons";
+	import CardList from "$lib/components/CardList.svelte";
 
 	const academicWork: ProjectData[] = [
 		{
@@ -100,12 +101,16 @@
 <Accordion name="Academic Work" open={true}>
 	<span slot="head">Academic Work (Theses, Paper)</span>
 	<div slot="details">
-		<UniProjects icon={faGraduationCap} data={academicWork}/>
+		<CardList>
+			<UniProjects icon={faGraduationCap} data={academicWork}/>
+		</CardList>
 	</div>
 </Accordion>
 <Accordion name="Uni Projects">
 	<span slot="head">University Projects</span>
 	<div slot="details">
-		<UniProjects icon={faFileLines} data={uniProjects}/>
+		<CardList>
+			<UniProjects icon={faFileLines} data={uniProjects}/>
+		</CardList>
 	</div>
 </Accordion>

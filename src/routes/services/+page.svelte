@@ -6,12 +6,11 @@
 <script lang="ts">
 	import darkTopology from "$lib/assets/darkTopology.png?enhanced";
 	import lightTopology from "$lib/assets/lightTopology.png?enhanced";
-	import {faBoxOpen} from "@fortawesome/free-solid-svg-icons";
 	import Accordion from "$lib/components/Accordion.svelte";
-	import Card from "$lib/components/Card.svelte";
-	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
+	import CardGrid from "$lib/components/CardGrid.svelte";
+	import Services, {type ServiceData} from "$lib/components/Services.svelte";
 
-	const services = [
+	const services: ServiceData[] = [
 		{
 			thing: "Homepage",
 			desc: "Well, you're currently there 😆",
@@ -49,12 +48,6 @@
 </script>
 
 <style>
-	.card-wrapper {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 1.5rem 1.5rem;
-	}
-
 	.topology {
 		width: 100%;
 		height: auto;
@@ -103,17 +96,8 @@
 		<div style="margin-bottom: 1rem">
 			Here is a collections of services I'm currently hosting:
 		</div>
-		<div class="card-wrapper">
-			{#each services as {thing, desc, link} (thing)}
-				<Card>
-					<div>
-						<FontAwesomeIcon icon={faBoxOpen}/>
-						<a target="_blank" data-umami-event={`Service ${thing}`}
-						   href={link}>{thing}</a>
-					</div>
-					{desc}
-				</Card>
-			{/each}
-		</div>
+		<CardGrid>
+			<Services data={services}/>
+		</CardGrid>
 	</div>
 </Accordion>

@@ -15,11 +15,8 @@
 	export let icon: IconDefinition
 </script>
 
-<style>
-</style>
-
 {#each data as {thing, desc, links}}
-	<Card style="margin: 1rem 0">
+	<Card>
 		<div>
 			<FontAwesomeIcon icon={icon}/>
 			{thing}</div>

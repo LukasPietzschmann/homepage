@@ -34,13 +34,25 @@
 		text-align: center;
 		font-size: .9rem;
 
-		flex: 1 auto;
+		flex: 1 1 calc(25% - 3rem);
 
 		border-radius: var(--radius);
 		border: var(--border);
 		padding: 1rem;
 
 		transition: var(--transition);
+	}
+
+	@media (max-width: 820px) {
+		.button-container a {
+			flex: 1 1 calc(50% - 3rem);
+		}
+	}
+
+	@media (max-width: 450px) {
+		.button-container a {
+			flex: 1 1 100%;
+		}
 	}
 
 	.button-container a:hover {
@@ -73,5 +85,6 @@
 <p class="button-container">
 	<a href="/projects">Personal Projects</a>
 	<a href="/uni">University Work</a>
-	<a href="/services">Hosted Services</a>
+	<a href="/talks">Talks</a>
+	<a href="/services">Self hosting</a>
 </p>

@@ -6,22 +6,29 @@
 </script>
 
 <script lang="ts">
-	import ProjectCard from "$lib/components/ProjectCard.svelte";
 	import Card from "$lib/components/Card.svelte";
 	import {fetchAndReturnJson} from "$lib/helper";
+	import CardGrid from "$lib/components/CardGrid.svelte";
+	import {faBookmark, faStar} from "@fortawesome/free-regular-svg-icons";
+	import languages from "$lib/colors.json";
+	import {faCodeFork} from "@fortawesome/free-solid-svg-icons";
+	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
+	import {config} from '@fortawesome/fontawesome-svg-core'
+
+	config.autoAddCss = false
 
 	export let projectIds: ProjectId[];
 </script>
 
 <style>
-	.card-wrapper {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 1.5rem 1.5rem;
+	.info-block {
+		display: flex;
+		align-items: center;
+		margin-right: 1rem;
 	}
 </style>
 
-<div class="card-wrapper">
+<CardGrid>
 	{#each projectIds as {owner, repo} (owner + repo)}
 		{@const slug = `${owner}/${repo}`}
 		{#await fetchAndReturnJson(`https://api.pietzschmann.org/gh/repos/${slug}`)}
@@ -30,8 +37,33 @@
 			</Card>
 		{:then result}
 			{@const {description, language, stargazers_count: stars, forks} = result}
-			<ProjectCard owner={owner} repo={repo} description={description}
-			             language={language} stars={stars} forks={forks}/>
+			<Card>
+				<div style="display: flex; align-items: center">
+					<FontAwesomeIcon style="margin-right: 8px" icon={faBookmark}/>
+					<a target="_blank" rel="noopener noreferrer" data-umami-event={slug}
+					   href="https://github.com/{slug}">
+						<!-- @formatter:off -->
+						<span>{owner}</span><wbr/><span>/</span><wbr/><span>{repo}</span>
+						<!-- @formatter:on -->
+					</a>
+				</div>
+				{description}
+				<hr/>
+				<div style="display: flex">
+					<div class="info-block">
+						<span style="margin-right: 4px; background-color: {languages[language]}; width: 0.6em; height: 0.6em; display: inline-block; border-radius: 50%;"/>
+						{language}
+					</div>
+					<div class="info-block">
+						<FontAwesomeIcon style="margin-right: 4px" icon={faStar}/>
+						{stars}
+					</div>
+					<div class="info-block">
+						<FontAwesomeIcon style="margin-right: 4px" icon={faCodeFork}/>
+						{forks}
+					</div>
+				</div>
+			</Card>
 		{:catch message}
 			<Card>
 				<div>{owner}/{repo}</div>
@@ -43,4 +75,4 @@
 			</Card>
 		{/await}
 	{/each}
-</div>
+</CardGrid>
