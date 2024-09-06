@@ -1,6 +1,7 @@
 <svelte:head>
 	<title>Imprint</title>
 	<meta name="description" content="Imprint of Lukas Pietzschmann"/>
+	<meta name="robots" content="noindex, noarchive, nocache, nosnippet"/>
 </svelte:head>
 
 <h1>Imprint</h1>
