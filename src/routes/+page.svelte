@@ -73,14 +73,15 @@
 <p>Hey! You just stumbled over my little corner on the internet :)</p>
 <p>
 	I'm Lukas, a German computer science student based near Ulm and I'm
-	currently studying for my master's degree at the
-	<a href="https://www.uni-ulm.de/en/">University of Ulm</a>.
+	currently studying for my master's degree at
+	<a href="https://www.uni-ulm.de/en/">Ulm University</a>.
 </p>
 <p>
-	I enjoy coding in all kinds of languages, but C and C++ (and TeX &#128521)
-	are probably the ones I am most experienced with. While many different
-	things spark my interest, you can always get my attention by talking about
-	compilers, functional programming, and typesetting.
+	While many different things spark my interest, you can always get my
+	attention by talking about compilers, functional programming, or typesetting.
+	Generally, I enjoy coding in various languages, and while I'm most productive
+	with the typical imperative languages, declarative ones will always have a
+	special place in my heart.
 </p>
 <p class="button-container">
 	<a href="/projects">Personal Projects</a>
