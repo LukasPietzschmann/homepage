@@ -79,7 +79,7 @@
 <p>
 	While many different things spark my interest, you can always get my
 	attention by talking about compilers, functional programming, or typesetting.
-	Generally, I enjoy coding in various languages, and while I'm most productive
+	I generally enjoy coding in various languages, and while I'm most productive
 	with the typical imperative languages, declarative ones will always have a
 	special place in my heart.
 </p>
