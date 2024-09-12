@@ -26,7 +26,7 @@
 		}, {
 			thing: 'API',
 			desc: 'A simple REST API that I currently only use to cache GitHub API responses for this site.',
-			link: 'https://api.pietzschmann.org'
+			link: 'https://api.pietzschmann.org/docs'
 		}, {
 			thing: 'Analytics',
 			desc: 'I host Umami to (GDPR compliantly) track visits to my homepage and search site.',
