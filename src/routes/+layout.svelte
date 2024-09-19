@@ -105,7 +105,7 @@
                 <FontAwesomeIcon icon={faHome}/>
                 Home
             </a>
-            <button type="button" id="nav-toggle" on:mousedown={() => responsive = !responsive}>
+            <button type="button" id="nav-toggle" aria-label="Toggle Header Navigation" on:mousedown={() => responsive = !responsive}>
                 {#if responsive}
                     <FontAwesomeIcon icon={faXmark}/>
                 {:else}
