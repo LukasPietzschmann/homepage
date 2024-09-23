@@ -12,20 +12,20 @@
 		"postbuild": "npx svelte-sitemap --domain https://lukas.pietzschmann.org"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^3.0.1",
-		"@sveltejs/enhanced-img": "^0.3.7",
-		"@sveltejs/kit": "^2.5.27",
+		"@sveltejs/adapter-static": "^3.0.5",
+		"@sveltejs/enhanced-img": "^0.3.8",
+		"@sveltejs/kit": "^2.5.28",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"@typescript-eslint/eslint-plugin": "^8.5.0",
-		"@typescript-eslint/parser": "^8.5.0",
-		"eslint": "^9.10.0",
+		"@typescript-eslint/eslint-plugin": "^8.6.0",
+		"@typescript-eslint/parser": "^8.6.0",
+		"eslint": "^9.11.0",
 		"eslint-plugin-svelte": "^2.44.0",
 		"svelte": "^4.2.7",
 		"svelte-check": "^4.0.2",
 		"svelte-sitemap": "^2.6.0",
 		"tslib": "^2.4.1",
 		"typescript": "^5.6.2",
-		"vite": "^5.4.6"
+		"vite": "^5.4.7"
 	},
 	"type": "module",
 	"dependencies": {
