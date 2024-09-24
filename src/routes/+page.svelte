@@ -77,11 +77,11 @@
 	<a href="https://www.uni-ulm.de/en/">Ulm University</a>.
 </p>
 <p>
-	While many different things spark my interest, you can always get my
-	attention by talking about compilers, functional programming, or typesetting.
-	I generally enjoy coding in various languages, and while I'm most productive
-	with the typical imperative languages, declarative ones will always have a
-	special place in my heart.
+	While I'm interested in a lot of different things, I definitely won't miss any
+	chance to nerd about functional programming and typesetting. Although I'm most
+	productive with the typical imperative languages, I generally enjoy coding in all
+	kinds of languages and paradigms. Generally I'd say: if you know something that I
+	don't, go ahead and share it with me. I'm always eager to learn new stuff.
 </p>
 <p class="button-container">
 	<a href="/projects">Personal Projects</a>
