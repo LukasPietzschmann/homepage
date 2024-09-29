@@ -17,10 +17,10 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--text: white;
-		--text-muted: #646464;
-		--background-100: #303030;
-		--background-200: #444444;
+		--text: #cccccc;
+		--text-muted: #6f6f6f;
+		--background-100: #1c1c1c;
+		--background-200: #272727;
 		--background-300: rgba(0, 0, 0, 0.4);
 		--highlight: #5a615f;
 		--accent: #009688;
