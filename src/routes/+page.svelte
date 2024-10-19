@@ -70,7 +70,7 @@
 	<enhanced:img class="avatar-img" src={avatar} alt="Avatar"/>
 </div>
 
-<p>Hey! You just stumbled over my little corner on the internet :)</p>
+<p>Hey! Welcome to my little corner on the internet :)</p>
 <p>
 	I'm Lukas, a German computer science student based near Ulm and I'm
 	currently studying for my master's degree at
