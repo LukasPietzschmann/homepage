@@ -88,6 +88,9 @@ h4 {
 pre {
   display: flex;
   justify-content: center;
+  background-color: var(--background-200);
+  border-radius: var(--radius);
+  padding: 20px;
 }
 
 code {
