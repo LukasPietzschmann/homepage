@@ -197,7 +197,8 @@ const colors: {[key: string]: string} = {
 	"C++": "#f34b7d",
 	"AGS Script": "#B9D9FF",
 	"Dogescript": "#cca760",
-	"nesC": "#94B0C7"
+	"nesC": "#94B0C7",
+	"Zig": "#ec915c",
 };
 
 export default colors;
