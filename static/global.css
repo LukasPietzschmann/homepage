@@ -6,7 +6,6 @@
   --background-300: rgba(0, 0, 0, 0.2);
   --highlight: #b6d2cd;
   --accent: #59ada1;
-  --code: #3d6662;
 
   --radius: 8px;
   --thickness: 2px;
@@ -25,7 +24,6 @@
     --background-300: rgba(0, 0, 0, 0.4);
     --highlight: #5a615f;
     --accent: #009688;
-    --code: #9ac1bd;
   }
 }
 
@@ -86,15 +84,23 @@ h4 {
 }
 
 pre {
-  display: flex;
-  justify-content: center;
-  background-color: var(--background-200);
-  border-radius: var(--radius);
-  padding: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 code {
-  color: var(--code);
+  background-color: var(--background-200);
+  border-radius: var(--radius);
+}
+
+pre > code {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+:not(pre) > code {
+  padding: 2px 10px;
 }
 
 .center {
