@@ -4,6 +4,7 @@
 		location: string;
 		desc: string;
 		link: string;
+		reload?: boolean;
 	}
 </script>
 
@@ -32,11 +33,11 @@
 	}
 </style>
 
-{#each data as { title, location, desc, link } (title)}
+{#each data as { title, location, desc, link, reload } (title)}
 	<Card>
 		<div>
 			<FontAwesomeIcon icon={faMessage}/>
-			<a href={link}>{title}</a> <span class='location'>@{location}</span>
+			<a rel={reload ? "external" : null} href={link}>{title}</a> <span class='location'>@{location}</span>
 		</div>
 		<div style='margin-top: 1rem'>{desc}</div>
 	</Card>

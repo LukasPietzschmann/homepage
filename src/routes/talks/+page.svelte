@@ -10,7 +10,8 @@
                    the desired properties of a result rather than specifying a sequence of steps.\
                    We will explore interesting properties of this approach using Constraint\
                    Handling Rules embedded in the ZIG language.',
-			link: '/talks/zigtoberfest'
+			link: '/talks/zigtoberfest',
+			reload: true,
 		},
 	];
 </script>
