@@ -1,0 +1,108 @@
+---
+.title = "Constrained Zig",
+.date = @date("2024-10-22T00:00:00"),
+.author = "Lukas Pietzschmann",
+.layout = "index.shtml",
+.draft = false,
+---
+
+For the [Zigtoberfest](https://zigtoberfest.de/) 2024 I gave a talk about interesting
+properties of constraint programs. This page provides a small summary of the talk.
+
+># [Fun Fact]($block.attrs('info'))
+>Since getting started with Zig was so much fun, I built this page using
+>[Zine](https://zine-ssg.io/), the static site generator written in Zig.
+
+# Intro
+CHR (Constraint Handling Rules) is a rule-based language and formalism that is typically
+used through an embedding into a host language. This makes it interesting to see how
+CHR's declarative nature can be used in languages with a possibly completely different
+paradigm. Besides that, it also brings cool properties that CHR programs can have to
+said other languages. Those properties will be what we are looking closer at in this
+little write-up.
+
+To start off, let's look at a simple example of a CHR program:
+```
+min(N) \ min(M) <=> N <= M | true.
+```
+This example will compute the minimum of an arbitrary number of values. We can read it
+like this: If there are two candidates for the minimum, `min(N)` and `min(M)`, then the
+minimum is the smaller one of the two and the bigger one will be removed from the list
+of candidates. What's cool about this notation is that we did not write down the steps
+of how to compute the minimum, but rather we described how the minimum looks like and
+the computer will find a fitting solution on its own.
+
+# Properties
+## Anytime Algorithms
+We start with a simple property that every CHR algorithm has: It is an anytime
+algorithm. This means that the algorithm can be stopped at any point in time and the
+state at this time will be a valid approximation of the final result.
+
+This property is especially useful if we need to guarantee a certain response time for
+our algorithm. Let's say it has to produce a result in under 100ms. Due to it being
+anytime, we can just stop the computation after 100ms, observe the current state, and
+return it as an approximation.
+
+## Memoization
+Every computer scientist has probably written the fibonacci function at least once in
+their life. In CHR we can formulate it as follows:
+```
+fib(0, R) <=> R = 1 | true.
+fib(1, R) <=> R = 1 | true.
+fib(N, R) <=> N > 1 |
+        N1 = N - 1, N2 = N - 2,
+        fib(N1, R1), fib(N2, R2),
+        R = R1 + R2.
+```
+While this works totally fine, it's also painfully slow — especially for bigger values
+of `N`. The reason for this is that we are computing the same values over and over again.
+If we could just remember and reuse the intermediate results, we could speed this up to
+linear time complexity.
+
+Achieving this is criminally easy in CHR. We just need to change our simplification
+rules to propagations and add a little cleanup rule:
+```
+fib(N,M1) \ fib(N,M2) <=> M1=M2.
+
+fib(0, R) ==> R = 1 | true.
+fib(1, R) ==> R = 1 | true.
+fib(N, R) ==> N > 1 |
+        N1 = N - 1,  N2 = N - 2,
+        fib(N1, R1), fib(N2, R2),
+        R = R1 + R2.
+```
+
+## Confluence
+The next property we will look at is confluence. Not every CHR program is necessarily
+confluent, but it's a very desirable property to have, since it will give us other handy
+properties for free. A program is confluent if it will always produce the same result
+for a given input, regardless of the order in which the rules are applied or in which
+order the query is given. Therefore, the relation of the initial and final state is a
+function.
+
+## Incremenrality
+Given that our algorithm is confluent, its also incremental or online. But what does
+that mean? In an online algorithm, we can add new constraints to the system at any time
+and they will eventually participate in the computation. This is very powerful,
+especially in e.g. feedback loops where we need to react to new input constantly.
+
+## Declarative Concurrency
+Writing correct concurrent programs is typically hard. But with a confluent CHR program
+not so much. Actually, we don't have to do anything at all. We can just take a hand full
+of constraints and put it on one machine, and put the other ones on another machine,
+evaluate both sets in parallel, bring them back together and we will have a correct
+result that equals the one we would have gotten if we would have evaluated everything on
+one machine.
+
+If you wanna try it out, here's a simple implementation of the map-reduce pattern.
+```
+map(OP) \ v(X) <=>
+    C =.. [OP, X, R],
+    call(C),
+    r(R)
+
+reduce(OP) \ r(X), r(Y) <=>
+    C =.. [OP, X, Y, R],
+    call(C),
+    r(R)
+```
