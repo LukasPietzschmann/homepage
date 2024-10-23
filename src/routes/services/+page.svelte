@@ -1,20 +1,20 @@
 <svelte:head>
 	<title>Self hosted services</title>
-	<meta name="description" content="Lukas' self hosted services">
+	<meta name='description' content="Lukas' self hosted services">
 </svelte:head>
 
-<script lang="ts">
-	import darkTopology from "$lib/assets/darkTopology.png?enhanced";
-	import lightTopology from "$lib/assets/lightTopology.png?enhanced";
-	import Accordion from "$lib/components/Accordion.svelte";
-	import CardGrid from "$lib/components/CardGrid.svelte";
-	import Services, {type ServiceData} from "$lib/components/Services.svelte";
+<script lang='ts'>
+	import darkTopology from '$lib/assets/darkTopology.png?enhanced';
+	import lightTopology from '$lib/assets/lightTopology.png?enhanced';
+	import Accordion from '$lib/components/Accordion.svelte';
+	import CardGrid from '$lib/components/CardGrid.svelte';
+	import Services, { type ServiceData } from '$lib/components/Services.svelte';
 
 	const services: ServiceData[] = [
 		{
-			thing: "Homepage",
-			desc: "Well, you're currently there 😆",
-			link: "https://lukas.pietzschmann.org"
+			thing: 'Homepage',
+			desc: 'Well, you\'re currently there 😆',
+			link: 'https://lukas.pietzschmann.org'
 		}, {
 			thing: 'NextCloud',
 			desc: 'My personal NextCloud instance.',
@@ -44,7 +44,7 @@
 			desc: 'From time to time I play some good old minecraft with a friend of mine. If you wanna join, mail me :)',
 			link: 'https://pietzschmann.org'
 		}
-	]
+	];
 </script>
 
 <style>
@@ -73,12 +73,12 @@
 </style>
 
 <h1>Services</h1>
-<enhanced:img class="topology dark" src={darkTopology} alt="Services"/>
-<enhanced:img class="topology light" src={lightTopology} alt="Services"/>
+<enhanced:img class='topology dark' alt='Services' src={darkTopology}/>
+<enhanced:img class='topology light' alt='Services' src={lightTopology}/>
 <p>
 	I host all my services as Docker containers on a VPS at
-	<a target="_blank" rel="noreferrer noopener" data-umami-event="NetCup"
-	   href="https://netcup.eu">NetCup</a>.
+	<a data-umami-event='NetCup' href='https://netcup.eu' rel='noreferrer noopener'
+		target='_blank'>NetCup</a>.
 	Among these, only one is exposed to the public: Caddy. Because of that,
 	everything &mdash; UDP/TCP packets and HTTP(s) requests &mdash; is routed
 	through Caddy, which either forwards the packets/requests to the appropriate
@@ -91,12 +91,12 @@
 	through a dedicated network shared exclusively between the service and the database
 	container.
 </p>
-<Accordion name="Services">
+<Accordion name='Services'>
 	{#snippet head()}
 		Services
 	{/snippet}
 	{#snippet details()}
-		<div style="margin-bottom: 1rem">
+		<div style='margin-bottom: 1rem'>
 			Here is a collections of services I'm currently hosting:
 		</div>
 		<CardGrid>

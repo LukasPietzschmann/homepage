@@ -1,12 +1,14 @@
-<script lang="ts">
+<script lang='ts'>
+	import type { Snippet } from 'svelte';
+
 	interface Props {
-		children: any;
+		children: Snippet;
 		hover?: boolean;
 		style?: string;
 		classes?: string;
 	}
 
-	let { children, hover = false, style = '', classes = ''}: Props = $props();
+	let { children, hover = false, style = '', classes = '' }: Props = $props();
 </script>
 
 <style>
@@ -26,8 +28,9 @@
 	}
 </style>
 
-<div class="display: inline-block">
-	<div class:hover-card={hover} class={`card ${classes}`} {style}>
+<div class='display: inline-block'>
+	<div {style} class={classes} class:card={true} class:hover-card={hover}>
 		{@render children()}
 	</div>
+
 </div>

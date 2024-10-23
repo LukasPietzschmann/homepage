@@ -1,5 +1,5 @@
-<script lang="ts">
-	import avatar from "$lib/assets/avatar.png?enhanced";
+<script lang='ts'>
+	import avatar from '$lib/assets/avatar.png?enhanced';
 </script>
 
 <style>
@@ -63,18 +63,18 @@
 
 <svelte:head>
 	<title>Lukas Pietzschmann</title>
-	<meta name="description" content="Lukas' personal home page"/>
+	<meta name='description' content="Lukas' personal home page"/>
 </svelte:head>
 
-<div class="avatar-container">
-	<enhanced:img class="avatar-img" src={avatar} alt="Avatar"/>
+<div class='avatar-container'>
+	<enhanced:img class='avatar-img' alt='Avatar' src={avatar}/>
 </div>
 
 <p>Hey! Welcome to my little corner on the internet :)</p>
 <p>
 	I'm Lukas, a German computer science student based near Ulm and I'm
 	currently studying for my master's degree at
-	<a href="https://www.uni-ulm.de/en/">Ulm University</a>.
+	<a href='https://www.uni-ulm.de/en/'>Ulm University</a>.
 </p>
 <p>
 	While I'm interested in a lot of different things, I definitely won't miss any
@@ -83,9 +83,9 @@
 	kinds of languages and paradigms. Generally I'd say: if you know something that I
 	don't, go ahead and share it with me. I'm always eager to learn new stuff.
 </p>
-<p class="button-container">
-	<a href="/projects">Personal Projects</a>
-	<a href="/uni">University Work</a>
-	<a href="/talks">Talks</a>
-	<a href="/services">Self hosting</a>
+<p class='button-container'>
+	<a href='/projects'>Personal Projects</a>
+	<a href='/uni'>University Work</a>
+	<a href='/talks'>Talks</a>
+	<a href='/services'>Self hosting</a>
 </p>

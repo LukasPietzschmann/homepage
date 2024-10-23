@@ -1,4 +1,4 @@
-<script module lang="ts">
+<script lang='ts' module>
 	export interface TalkData {
 		title: string;
 		location: string;
@@ -7,10 +7,10 @@
 	}
 </script>
 
-<script lang="ts">
-	import Card from "$lib/components/Card.svelte";
-	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
-	import {faMessage} from "@fortawesome/free-solid-svg-icons";
+<script lang='ts'>
+	import Card from '$lib/components/Card.svelte';
+	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import { faMessage } from '@fortawesome/free-solid-svg-icons';
 
 	interface Props {
 		data: TalkData[];
@@ -32,12 +32,12 @@
 	}
 </style>
 
-{#each data as {title, location, desc, link}}
+{#each data as { title, location, desc, link } (title)}
 	<Card>
 		<div>
 			<FontAwesomeIcon icon={faMessage}/>
-			<a href={link}>{title}</a> <span class="location">@{location}</span>
+			<a href={link}>{title}</a> <span class='location'>@{location}</span>
 		</div>
-		<div style="margin-top: 1rem">{desc}</div>
+		<div style='margin-top: 1rem'>{desc}</div>
 	</Card>
 {/each}

@@ -1,6 +1,6 @@
-<script lang="ts">
-	import Talks, {type TalkData} from "$lib/components/Talks.svelte";
-	import CardList from "$lib/components/CardList.svelte";
+<script lang='ts'>
+	import Talks, { type TalkData } from '$lib/components/Talks.svelte';
+	import CardList from '$lib/components/CardList.svelte';
 
 	const talks: TalkData[] = [
 		{
@@ -17,7 +17,7 @@
 
 <svelte:head>
 	<title>Talks</title>
-	<meta name="description" content="Talks Lukas gave at various occasions">
+	<meta name='description' content='Talks Lukas gave at various occasions'>
 </svelte:head>
 
 <h1>Talks</h1>

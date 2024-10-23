@@ -1,19 +1,19 @@
-<script lang="ts">
-	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
+<script lang='ts'>
+	import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+	import { fade, slide } from 'svelte/transition';
+	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
-		head: any;
-		details: any;
+		head: Snippet;
+		details: Snippet;
 		open?: boolean;
 		name: string;
 	}
 
 	let { head, details, open = false, name }: Props = $props();
 
-	import {slide, fade} from 'svelte/transition';
-	import {faCaretDown, faCaretRight} from "@fortawesome/free-solid-svg-icons";
-
-	const toggleOpen = () => open = !open
+	const toggleOpen = () => open = !open;
 </script>
 
 <style>
@@ -60,19 +60,19 @@
 	}
 </style>
 
-<div class="accordion">
-	<button class="header" class:active={open} onmousedown={toggleOpen}
-	        data-umami-event={`${name} ${open ? 'open' : 'close'}`}>
+<div class='accordion'>
+	<button class='header' class:active={open} data-umami-event={`${name} ${open ? 'open' : 'close'}`}
+		onmousedown={toggleOpen}>
 		{@render head()}
 		{#if open}
-			<span class="expand" in:fade><FontAwesomeIcon icon={faCaretDown}/></span>
+			<span class='expand' in:fade><FontAwesomeIcon icon={faCaretDown}/></span>
 		{:else}
-			<span class="expand" in:fade><FontAwesomeIcon icon={faCaretRight}/></span>
+			<span class='expand' in:fade><FontAwesomeIcon icon={faCaretRight}/></span>
 		{/if}
 	</button>
 
 	{#if open}
-		<div class="details" transition:slide>
+		<div class='details' transition:slide>
 			{@render details()}
 		</div>
 	{/if}

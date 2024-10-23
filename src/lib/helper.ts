@@ -5,7 +5,7 @@ export async function fetchAndReturnJson(url: string) {
 		switch (response.status) {
 			case 403:
 			case 429:
-				return Promise.reject('Rate limit exceeded')
+				return Promise.reject('Rate limit exceeded');
 		}
 		return response.json();
 	} catch (err: any) {

@@ -1,9 +1,11 @@
-<script lang="ts">
+<script lang='ts'>
+	import type { Snippet } from 'svelte';
+
 	interface Props {
-		children: any;
+		children: Snippet;
 	}
 
-	let { children }: Props = $props()
+	let { children }: Props = $props();
 </script>
 
 <style>
@@ -12,6 +14,6 @@
 	}
 </style>
 
-<div class="card-list">
+<div class='card-list'>
 	{@render children()}
 </div>

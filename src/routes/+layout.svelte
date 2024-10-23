@@ -1,19 +1,19 @@
-<script lang="ts">
-    import {FontAwesomeIcon} from '@fortawesome/svelte-fontawesome';
-    import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-    import {faHome, faBars, faXmark, faEnvelope, faKey} from "@fortawesome/free-solid-svg-icons";
-    import {config} from '@fortawesome/fontawesome-svg-core'
-    import '@fortawesome/fontawesome-svg-core/styles.css'
-    import Card from "$lib/components/Card.svelte";
-    import ScrollToTop from "$lib/components/ScrollToTop.svelte";
+<script lang='ts'>
+	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+	import { faBars, faEnvelope, faHome, faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
+	import '@fortawesome/fontawesome-svg-core/styles.css';
+	import Card from '$lib/components/Card.svelte';
+	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
+	import type { Snippet } from 'svelte';
 
-    interface Props {
-		children: any;
+	interface Props {
+		children: Snippet;
 	}
 
-    let { children }: Props = $props();
+	let { children }: Props = $props();
 
-    let responsive = $state(false);
+	let responsive = $state(false);
 </script>
 
 <style>
@@ -103,44 +103,44 @@
 </style>
 
 <header>
-    <nav class:responsive>
-        <div class="nav-logo">
-            <a href="/" style="width: fit-content">
-                <FontAwesomeIcon icon={faHome}/>
-                Home
-            </a>
-            <button type="button" id="nav-toggle" aria-label="Toggle Header Navigation" onmousedown={() => responsive = !responsive}>
-                {#if responsive}
-                    <FontAwesomeIcon icon={faXmark}/>
-                {:else}
-                    <FontAwesomeIcon icon={faBars}/>
-                {/if}
-            </button>
-        </div>
-        <a class="nav-link" href="/keys">
-            <FontAwesomeIcon icon={faKey}/>
-            Keys
-        </a>
-        <a class="nav-link" data-umami-event="GitHub" href="https://github.com/LukasPietzschmann" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faGithub}/>
-            GitHub
-        </a>
-        <a class="nav-link" data-umami-event="LinkedIn" href="https://www.linkedin.com/in/lukas-p-83aa261a3" target="_blank"
-           rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faLinkedin}/>
-            LinkedIn
-        </a>
-        <a class="nav-link" data-umami-event="Email" href="mailto:lukas.pietzschmann@outlook.de">
-            <FontAwesomeIcon icon={faEnvelope}/>
-            Email
-        </a>
-    </nav>
+	<nav class:responsive>
+		<div class='nav-logo'>
+			<a style='width: fit-content' href='/'>
+				<FontAwesomeIcon icon={faHome}/>
+				Home
+			</a>
+			<button id='nav-toggle' aria-label='Toggle Header Navigation' onmousedown={() => responsive = !responsive} type='button'>
+				{#if responsive}
+					<FontAwesomeIcon icon={faXmark}/>
+				{:else}
+					<FontAwesomeIcon icon={faBars}/>
+				{/if}
+			</button>
+		</div>
+		<a class='nav-link' href='/keys'>
+			<FontAwesomeIcon icon={faKey}/>
+			Keys
+		</a>
+		<a class='nav-link' data-umami-event='GitHub' href='https://github.com/LukasPietzschmann' rel='noopener noreferrer' target='_blank'>
+			<FontAwesomeIcon icon={faGithub}/>
+			GitHub
+		</a>
+		<a class='nav-link' data-umami-event='LinkedIn' href='https://www.linkedin.com/in/lukas-p-83aa261a3' rel='noopener noreferrer'
+			target='_blank'>
+			<FontAwesomeIcon icon={faLinkedin}/>
+			LinkedIn
+		</a>
+		<a class='nav-link' data-umami-event='Email' href='mailto:lukas.pietzschmann@outlook.de'>
+			<FontAwesomeIcon icon={faEnvelope}/>
+			Email
+		</a>
+	</nav>
 </header>
 
 <noscript>
-    <Card style="border: 1px solid darkred; background-color: rgba(255,0,0,0.1); margin-top: 2rem">
-        Whoops! It looks like you disabled JavaScript. Turn it back on for this site to function properly.
-    </Card>
+	<Card style='border: 1px solid darkred; background-color: rgba(255,0,0,0.1); margin-top: 2rem'>
+		Whoops! It looks like you disabled JavaScript. Turn it back on for this site to function properly.
+	</Card>
 </noscript>
 
 {@render children()}
@@ -148,25 +148,25 @@
 <ScrollToTop/>
 
 <footer>
-    <a href="/imprint">
-        Imprint
-    </a>
-    <div class="dot">•</div>
-    <a href="/privacy">
-        Privacy Policy
-    </a>
-    <div class="dot">•</div>
-    <a data-umami-event="Uptime" href="https://uptime.pietzschmann.org/status/public" target="_blank" rel="noopener noreferrer">
-        Uptime
-    </a>
-    <div class="dot">•</div>
-    <a data-umami-event="Analytics" href="https://analytics.pietzschmann.org/share/rpUDid7d9z2Cuzxm/lukas.pietzschmann.org" target="_blank" rel="noopener noreferrer">
-        Analytics
-    </a>
-    <div class="dot">•</div>
-    <a data-umami-event="512kb" href="https://512kb.club" target="_blank" rel="noopener noreferrer">
-        <img src="https://512kb.club/assets/images/orange-team.gif" alt="A proud member of the orange team of 512KB club"/>
-    </a>
-    <br />
-    <div id="last-modified">Last modified: {__BUILD_DATE__}</div>
+	<a href='/imprint'>
+		Imprint
+	</a>
+	<div class='dot'>•</div>
+	<a href='/privacy'>
+		Privacy Policy
+	</a>
+	<div class='dot'>•</div>
+	<a data-umami-event='Uptime' href='https://uptime.pietzschmann.org/status/public' rel='noopener noreferrer' target='_blank'>
+		Uptime
+	</a>
+	<div class='dot'>•</div>
+	<a data-umami-event='Analytics' href='https://analytics.pietzschmann.org/share/rpUDid7d9z2Cuzxm/lukas.pietzschmann.org' rel='noopener noreferrer' target='_blank'>
+		Analytics
+	</a>
+	<div class='dot'>•</div>
+	<a data-umami-event='512kb' href='https://512kb.club' rel='noopener noreferrer' target='_blank'>
+		<img alt='A proud member of the orange team of 512KB club' src='https://512kb.club/assets/images/orange-team.gif'/>
+	</a>
+	<br />
+	<div id='last-modified'>Last modified: {BUILD_DATE}</div>
 </footer>

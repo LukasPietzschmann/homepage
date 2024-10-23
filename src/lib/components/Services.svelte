@@ -1,4 +1,4 @@
-<script module lang="ts">
+<script lang='ts' module>
 	export interface ServiceData {
 		thing: string;
 		desc: string;
@@ -6,10 +6,10 @@
 	}
 </script>
 
-<script lang="ts">
-	import Card from "$lib/components/Card.svelte";
-	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
-	import {faBoxOpen} from "@fortawesome/free-solid-svg-icons";
+<script lang='ts'>
+	import Card from '$lib/components/Card.svelte';
+	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+	import { faBoxOpen } from '@fortawesome/free-solid-svg-icons';
 
 	interface Props {
 		data: ServiceData[];
@@ -18,11 +18,11 @@
 	let { data }: Props = $props();
 </script>
 
-{#each data as {thing, desc, link}}
+{#each data as { thing, desc, link } (thing)}
 	<Card>
 		<div>
 			<FontAwesomeIcon icon={faBoxOpen}/>
-			<a target="_blank" data-umami-event={`Service ${thing}`} href={link}>{thing}</a>
+			<a data-umami-event={`Service ${thing}`} href={link} target='_blank'>{thing}</a>
 		</div>
 		<div>{desc}</div>
 	</Card>

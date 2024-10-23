@@ -1,6 +1,6 @@
 <svelte:head>
 	<title>Constrained Zig</title>
-	<meta name="description" content="Website for my Zigtoberfest talk from 2024">
+	<meta name='description' content='Website for my Zigtoberfest talk from 2024'>
 </svelte:head>
 
 <style>
@@ -16,14 +16,14 @@
 <h2>Zigtoberfest 2024</h2>
 
 <p>
-	For the <a href="https://zigtoberfest.de" target="_blank">Zigtoberfest</a> 2024 I
+	For the <a href='https://zigtoberfest.de' target='_blank'>Zigtoberfest</a> 2024 I
 	gave a talk about interesting properties of constraint programs. This page provides
 	a small summary of the talk. Also, here are the links to the slides and the code I
 	wrote for the talk.
 </p>
-<div class="links">
-	<a data-umami-event="Zigtoberfest Slides" href="/zigchr.pdf" target="_blank">Slides</a>
-	<a data-umami-event="ZigCHR" href="https://github.com/LukasPietzschmann/zigchr" target="_blank">Repo</a>
+<div class='links'>
+	<a data-umami-event='Zigtoberfest Slides' href='/zigchr.pdf' target='_blank'>Slides</a>
+	<a data-umami-event='ZigCHR' href='https://github.com/LukasPietzschmann/zigchr' target='_blank'>Repo</a>
 </div>
 <h3>Intro</h3>
 <p>
