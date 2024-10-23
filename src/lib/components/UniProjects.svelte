@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export interface ProjectData {
 		thing: string;
 		desc: string;
@@ -11,8 +11,12 @@
 	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
 	import type {IconDefinition} from "@fortawesome/fontawesome-common-types";
 
-	export let data: ProjectData[];
-	export let icon: IconDefinition
+	interface Props {
+		data: ProjectData[];
+		icon: IconDefinition;
+	}
+
+	let { data, icon }: Props = $props();
 </script>
 
 {#each data as {thing, desc, links}}

@@ -1,7 +1,12 @@
 <script lang="ts">
-	export let hover = false;
-	export let style = '';
-	export let classes = '';
+	interface Props {
+		children: any;
+		hover?: boolean;
+		style?: string;
+		classes?: string;
+	}
+
+	let { children, hover = false, style = '', classes = ''}: Props = $props();
 </script>
 
 <style>
@@ -23,6 +28,6 @@
 
 <div class="display: inline-block">
 	<div class:hover-card={hover} class={`card ${classes}`} {style}>
-		<slot/>
+		{@render children()}
 	</div>
 </div>

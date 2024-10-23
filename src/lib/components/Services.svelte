@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export interface ServiceData {
 		thing: string;
 		desc: string;
@@ -11,7 +11,11 @@
 	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
 	import {faBoxOpen} from "@fortawesome/free-solid-svg-icons";
 
-	export let data: ServiceData[];
+	interface Props {
+		data: ServiceData[];
+	}
+
+	let { data }: Props = $props();
 </script>
 
 {#each data as {thing, desc, link}}

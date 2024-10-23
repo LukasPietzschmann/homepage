@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export interface TalkData {
 		title: string;
 		location: string;
@@ -12,7 +12,11 @@
 	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
 	import {faMessage} from "@fortawesome/free-solid-svg-icons";
 
-	export let data: TalkData[];
+	interface Props {
+		data: TalkData[];
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <style>

@@ -1,8 +1,15 @@
 <script lang="ts">
 	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
 
-	export let open = false;
-	export let name: string;
+	interface Props {
+		head: any;
+		details: any;
+		open?: boolean;
+		name: string;
+	}
+
+	let { head, details, open = false, name }: Props = $props();
+
 	import {slide, fade} from 'svelte/transition';
 	import {faCaretDown, faCaretRight} from "@fortawesome/free-solid-svg-icons";
 
@@ -54,9 +61,9 @@
 </style>
 
 <div class="accordion">
-	<button class="header" class:active={open} on:mousedown={toggleOpen}
+	<button class="header" class:active={open} onmousedown={toggleOpen}
 	        data-umami-event={`${name} ${open ? 'open' : 'close'}`}>
-		<slot name="head"/>
+		{@render head()}
 		{#if open}
 			<span class="expand" in:fade><FontAwesomeIcon icon={faCaretDown}/></span>
 		{:else}
@@ -66,7 +73,7 @@
 
 	{#if open}
 		<div class="details" transition:slide>
-			<slot name="details"/>
+			{@render details()}
 		</div>
 	{/if}
 </div>

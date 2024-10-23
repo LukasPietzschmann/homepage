@@ -99,18 +99,22 @@
 	I compiled a little list of the more interesting things:
 </p>
 <Accordion name="Academic Work" open={true}>
-	<span slot="head">Academic Work (Theses, Paper)</span>
-	<div slot="details">
+	{#snippet head()}
+		Academic Work (Theses, Paper)
+	{/snippet}
+	{#snippet details()}
 		<CardList>
 			<UniProjects icon={faGraduationCap} data={academicWork}/>
 		</CardList>
-	</div>
+	{/snippet}
 </Accordion>
 <Accordion name="Uni Projects">
-	<span slot="head">University Projects</span>
-	<div slot="details">
+	{#snippet head()}
+		University Projects
+	{/snippet}
+	{#snippet details()}
 		<CardList>
 			<UniProjects icon={faFileLines} data={uniProjects}/>
 		</CardList>
-	</div>
+	{/snippet}
 </Accordion>

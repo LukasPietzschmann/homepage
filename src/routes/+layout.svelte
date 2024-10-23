@@ -7,9 +7,13 @@
     import Card from "$lib/components/Card.svelte";
     import ScrollToTop from "$lib/components/ScrollToTop.svelte";
 
-    config.autoAddCss = false
+    interface Props {
+		children: any;
+	}
 
-    let responsive = false;
+    let { children }: Props = $props();
+
+    let responsive = $state(false);
 </script>
 
 <style>
@@ -105,7 +109,7 @@
                 <FontAwesomeIcon icon={faHome}/>
                 Home
             </a>
-            <button type="button" id="nav-toggle" aria-label="Toggle Header Navigation" on:mousedown={() => responsive = !responsive}>
+            <button type="button" id="nav-toggle" aria-label="Toggle Header Navigation" onmousedown={() => responsive = !responsive}>
                 {#if responsive}
                     <FontAwesomeIcon icon={faXmark}/>
                 {:else}
@@ -139,7 +143,7 @@
     </Card>
 </noscript>
 
-<slot/>
+{@render children()}
 
 <ScrollToTop/>
 

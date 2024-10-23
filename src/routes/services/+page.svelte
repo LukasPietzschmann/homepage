@@ -92,13 +92,15 @@
 	container.
 </p>
 <Accordion name="Services">
-	<span slot="head">Services</span>
-	<div slot="details">
+	{#snippet head()}
+		Services
+	{/snippet}
+	{#snippet details()}
 		<div style="margin-bottom: 1rem">
 			Here is a collections of services I'm currently hosting:
 		</div>
 		<CardGrid>
 			<Services data={services}/>
 		</CardGrid>
-	</div>
+	{/snippet}
 </Accordion>

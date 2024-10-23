@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export interface ProjectId {
 		owner: string;
 		repo: string;
@@ -13,11 +13,12 @@
 	import colors from "$lib/colors";
 	import {faCodeFork} from "@fortawesome/free-solid-svg-icons";
 	import {FontAwesomeIcon} from "@fortawesome/svelte-fontawesome";
-	import {config} from '@fortawesome/fontawesome-svg-core'
 
-	config.autoAddCss = false
+	interface Props {
+		projectIds: ProjectId[];
+	}
 
-	export let projectIds: ProjectId[];
+	let { projectIds }: Props = $props();
 </script>
 
 <style>
@@ -51,8 +52,7 @@
 				<hr/>
 				<div style="display: flex">
 					<div class="info-block">
-						<span style="margin-right: 4px; background-color: {colors[language]}; width: 0.6em; height: 0.6em; display: inline-block; border-radius: 50%;"/>
-						{language}
+						<span style="margin-right: 4px; background-color: {colors[language]}; width: 0.6em; height: 0.6em; display: inline-block; border-radius: 50%;">{language}</span>
 					</div>
 					<div class="info-block">
 						<FontAwesomeIcon style="margin-right: 4px" icon={faStar}/>

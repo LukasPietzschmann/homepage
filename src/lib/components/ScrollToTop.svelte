@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {blur} from 'svelte/transition';
 
-	let scrollY: number;
-	$: showGotoTop = scrollY >= 800;
+	let scrollY: number = $state(0);
+	const showGotoTop = $derived(scrollY >= 800);
 </script>
 
 <style>
@@ -26,7 +26,7 @@
 <svelte:window bind:scrollY/>
 
 {#if showGotoTop}
-	<button on:mousedown={() => window.scrollTo({top: 0, behavior: "smooth"})}
+	<button aria-label="Scroll to top" onmousedown={() => window.scrollTo({top: 0, behavior: "smooth"})}
 	        class="gotoTop" transition:blur data-umami-event="Scroll to top">
 		<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
 		     viewBox="0 0 24 24">
