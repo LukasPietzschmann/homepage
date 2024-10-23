@@ -10,7 +10,7 @@ For the [Zigtoberfest](https://zigtoberfest.de/) 2024 I gave a talk about intere
 properties of constraint programs. This page provides a small summary of the talk.
 
 ># [Fun Fact]($block.attrs('info'))
->Since getting started with Zig was so much fun, I built this page using
+>Since getting started with Zig was so much fun, I created this summary page using
 >[Zine](https://zine-ssg.io/), the static site generator written in Zig.
 
 # Intro
