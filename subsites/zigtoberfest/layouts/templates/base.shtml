@@ -10,17 +10,7 @@
   </head>
   <body>
     <nav id="menu" class="centered">
-      <a href="/talks">Go Back</a>
-      •
-      <a href="/">Main Site</a>
-      •
-      <a href="/zigchr.pdf" target="_blank">
-        Slides
-      </a>
-      •
-      <a href="https://github.com/LukasPietzschmann/zigchr" target="_blank">
-        Code
-      </a>
+      <a href="/talks">Go Back</a> • <a href="/">Main Site</a> • <a href="/zigchr.pdf" target="_blank">Slides</a> • <a href="https://github.com/LukasPietzschmann/zigchr" target="_blank">Code</a>
     </nav>
     <div id="content">
       <super>

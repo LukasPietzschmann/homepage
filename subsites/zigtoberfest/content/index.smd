@@ -119,8 +119,8 @@ order the query is given. Therefore, the relation of the initial and final state
 function.
 
 ```
-a => b.
-a => false.
+a ==> b.
+a ==> false.
 ```
 The above code snippet is not confluent. Given `a`, depending on which rule we check
 first, we will get different final states. Namely `b` and `false`.
@@ -128,10 +128,10 @@ first, we will get different final states. Namely `b` and `false`.
 But on the upside, we (or the [completion algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Bendix_completion_algorithm))
 can make this program confluent by adding a single rule:
 ```
-a => b.
-a => false.
+a ==> b.
+a ==> false.
 
-b => false.
+b ==> false.
 ```
 But note that not every program can be made confluent.
 
