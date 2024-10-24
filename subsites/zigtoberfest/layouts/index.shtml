@@ -14,23 +14,9 @@
 			align-self: center;
 		}
 
-		.info {
-			border-color: #5a615f !important;
-		}
-
-		.info h1 {
-			color: white !important;
-			border-color: #5a615f !important;
-			background-color: #5a615f !important;
-		}
-
 		.block {
-			border: 1px dashed #ccc;
-		}
-
-		.block.padded {
-			margin: 10px;
-			border: 1px solid #ccc;
+			border: var(--border);
+			border-radius: var(--radius);
 		}
 
 		.block p {
@@ -48,9 +34,7 @@
 			padding-left: 15px;
 			padding-right: 15px;
 			padding-top: 2px !important;
-			border: 1px solid #ccc;
-			color: #111;
-			background-color: #ccc;
+			background-color: var(--highlight);
 			font-weight: normal;
 		}
 	</style>
