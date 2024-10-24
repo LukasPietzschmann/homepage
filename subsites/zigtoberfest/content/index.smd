@@ -14,29 +14,64 @@ properties of constraint programs. This page provides a small summary of the tal
 >[Zine](https://zine-ssg.io/), the static site generator written in Zig.
 
 # Intro
-CHR (Constraint Handling Rules) is a rule-based language and formalism that is typically
+Constraint programming, unlike imperative programming, focuses on defining the desired
+properties of a result rather than specifying a sequence of steps. While there exist
+languages that have this paradigm built-in (e.g., [Oz](http://mozart2.org/) or
+[Kaleidoscope](https://constraints.cs.washington.edu/cip/kaleidoscope-asi.pdf)), it is
+more common for constraints to be an extension or library for a programming language.
+For this talk, we are going to look at constraint programs through CHR.
+
+CHR (Constraint Handling Rules) is a rule-based language and formalism that is 
 used through an embedding into a host language. This makes it interesting to see how
 CHR's declarative nature can be used in languages with a possibly completely different
 paradigm. Besides that, it also brings cool properties that CHR programs can have to
 said other languages. Those properties will be what we are looking closer at in this
 little write-up.
 
-To start off, let's look at a simple example of a CHR program:
+To start off, let's look at a simple example of a CHR program. This and all other
+examples can be used with [Prolog's CHR embedding](https://www.swi-prolog.org/man/chr.html).
 ```
 min(N) \ min(M) <=> N <= M | true.
 ```
 This example will compute the minimum of an arbitrary number of values. We can read it
 like this: If there are two candidates for the minimum, `min(N)` and `min(M)`, then the
-minimum is the smaller one of the two and the bigger one will be removed from the list
-of candidates. What's cool about this notation is that we did not write down the steps
-of how to compute the minimum, but rather we described how the minimum looks like and
-the computer will find a fitting solution on its own.
+minimum is the smaller one of the two and the bigger one will be removed. What's cool
+about this notation is that it's extremely concise and easy to read. Just by looking
+at it, we can instantly tell what it does.
+
+# CHR Basics
+## Rule Structure
+A Rule always consists of three parts: The head, the guard, and the body. `HEAD <op> GUARD | BODY`.
+| Part  | Example  | Description |
+|-------|----------|-------------|
+| Head  | `min(N)` | The constraints that the rule needs to be applicable. |
+| Guard | `N <= M` | A condition that needs to be true for the rule to be applied. This will only contain prolog code and no constraints.|
+| Body  | `true`   | The constraints that will be added if the rule is applied. |
+
+
+## Rule Types
+CHR knows about three different types of rules:
+1. **Propagation** `C ==> G | B`: If the guard `G` holds, then constraints from the body `B`
+   will be added.
+2. **Simplification** `C <=> G | B`: If the guard `G` holds, then the constraint `C` will
+   be removed and constraints from the body `B` will be added.
+3. **Simpagation** `C1 \ C2 <=> G | B`: If the guard `G` holds, then the constraint `C2` will
+   be removed and constraints from the body `B` will be added.
+
+You might have already noticed that a simpagation can express both a simplification and a
+propagation. Therefore, the [Zig embedding](https://github.com/LukasPietzschmann/zigchr)
+I wrote only uses simpagations (or 4-tuples) [under the hood](https://github.com/LukasPietzschmann/zigchr/blob/6cab5232de33365ba5fd8502a70ce1cb9b4a4600/lib/solvers/rule_solver.zig#L121-L127).
 
 # Properties
 ## Anytime Algorithms
 We start with a simple property that every CHR algorithm has: It is an anytime
 algorithm. This means that the algorithm can be stopped at any point in time and the
 state at this time will be a valid approximation of the final result.
+
+Let's say we have the following query: `min(4), min(2), min(1)`. When we
+interrupt the computation after the first two constraints were handles, we will get
+`min(2)` as the result. While that's not a correct final answer, it's at least _more
+valid_ than the initial `min(4)`.
 
 This property is especially useful if we need to guarantee a certain response time for
 our algorithm. Let's say it has to produce a result in under 100ms. Due to it being
@@ -71,6 +106,9 @@ fib(N, R) ==> N > 1 |
         fib(N1, R1), fib(N2, R2),
         R = R1 + R2.
 ```
+This way, we don't throw away intermediate `fib(N,M)` constraints but keep them. If we
+later need to compute, e.g., `fib(5, R)` it might be already present with a result
+bound to `R`.
 
 ## Confluence
 The next property we will look at is confluence. Not every CHR program is necessarily
@@ -80,19 +118,37 @@ for a given input, regardless of the order in which the rules are applied or in 
 order the query is given. Therefore, the relation of the initial and final state is a
 function.
 
+```
+a => b.
+a => false.
+```
+The above code snippet is not confluent. Given `a`, depending on which rule we check
+first, we will get different final states. Namely `b` and `false`.
+
+But on the upside, we (or the [completion algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Bendix_completion_algorithm))
+can make this program confluent by adding a single rule:
+```
+a => b.
+a => false.
+
+b => false.
+```
+But note that not every program can be made confluent.
+
 ## Incremenrality
 Given that our algorithm is confluent, its also incremental or online. But what does
 that mean? In an online algorithm, we can add new constraints to the system at any time
-and they will eventually participate in the computation. This is very powerful,
-especially in e.g. feedback loops where we need to react to new input constantly.
+and they will eventually participate in the computation and contribute to the final
+state. This is very powerful, especially in e.g. feedback loops where we need to react
+to new input constantly.
 
 ## Declarative Concurrency
 Writing correct concurrent programs is typically hard. But with a confluent CHR program
 not so much. Actually, we don't have to do anything at all. We can just take a hand full
-of constraints and put it on one machine, and put the other ones on another machine,
-evaluate both sets in parallel, bring them back together and we will have a correct
+of constraints, put it on one machine, put the other ones on another machine,
+evaluate both sets in parallel, bring them back together, and we will have a correct
 result that equals the one we would have gotten if we would have evaluated everything on
-one machine.
+a single machine.
 
 If you wanna try it out, here's a simple implementation of the map-reduce pattern.
 ```
@@ -106,3 +162,15 @@ reduce(OP) \ r(X), r(Y) <=>
     call(C),
     r(R)
 ```
+
+### Destructive Assignment
+By the way, we can also use confluence to _show_ why it's often hard to write a correct
+concurrent algorithm in imperative languages. Take a look at the following rule:
+```
+assign(K, V), cell(K, V') <=> cell(K, V).
+```
+This simple rules models destructive assignments, the backbone of imperative programming.
+Now given a query like `cell(a,1), assign(a,2), assign(a,3)` we first set `a` to `2` and
+following that to `3`. But for confluence we need the query order to be independent of
+the result. But swapping the two `assign` constraints will yield a different result.
+Thus destructive assignments are not confluent and by proxy not trivially concurrent.
