@@ -13,6 +13,23 @@ properties of constraint programs. This page provides a small summary of the tal
 >Since getting started with Zig was so much fun, I created this summary page using
 >[Zine](https://zine-ssg.io/), the static site generator written in Zig.
 
+Not in a reading mood? Let me do the talking over on YouTube:
+```=html
+<p style="padding-bottom: 56.25%; max-width: 100%; position: relative;">
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube-nocookie.com/embed/suWRGy2jZxY?si=yQp8Y77v1VMQTrQr"
+        title="Exploring properties of constraint programs (Lukas Pietzschmann, Zigtoberfest 2024)"
+        frameborder="0"
+        allow="clipboard-write; encrypted-media; picture-in-picture; web-share"
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+    ></iframe>
+</p>
+```
+
 # Intro
 Constraint programming, unlike imperative programming, focuses on defining the desired
 properties of a result rather than specifying a sequence of steps. While there exist
