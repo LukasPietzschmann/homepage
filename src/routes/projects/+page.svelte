@@ -7,7 +7,7 @@
 		{ owner: 'LukasPietzschmann', repo: 'zigchr' },
 		{ owner: 'LukasPietzschmann', repo: 'Haskellator9000' },
 		{ owner: 'LukasPietzschmann', repo: 'LZip' },
-		{ owner: 'LukasPietzschmann', repo: 'PL0-Compiler' }
+		{ owner: 'flowr-analysis', repo: 'slicing-coverage-r-package' }
 	];
 </script>
 
