@@ -8,6 +8,6 @@ export default defineConfig({
 		sveltekit()
 	],
 	define: {
-		BUILD_DATE: JSON.stringify(new Date().toLocaleDateString())
+		BUILD_DATE: JSON.stringify(new Date().toLocaleDateString(undefined, { dateStyle: 'medium' }))
 	}
 });
