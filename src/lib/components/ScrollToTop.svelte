@@ -13,7 +13,6 @@
 		bottom: 0;
 		right: 0;
 		margin: 2rem;
-		cursor: pointer;
 		transition-duration: 0.2s;
 		z-index: 999;
 	}
