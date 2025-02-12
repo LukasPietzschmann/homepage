@@ -19,10 +19,6 @@
 <style>
 	.header {
 		display: flex;
-		cursor: pointer;
-	}
-
-	.header {
 		background: var(--background-200);
 		border-radius: var(--radius);
 		border: var(--border);
