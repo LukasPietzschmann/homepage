@@ -34,7 +34,7 @@
 		text-align: center;
 		font-size: .9rem;
 
-		flex: 1 1 calc(25% - 3rem);
+		flex: 1 1 calc(33% - 3rem);
 
 		border-radius: var(--radius);
 		border: var(--border);
@@ -43,13 +43,13 @@
 		transition: var(--transition);
 	}
 
-	@media (max-width: 820px) {
+	@media (max-width: 670px) {
 		.button-container a {
 			flex: 1 1 calc(50% - 3rem);
 		}
 	}
 
-	@media (max-width: 450px) {
+	@media (max-width: 500px) {
 		.button-container a {
 			flex: 1 1 100%;
 		}
@@ -87,5 +87,4 @@
 	<a href='/projects'>Personal Projects</a>
 	<a href='/uni'>University Work</a>
 	<a href='/talks'>Talks</a>
-	<a href='/services'>Self hosting</a>
 </p>
