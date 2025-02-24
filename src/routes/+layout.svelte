@@ -129,7 +129,7 @@
 			<FontAwesomeIcon icon={faLinkedin}/>
 			LinkedIn
 		</a>
-		<a class='nav-link' data-umami-event='Email' href='mailto:lukas.pietzschmann@outlook.de'>
+		<a class='nav-link' data-umami-event='Email' href='mailto:lukas@pietzschmann.org'>
 			<FontAwesomeIcon icon={faEnvelope}/>
 			Email
 		</a>
