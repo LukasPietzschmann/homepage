@@ -7,5 +7,6 @@
 <ul>
 	<li><a data-umami-event='GPG Uni Key' download href='/public_key_uni.asc'>GPG (University)</a></li>
 	<li><a data-umami-event='GPG Personal Key' download href='/public_key_personal.asc'>GPG (Personal)</a></li>
+	<li><a data-umami-event='GPG Personal Key (Old)' download href='/public_key_personal_old.asc'>GPG (Personal, Old)</a></li>
 	<li><a data-umami-event='SSH Key' download href='/public_key.pub'>SSH</a></li>
 </ul>
