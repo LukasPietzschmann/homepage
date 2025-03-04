@@ -6,6 +6,24 @@
 
 	const academicWork: ProjectData[] = [
 		{
+			thing: 'Master\'s Thesis',
+			desc: `For my master's thesis I implemented a novel approach to calculate
+			       code coverage for R packages. The approach only consideres code that
+			       is executed and relevant for the test's result as covered. To
+			       evaluate it, I implemented mutatr: a mutation testing frameword for
+			       R.`,
+			links: [
+				{
+					name: 'Slicing Coverage',
+					link: 'https://github.com/flowr-analysis/slicing-coverage-r-package'
+				},
+				{
+					name: 'MutatR',
+					link: 'https://github.com/flowr-analysis/mutatr'
+				}
+			]
+		},
+		{
 			thing: 'The Anatomy of R code',
 			desc: `I coauthored a paper about the anatomy of real-world R code. The
                    paper conducts a large-scale, static analysis of more than 50
@@ -14,15 +32,14 @@
 			links: [ { name: 'Paper', link: 'https://doi.org/10.1145/3643991.3644911' } ]
 		},
 		{
-			thing: 'Bachelor Thesis',
-			desc: `My bachelor thesis extended the MOSTflexiPL project by adding a
-                   backend to the compiler that uses LLVM to lower MOSTflexiPL to
+			thing: 'Bachelor\'s Thesis',
+			desc: `My bachelor's thesis extended the MOSTflexiPL project by adding a
+                   backend to the compiler that uses LLVM to lower MOSTflexiPL code to
                    machine code.`,
 			links: [
-				{ name: 'Thesis', link: '/bachelor.pdf' },
 				{
-					name: 'Code',
-					link: 'https://github.com/LukasPietzschmann/Bachelorarbeit'
+					name: 'Code Generation',
+					link: 'https://github.com/LukasPietzschmann/Bachelorarbeit/tree/master/Codegen'
 				}
 			]
 		},
