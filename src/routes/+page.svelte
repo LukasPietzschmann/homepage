@@ -72,9 +72,9 @@
 
 <p>Hey! Welcome to my little corner on the internet :)</p>
 <p>
-	I'm Lukas, a German computer science student based near Ulm and I'm
-	currently studying for my master's degree at
-	<a href='https://www.uni-ulm.de/en/'>Ulm University</a>.
+	I'm Lukas, a research assistant at the
+	<a target='_blank' href='https://www.uni-ulm.de/en/in/vs/'>Institute of Distributed Systems</a>
+	at Ulm University.
 </p>
 <p>
 	While I'm interested in a lot of different things, I definitely won't miss any
@@ -85,6 +85,6 @@
 </p>
 <p class='button-container'>
 	<a href='/projects'>Personal Projects</a>
-	<a href='/uni'>University Work</a>
+	<a href='/uni'>University Stuff</a>
 	<a href='/talks'>Talks</a>
 </p>

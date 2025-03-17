@@ -104,15 +104,15 @@
 </script>
 
 <svelte:head>
-	<title>University Work</title>
+	<title>University Stuff</title>
 	<meta name='description' content="Lukas' work at the university">
 </svelte:head>
 
-<h1>University Work</h1>
+<h1>University Stuff</h1>
 
 <p>
 	During my bachelor's and master's studies, I produced a variety of
-	stuff. This, among others, includes slides, projects, papers, and theses.
+	things. This, among others, includes slides, projects, papers, and theses.
 	I compiled a little list of the more interesting things:
 </p>
 <Accordion name='Academic Work' open={true}>
