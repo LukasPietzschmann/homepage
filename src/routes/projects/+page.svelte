@@ -19,7 +19,7 @@
 <h1>Personal Projects</h1>
 
 <p>
-	Outside of my <a data-umami-event='Studies' href='/uni'>studies</a>, I like to
+	Outside of my <a data-umami-event='Uni' href='/uni'>research</a>, I like to
 	implement fun little things, hack on some LaTeX code, or dump way too many hours
 	into my <a data-umami-event='NVim Config'
 		href='https://github.com/LukasPietzschmann/nvim-config' rel='noopener noreferrer'

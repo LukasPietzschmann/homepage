@@ -77,11 +77,23 @@
 	at Ulm University.
 </p>
 <p>
-	While I'm interested in a lot of different things, I definitely won't miss any
-	chance to nerd about functional programming and typesetting. Although I'm most
-	productive with the typical imperative languages, I generally enjoy coding in all
-	kinds of languages and paradigms. Generally I'd say: if you know something that I
-	don't, go ahead and share it with me. I'm always eager to learn new stuff.
+	Research-wise, I'm exploring potential privacy risks associated with public datasets
+	stemming from empirical research. I'm currently particularly interested in possible
+	attack vectors and the potential for re-identification of individuals in these
+	datasets.
+</p>
+<p style='margin-top: 0;'>
+	Besides that, I'm also working on the <a data-umami-event='BwNet' rel='noopener
+	noreferrer' target='_blank' href="https://bwnet.belwue.de/">BwNet2.0</a> project,
+	which is concerned with the development of various parts of the <a
+	data-umami-event='BelWü' rel='noopener noreferrer' target='_blank'
+	href="https://www.belwue.de/">Belwü</a> network. My main focus is in the monitoring,
+	collection, and provision of network data for the purpose of research and analysis.
+</p>
+<p>
+	Outside of work, I'm interested in a lot of different things, but I definitely won't
+	miss any chance to nerd about functional programming and typesetting. Check out my
+	personal and university projects to see what I'm up to!
 </p>
 <p class='button-container'>
 	<a href='/projects'>Personal Projects</a>
