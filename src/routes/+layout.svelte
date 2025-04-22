@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
-	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-	import { faBars, faEnvelope, faHome, faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
+	import { faGithub } from '@fortawesome/free-brands-svg-icons';
+	import { faGraduationCap, faBars, faEnvelope, faHome, faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
 	import '@fortawesome/fontawesome-svg-core/styles.css';
 	import Card from '$lib/components/Card.svelte';
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
@@ -124,10 +124,15 @@
 			<FontAwesomeIcon icon={faGithub}/>
 			GitHub
 		</a>
-		<a class='nav-link' data-umami-event='LinkedIn' href='https://www.linkedin.com/in/lukas-p-83aa261a3' rel='noopener noreferrer'
+		<!-- <a class='nav-link' data-umami-event='LinkedIn' href='https://www.linkedin.com/in/lukas-p-83aa261a3' rel='noopener noreferrer' -->
+		<!-- 	target='_blank'> -->
+		<!-- 	<FontAwesomeIcon icon={faLinkedin}/> -->
+		<!-- 	LinkedIn -->
+		<!-- </a> -->
+		<a class='nav-link' data-umami-event='LinkedIn' href='https://www.uni-ulm.de/in/vs/inst/team/lukas-pietzschmann/' rel='noopener noreferrer'
 			target='_blank'>
-			<FontAwesomeIcon icon={faLinkedin}/>
-			LinkedIn
+			<FontAwesomeIcon icon={faGraduationCap}/>
+			Work
 		</a>
 		<a class='nav-link' data-umami-event='Email' href='mailto:lukas@pietzschmann.org'>
 			<FontAwesomeIcon icon={faEnvelope}/>
