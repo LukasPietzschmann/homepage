@@ -6,8 +6,9 @@
 .draft = false,
 ---
 
-For the [Zigtoberfest](https://zigtoberfest.de/) 2024 I gave a talk about interesting
-properties of constraint programs. This page provides a small summary of the talk.
+For the [Zigtoberfest 2024](https://zigtoberfest.de/zigtoberfest2024/) I gave a talk
+about interesting properties of constraint programs. This page provides a small summary
+of the talk.
 
 ># [Fun Fact]($block.attrs('info'))
 >Since getting started with Zig was so much fun, I created this summary page using
