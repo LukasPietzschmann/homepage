@@ -32,6 +32,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: mlugg/setup-zig@v1
+        with:
+          version: 0.13.0
       - run: zig build website
       - name: Upload zigtoberfest subsite
         uses: actions/upload-artifact@v4
