@@ -1,0 +1,42 @@
+name: Build main and subsites
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build main site
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - name: Upload main site
+      uses: actions/upload-artifact@v4
+      with:
+        name: main
+        path: ./build
+        if-no-files-found: error
+        include-hidden-files: true
+  zigtoberfest:
+    name: Build zigtoberfest subsite
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./subsites/zigtoberfest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mlugg/setup-zig@v1
+      - run: zig build website
+      - name: Upload zigtoberfest subsite
+        uses: actions/upload-artifact@v4
+        with:
+          name: zigtoberfest
+          path: ./subsites/zigtoberfest/zig-out
+          if-no-files-found: error
+          include-hidden-files: true
