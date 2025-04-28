@@ -1,5 +1,5 @@
 .{
-    .name = "Zigtoberfest Subsite",
+    .name = "Zigtoberfest_Subsite",
     .version = "0.1.0",
     .dependencies = .{
         .zine = .{
