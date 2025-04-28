@@ -4,8 +4,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    reviewers:
-      - "LukasPietzschmann"
     groups:
       version-updates:
         applies-to: version-updates
