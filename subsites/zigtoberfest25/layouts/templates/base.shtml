@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head id="head">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title id="title"><super></title>
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <super>
+  </head>
+  <body>
+    <nav id="menu" class="centered">
+      <a href="/talks">Go Back</a> • <a href="/">Main Site</a>
+    </nav>
+    <div id="content">
+      <super>
+    </div>
+  </body>
+</html>

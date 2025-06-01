@@ -10,7 +10,18 @@
                    the desired properties of a result rather than specifying a sequence of steps.\
                    We will explore interesting properties of this approach using Constraint\
                    Handling Rules embedded in the ZIG language.',
-			link: '/talks/zigtoberfest',
+			link: '/talks/zigtoberfest24',
+			reload: true,
+		},
+		{
+			title: 'You Shall Not Block',
+			location: 'Zigtoberfest 2025',
+			desc: 'Locks are common in concurrent programming but can introduce performance\
+                   issues, deadlocks, and complexity. Lock-free data structures use atomic\
+                   operations to avoid these problems, enabling smoother and faster execution.\
+                   We’ll explore how to implement them in Zig, when they’re most effective,\
+                   and also touch on concepts like progress guarantees and levels of “freeness”.',
+			link: '/talks/zigtoberfest25',
 			reload: true,
 		},
 	];

@@ -1,0 +1,9 @@
+---
+.title = "You Shall Not Block",
+.date = @date("2024-10-25T00:00:00"),
+.author = "Lukas Pietzschmann",
+.layout = "index.shtml",
+.draft = false,
+---
+
+This website is still being built. It will be ready in time for the event :)

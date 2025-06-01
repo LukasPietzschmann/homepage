@@ -1,0 +1,61 @@
+<extend template="base.shtml">
+<title id="title" :text="$page.title"></title>
+<head id="head">
+	<style>
+		body {
+			margin: 2rem auto;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		nav {
+			align-self: center;
+		}
+
+		.block {
+			border: var(--border);
+			border-radius: var(--radius);
+		}
+
+		.block p {
+			padding-top: 0;
+			font-size: 0.9em;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.block h1 {
+			font-size: 1.17em;
+			position: relative !important;
+			margin: 0 !important;
+			text-align: left;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 2px !important;
+			background-color: var(--highlight);
+			font-weight: normal;
+		}
+
+		table {
+			border-spacing: .5em .5em;
+		}
+
+		th {
+			text-align: start;
+		}
+
+		td {
+			vertical-align: top;
+		}
+	</style>
+	<script async src="https://analytics.pietzschmann.org/script.js" data-website-id="9704fd6a-b2e4-4183-b8dc-9f7503073090"></script>
+</head>
+<div id="content">
+	<h1 class="centered title">You shall not block</h1>
+		<!-- <p class="centered tagline"> -->
+		<!--   Zigtoberfest 2024 -->
+		<!-- </p> -->
+	<div id="page" :html="$page.content()"></div>
+</div>
