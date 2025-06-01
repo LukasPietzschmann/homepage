@@ -6,6 +6,14 @@
 
 	const academicWork: ProjectData[] = [
 		{
+			thing: 'The Anatomy of R code',
+			desc: `I coauthored a paper about the anatomy of real-world R code. The
+                   paper conducts a large-scale, static analysis of more than 50
+                   million lines of R code to identify their characteristics and the
+                   features that are actually used. It was accepted at MSR 2024.`,
+			links: [ { name: 'Paper', link: 'https://doi.org/10.1145/3643991.3644911' } ]
+		},
+		{
 			thing: 'Master\'s Thesis',
 			desc: `For my master's thesis I implemented a novel approach to calculate
 			       code coverage for R packages. The approach only consideres code that
@@ -22,14 +30,6 @@
 					link: 'https://github.com/flowr-analysis/mutatr'
 				}
 			]
-		},
-		{
-			thing: 'The Anatomy of R code',
-			desc: `I coauthored a paper about the anatomy of real-world R code. The
-                   paper conducts a large-scale, static analysis of more than 50
-                   million lines of R code to identify their characteristics and the
-                   features that are actually used. It was accepted at MSR 2024.`,
-			links: [ { name: 'Paper', link: 'https://doi.org/10.1145/3643991.3644911' } ]
 		},
 		{
 			thing: 'Bachelor\'s Thesis',
