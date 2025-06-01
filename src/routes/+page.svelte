@@ -84,10 +84,10 @@
 </p>
 <p style='margin-top: 0;'>
 	Besides that, I'm also working on the <a data-umami-event='BwNet' rel='noopener
-	noreferrer' target='_blank' href="https://bwnet2.belwue.de/">BwNet2.0</a> project,
+	noreferrer' target='_blank' href="https://bwnet2.belwue.de/">bwNET2.0</a> project,
 	which is concerned with the development of various parts of the <a
 	data-umami-event='BelWü' rel='noopener noreferrer' target='_blank'
-	href="https://www.belwue.de/">Belwü</a> network. My main focus is in the monitoring,
+	href="https://www.belwue.de/">BelWü</a> network. My main focus is in the monitoring,
 	collection, and provision of network data for the purpose of research and analysis.
 </p>
 <p>
