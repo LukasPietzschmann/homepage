@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head id="head">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title id="title">Constrained Zig</title>
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    
+	<style>
+		body {
+			margin: 2rem auto;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		nav {
+			align-self: center;
+		}
+
+		.block {
+			border: var(--border);
+			border-radius: var(--radius);
+		}
+
+		.block p {
+			padding-top: 0;
+			font-size: 0.9em;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.block h1 {
+			font-size: 1.17em;
+			position: relative !important;
+			margin: 0 !important;
+			text-align: left;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 2px !important;
+			background-color: var(--highlight);
+			font-weight: normal;
+		}
+
+		table {
+			border-spacing: .5em .5em;
+		}
+
+		th {
+			text-align: start;
+		}
+
+		td {
+			vertical-align: top;
+		}
+	</style>
+	<script async src="https://analytics.pietzschmann.org/script.js" data-website-id="9704fd6a-b2e4-4183-b8dc-9f7503073090"></script>
+
+  </head>
+  <body>
+    <nav id="menu" class="centered">
+      <a href="/talks">Go Back</a> • <a href="/">Main Site</a> • <a href="/zigchr.pdf" target="_blank">Slides</a> • <a href="https://github.com/LukasPietzschmann/zigchr" target="_blank">Code</a>
+    </nav>
+    <div id="content">
+      
+	<h1 class="centered title">Constrained Zig</h1>
+		<!-- <p class="centered tagline"> -->
+		<!--   Zigtoberfest 2024 -->
+		<!-- </p> -->
+	<div id="page"><p>For the <a href="https://zigtoberfest.de/past/" target="_blank">Zigtoberfest 2024</a> I gave a talk about interesting properties of constraint programs. This page provides a small summary of the talk.</p><div class="block info"><h1>Fun Fact</h1><p>Since getting started with Zig was so much fun, I created this summary page using <a href="https://zine-ssg.io/" target="_blank">Zine</a>, the static site generator written in Zig.</p></div><p>Not in a reading mood? Let me do the talking over on YouTube:</p><p style="padding-bottom: 56.25%; max-width: 100%; position: relative;">
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube-nocookie.com/embed/suWRGy2jZxY?si=yQp8Y77v1VMQTrQr"
+        title="Exploring properties of constraint programs (Lukas Pietzschmann, Zigtoberfest 2024)"
+        frameborder="0"
+        allow="clipboard-write; encrypted-media; picture-in-picture; web-share"
+        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+    ></iframe>
+</p>
+<h1>Intro</h1><p>Constraint programming, unlike imperative programming, focuses on defining the desired properties of a result rather than specifying a sequence of steps. While there exist languages that have this paradigm built-in (e.g., <a href="http://mozart2.org/" target="_blank">Oz</a> or <a href="https://constraints.cs.washington.edu/cip/kaleidoscope-asi.pdf" target="_blank">Kaleidoscope</a>), it is more common for constraints to be an extension or library for a programming language. For this talk, we are going to look at constraint programs through CHR.</p><p>CHR (Constraint Handling Rules) is a rule-based language and formalism that is used through an embedding into a host language. This makes it interesting to see how CHR’s declarative nature can be used in languages with a possibly completely different paradigm. Besides that, it also brings cool properties that CHR programs can have to said other languages. Those properties will be what we are looking closer at in this little write-up.</p><p>To start off, let’s look at a simple example of a CHR program. This and all other examples can be used with <a href="https://www.swi-prolog.org/man/chr.html" target="_blank">Prolog’s CHR embedding</a>.</p><pre><code>min(N) \ min(M) &lt;=&gt; N &lt;= M | true.
+</code></pre><p>This example will compute the minimum of an arbitrary number of values. We can read it like this: If there are two candidates for the minimum, <code>min(N)</code> and <code>min(M)</code>, then the minimum is the smaller one of the two and the bigger one will be removed. What’s cool about this notation is that it’s extremely concise and easy to read. Just by looking at it, we can instantly tell what it does.</p><h1>CHR Basics</h1><h2>Rule Structure</h2><p>A Rule always consists of three parts: The head, the guard, and the body. <code>HEAD &lt;op&gt; GUARD | BODY</code>.</p><table><tr><th>Part</th><th>Example</th><th>Description</th></tr><tr><td>Head</td><td><code>min(N)</code></td><td>The constraints that the rule needs to be applicable.</td></tr><tr><td>Guard</td><td><code>N &lt;= M</code></td><td>A condition that needs to be true for the rule to be applied. This will only contain prolog code and no constraints.</td></tr><tr><td>Body</td><td><code>true</code></td><td>The constraints that will be added if the rule is applied.</td></tr></table><h2>Rule Types</h2><p>CHR knows about three different types of rules:</p><ol><li><strong>Propagation</strong> <code>C ==&gt; G | B</code>: If the guard <code>G</code> holds, then constraints from the body <code>B</code> will be added.</li><li><strong>Simplification</strong> <code>C &lt;=&gt; G | B</code>: If the guard <code>G</code> holds, then the constraint <code>C</code> will be removed and constraints from the body <code>B</code> will be added.</li><li><strong>Simpagation</strong> <code>C1 \ C2 &lt;=&gt; G | B</code>: If the guard <code>G</code> holds, then the constraint <code>C2</code> will be removed and constraints from the body <code>B</code> will be added.</li></ol><p>You might have already noticed that a simpagation can express both a simplification and a propagation. Therefore, the <a href="https://github.com/LukasPietzschmann/zigchr" target="_blank">Zig embedding</a> I wrote only uses simpagations (or 4-tuples) <a href="https://github.com/LukasPietzschmann/zigchr/blob/6cab5232de33365ba5fd8502a70ce1cb9b4a4600/lib/solvers/rule_solver.zig#L121-L127" target="_blank">under the hood</a>.</p><h1>Properties</h1><h2>Anytime Algorithms</h2><p>We start with a simple property that every CHR algorithm has: It is an anytime algorithm. This means that the algorithm can be stopped at any point in time and the state at this time will be a valid approximation of the final result.</p><p>Let’s say we have the following query: <code>min(4), min(2), min(1)</code>. When we interrupt the computation after the first two constraints were handles, we will get <code>min(2)</code> as the result. While that’s not a correct final answer, it’s at least <em>more valid</em> than the initial <code>min(4)</code>.</p><p>This property is especially useful if we need to guarantee a certain response time for our algorithm. Let’s say it has to produce a result in under 100ms. Due to it being anytime, we can just stop the computation after 100ms, observe the current state, and return it as an approximation.</p><h2>Memoization</h2><p>Every computer scientist has probably written the fibonacci function at least once in their life. In CHR we can formulate it as follows:</p><pre><code>fib(0, R) &lt;=&gt; R = 1 | true.
+fib(1, R) &lt;=&gt; R = 1 | true.
+fib(N, R) &lt;=&gt; N &gt; 1 |
+        N1 = N - 1, N2 = N - 2,
+        fib(N1, R1), fib(N2, R2),
+        R = R1 + R2.
+</code></pre><p>While this works totally fine, it’s also painfully slow — especially for bigger values of <code>N</code>. The reason for this is that we are computing the same values over and over again. If we could just remember and reuse the intermediate results, we could speed this up to linear time complexity.</p><p>Achieving this is criminally easy in CHR. We just need to change our simplification rules to propagations and add a little cleanup rule:</p><pre><code>fib(N,M1) \ fib(N,M2) &lt;=&gt; M1=M2.
+
+fib(0, R) ==&gt; R = 1 | true.
+fib(1, R) ==&gt; R = 1 | true.
+fib(N, R) ==&gt; N &gt; 1 |
+        N1 = N - 1,  N2 = N - 2,
+        fib(N1, R1), fib(N2, R2),
+        R = R1 + R2.
+</code></pre><p>This way, we don’t throw away intermediate <code>fib(N,M)</code> constraints but keep them. If we later need to compute, e.g., <code>fib(5, R)</code> it might be already present with a result bound to <code>R</code>.</p><h2>Confluence</h2><p>The next property we will look at is confluence. Not every CHR program is necessarily confluent, but it’s a very desirable property to have, since it will give us other handy properties for free. A program is confluent if it will always produce the same result for a given input, regardless of the order in which the rules are applied or in which order the query is given. Therefore, the relation of the initial and final state is a function.</p><pre><code>a ==&gt; b.
+a ==&gt; false.
+</code></pre><p>The above code snippet is not confluent. Given <code>a</code>, depending on which rule we check first, we will get different final states. Namely <code>b</code> and <code>false</code>.</p><p>But on the upside, we (or the <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Bendix_completion_algorithm" target="_blank">completion algorithm</a>) can make this program confluent by adding a single rule:</p><pre><code>a ==&gt; b.
+a ==&gt; false.
+
+b ==&gt; false.
+</code></pre><p>But note that not every program can be made confluent.</p><h2>Incremenrality</h2><p>Given that our algorithm is confluent, its also incremental or online. But what does that mean? In an online algorithm, we can add new constraints to the system at any time and they will eventually participate in the computation and contribute to the final state. This is very powerful, especially in e.g. feedback loops where we need to react to new input constantly.</p><h2>Declarative Concurrency</h2><p>Writing correct concurrent programs is typically hard. But with a confluent CHR program not so much. Actually, we don’t have to do anything at all. We can just take a hand full of constraints, put it on one machine, put the other ones on another machine, evaluate both sets in parallel, bring them back together, and we will have a correct result that equals the one we would have gotten if we would have evaluated everything on a single machine.</p><p>If you wanna try it out, here’s a simple implementation of the map-reduce pattern.</p><pre><code>map(OP) \ v(X) &lt;=&gt;
+    C =.. [OP, X, R],
+    call(C),
+    r(R)
+
+reduce(OP) \ r(X), r(Y) &lt;=&gt;
+    C =.. [OP, X, Y, R],
+    call(C),
+    r(R)
+</code></pre><h3>Destructive Assignment</h3><p>By the way, we can also use confluence to <em>show</em> why it’s often hard to write a correct concurrent algorithm in imperative languages. Take a look at the following rule:</p><pre><code>assign(K, V), cell(K, V&apos;) &lt;=&gt; cell(K, V).
+</code></pre><p>This simple rules models destructive assignments, the backbone of imperative programming. Now given a query like <code>cell(a,1), assign(a,2), assign(a,3)</code> we first set <code>a</code> to <code>2</code> and following that to <code>3</code>. But for confluence we need the query order to be independent of the result. But swapping the two <code>assign</code> constraints will yield a different result. Thus destructive assignments are not confluent and by proxy not trivially concurrent.</p></div>
+
+    </div>
+  </body>
+</html>
