@@ -1,18 +1,12 @@
 <script lang='ts'>
 	import Accordion from '$lib/components/Accordion.svelte';
 	import UniProjects, { type ProjectData } from '$lib/components/UniProjects.svelte';
+	import Paper from '$lib/components/Paper.svelte';
 	import { faFileLines, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 	import CardList from '$lib/components/CardList.svelte';
+	import publications from '$lib/assets/publications.json';
 
-	const academicWork: ProjectData[] = [
-		{
-			thing: 'The Anatomy of R code',
-			desc: `I coauthored a paper about the anatomy of real-world R code. The
-                   paper conducts a large-scale, static analysis of more than 50
-                   million lines of R code to identify their characteristics and the
-                   features that are actually used. It was accepted at MSR 2024.`,
-			links: [ { name: 'Paper', link: 'https://doi.org/10.1145/3643991.3644911' } ]
-		},
+	const theses: ProjectData[] = [
 		{
 			thing: 'Master\'s Thesis',
 			desc: `For my master's thesis I implemented a novel approach to calculate
@@ -104,30 +98,41 @@
 </script>
 
 <svelte:head>
-	<title>University Stuff</title>
+	<title>Academic Work</title>
 	<meta name='description' content="Lukas' work at the university">
 </svelte:head>
 
-<h1>University Stuff</h1>
+<h1>Academic Work</h1>
 
 <p>
-	During my bachelor's and master's studies, I produced a variety of
-	things. This, among others, includes slides, projects, papers, and theses.
-	I compiled a little list of the more interesting things:
+	This page contains most of the artifacts I created at university, both during my
+	studies and as a research assistant.
 </p>
-<Accordion name='Academic Work' open={true}>
+<Accordion name='Publications' open={true}>
 	{#snippet head()}
-		Academic Work (Theses, Paper)
+		Publications
 	{/snippet}
 	{#snippet details()}
 		<CardList>
-			<UniProjects data={academicWork} icon={faGraduationCap}/>
+			{#each publications as paper (paper.ID)}
+				<Paper data={paper} />
+			{/each}
+		</CardList>
+	{/snippet}
+</Accordion>
+<Accordion name='Theses'>
+	{#snippet head()}
+		Theses
+	{/snippet}
+	{#snippet details()}
+		<CardList>
+			<UniProjects data={theses} icon={faGraduationCap}/>
 		</CardList>
 	{/snippet}
 </Accordion>
 <Accordion name='Uni Projects'>
 	{#snippet head()}
-		University Projects
+		Projects and Slides
 	{/snippet}
 	{#snippet details()}
 		<CardList>

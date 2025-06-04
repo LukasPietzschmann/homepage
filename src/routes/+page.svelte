@@ -97,6 +97,6 @@
 </p>
 <p class='button-container'>
 	<a href='/projects'>Personal Projects</a>
-	<a href='/uni'>University Stuff</a>
+	<a href='/uni'>Academic Work</a>
 	<a href='/talks'>Talks</a>
 </p>
