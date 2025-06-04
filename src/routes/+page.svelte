@@ -98,5 +98,5 @@
 <p class='button-container'>
 	<a href='/projects'>Personal Projects</a>
 	<a href='/uni'>Academic Work</a>
-	<a href='/talks'>Talks</a>
+	<a href='/talks'>Talks & Workshops</a>
 </p>
