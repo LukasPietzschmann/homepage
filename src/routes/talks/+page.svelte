@@ -11,7 +11,8 @@
 			       their general education. We offer a workshop, where we convey practical tips on\
 			       how to spot fake emails and websites, recognize online scams, and protect your\
 			       personal data.',
-			link: '#',
+			link: 'https://www.uni-ulm.de/en/einrichtungen/zawiw/programmlinien-und-themen/academy-weeks/',
+			newTab: true,
 		},
 		{
 			title: 'You Shall Not Block',

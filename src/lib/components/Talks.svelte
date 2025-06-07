@@ -5,6 +5,7 @@
 		desc: string;
 		link: string;
 		reload?: boolean;
+		newTab?: boolean;
 	}
 </script>
 
@@ -33,11 +34,11 @@
 	}
 </style>
 
-{#each data as { title, location, desc, link, reload } (title)}
+{#each data as { title, location, desc, link, reload, newTab } (title)}
 	<Card>
 		<div>
 			<FontAwesomeIcon icon={faMessage}/>
-			<a rel={reload ? "external" : null} href={link}>{title}</a> <span class='location'>@{location}</span>
+			<a rel={reload ? "external" : null} target={newTab ? "_blank" : "_self"} href={link}>{title}</a> <span class='location'>@{location}</span>
 		</div>
 		<div style='margin-top: 1rem'>{desc}</div>
 	</Card>
