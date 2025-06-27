@@ -44,6 +44,10 @@
 			desc: 'From time to time I play some good old minecraft with a friend of mine. If you wanna join, mail me :)',
 			link: 'https://pietzschmann.org'
 		}, {
+			thing: 'Tor Relay',
+			desc: 'I run a Tor relay to help the Tor network stay healthy and fast.',
+			link: 'https://metrics.torproject.org/rs.html#details/661F7F281A1A4658C570BA1DCBA5D4373DEF93D1'
+		}, {
 			thing: 'RSS Reader',
 			desc: 'I use MiniFlux to keep up with all the news I care about.',
 			link: 'https://news.pietzschmann.org'

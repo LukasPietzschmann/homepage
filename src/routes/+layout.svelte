@@ -2,6 +2,7 @@
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 	import { faGraduationCap, faBars, faEnvelope, faHome, faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
+	import { slide } from 'svelte/transition';
 	import '@fortawesome/fontawesome-svg-core/styles.css';
 	import Card from '$lib/components/Card.svelte';
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
@@ -15,7 +16,7 @@
 
 	let responsive = $state(false);
 	let sage = $state(false);
-	let club = $state(true);
+	let club = $state(false);
 </script>
 
 <style>
@@ -182,14 +183,14 @@
 		</a>
 	</div>
 	{#if sage}
-		<div>
+		<div transition:slide>
 			<a data-umami-event='Sage site' href='https://ipv6.he.net' rel='noopener noreferrer' target='_blank'>
 				<img alt='IPv6 Sage Certificate' src='https://ipv6.he.net/certification/create_badge.php?pass_name=AwesomeLuke&badge=1'/>
 			</a>
 		</div>
 	{/if}
 	{#if club}
-		<div>
+		<div transition:slide>
 			<a data-umami-event='512kb site' href='https://512kb.club' rel='noopener noreferrer' target='_blank'>
 				<img height='40rem' alt='A proud member of the orange team of 512KB club' src='https://512kb.club/assets/images/orange-team.gif'/>
 			</a>
