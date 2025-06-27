@@ -14,10 +14,12 @@
 	let { children }: Props = $props();
 
 	let responsive = $state(false);
+	let sage = $state(false);
+	let club = $state(true);
 </script>
 
 <style>
-    footer {
+    footer div {
         margin: 2rem;
         display: flex;
         justify-content: center;
@@ -152,25 +154,46 @@
 <ScrollToTop/>
 
 <footer>
-	<a href='/imprint'>
-		Imprint
-	</a>
-	<div class='dot'>•</div>
-	<a href='/privacy'>
-		Privacy Policy
-	</a>
-	<div class='dot'>•</div>
-	<a data-umami-event='Uptime' href='https://uptime.pietzschmann.org/status/public' rel='noopener noreferrer' target='_blank'>
-		Uptime
-	</a>
-	<div class='dot'>•</div>
-	<a data-umami-event='Analytics' href='https://analytics.pietzschmann.org/share/rpUDid7d9z2Cuzxm/lukas.pietzschmann.org' rel='noopener noreferrer' target='_blank'>
-		Analytics
-	</a>
-	<div class='dot'>•</div>
-	<a data-umami-event='512kb' href='https://512kb.club' rel='noopener noreferrer' target='_blank'>
-		<img alt='A proud member of the orange team of 512KB club' src='https://512kb.club/assets/images/orange-team.gif'/>
-	</a>
-	<br />
+	<div>
+		<a href='/imprint'>
+			Imprint
+		</a>
+		<div class='dot'>•</div>
+		<a href='/privacy'>
+			Privacy Policy
+		</a>
+		<div class='dot'>•</div>
+		<a data-umami-event='Uptime' href='https://uptime.pietzschmann.org/status/public' rel='noopener noreferrer' target='_blank'>
+			Uptime
+		</a>
+		<div class='dot'>•</div>
+		<a data-umami-event='Sage' href='' onmousedown={() => {
+			club = false;
+			sage = !sage;
+		}}>
+			IPv6 Sage
+		</a>
+		<div class='dot'>•</div>
+		<a data-umami-event='512kb' href='' onmousedown={() => {
+			sage = false;
+			club = !club;
+		}}>
+			512K Club
+		</a>
+	</div>
+	{#if sage}
+		<div>
+			<a data-umami-event='Sage site' href='https://ipv6.he.net' rel='noopener noreferrer' target='_blank'>
+				<img alt='IPv6 Sage Certificate' src='https://ipv6.he.net/certification/create_badge.php?pass_name=AwesomeLuke&badge=1'/>
+			</a>
+		</div>
+	{/if}
+	{#if club}
+		<div>
+			<a data-umami-event='512kb site' href='https://512kb.club' rel='noopener noreferrer' target='_blank'>
+				<img height='40rem' alt='A proud member of the orange team of 512KB club' src='https://512kb.club/assets/images/orange-team.gif'/>
+			</a>
+		</div>
+	{/if}
 	<div id='last-modified'>Last modified: {BUILD_DATE}</div>
 </footer>
