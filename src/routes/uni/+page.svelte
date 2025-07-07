@@ -81,19 +81,6 @@
 				{ name: 'Report', link: '/spark_report.pdf' }
 			]
 		},
-	/* {
-			thing: 'Project paper',
-			desc: 'The project paper I wrote was all about the MOSTflexiPL compilation process. I developed a TUI that lets you view the compilers internal state during the whole process.',
-			links: [
-				{name: 'Paper', link: '/term_paper.pdf'},
-				{name: 'Code', link: 'https://github.com/LukasPietzschmann/Projektarbeit'}
-			]
-		},
-		{
-			thing: 'Term paper',
-			desc: 'For the course "computer networks" I wrote a short paper about HTTP and how it works. This is only a 10 page summary of everything so don\'t expect anything to advanced.',
-			links: [{name: 'Paper', link: '/computer_networks.pdf'}]
-		}*/
 	];
 </script>
 
