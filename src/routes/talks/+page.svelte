@@ -15,15 +15,6 @@
 			newTab: true,
 		},
 		{
-			title: 'On huge commits and Cthulhu\'s merge',
-			location: 'Tübix 2025',
-			desc: 'This Lightning Talk tells a few weird stories from the kernel\'s Git\
-			       history. It\'s mainly about huge commits and a merge that had so many\
-			       parents that it was nicknamed "Cthulhu".',
-			link: 'https://www.tuebix.org/2025/programm/',
-			newTab: true,
-		},
-		{
 			title: 'You Shall Not Block',
 			location: 'Zigtoberfest 2025',
 			desc: 'Locks are common in concurrent programming but can introduce performance\
@@ -33,6 +24,15 @@
                    and also touch on concepts like progress guarantees and levels of “freeness”.',
 			link: '/talks/zigtoberfest25',
 			reload: true,
+		},
+		{
+			title: 'On huge commits and Cthulhu\'s merge',
+			location: 'Tübix 2025',
+			desc: 'This Lightning Talk tells a few weird stories from the kernel\'s Git\
+			       history. It\'s about a huge merge commit and how Linux can have four\
+			       init commits.',
+			link: '/tuebix_24_lightningtalk.pdf',
+			newTab: true,
 		},
 		{
 			title: 'Constrained Zig',
