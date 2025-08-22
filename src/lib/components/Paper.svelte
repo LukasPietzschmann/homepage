@@ -48,9 +48,9 @@
 	</p>
 	<p>
 		{#if data.abstract}
-			<a class:simulated-hover={showAbstract} href='' onmousedown={e => showAbstract = !showAbstract}>
+			<button class="link-btn" class:simulated-hover={showAbstract} onmousedown={e => showAbstract = !showAbstract}>
 				Abstract
-			</a>{#if data.link?.length > 0}, {/if}
+			</button>{#if data.link?.length > 0}, {/if}
 		{/if}
 		{#each data.link as { anchor, url }, i (i)}
 			{#if i !== 0}, {/if}

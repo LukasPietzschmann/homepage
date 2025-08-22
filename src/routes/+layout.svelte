@@ -168,31 +168,31 @@
 			Uptime
 		</a>
 		<div class='dot'>•</div>
-		<a data-umami-event='Sage' href='' onmousedown={() => {
+		<button class='link-btn' data-umami-event='Sage' onmousedown={() => {
 			club = false;
 			sage = !sage;
 		}}>
 			IPv6 Sage
-		</a>
+		</button>
 		<div class='dot'>•</div>
-		<a data-umami-event='512kb' href='' onmousedown={() => {
+		<button class='link-btn' data-umami-event='512kb' onmousedown={() => {
 			sage = false;
 			club = !club;
 		}}>
 			512K Club
-		</a>
+		</button>
 	</div>
 	{#if sage}
 		<div transition:slide>
 			<a data-umami-event='Sage site' href='https://ipv6.he.net' rel='noopener noreferrer' target='_blank'>
-				<img alt='IPv6 Sage Certificate' src='https://ipv6.he.net/certification/create_badge.php?pass_name=AwesomeLuke&badge=1'/>
+				<img rel='preload' alt='IPv6 Sage Certificate' src='https://ipv6.he.net/certification/create_badge.php?pass_name=AwesomeLuke&badge=1'/>
 			</a>
 		</div>
 	{/if}
 	{#if club}
 		<div transition:slide>
 			<a data-umami-event='512kb site' href='https://512kb.club' rel='noopener noreferrer' target='_blank'>
-				<img height='40rem' alt='A proud member of the orange team of 512KB club' src='https://512kb.club/assets/images/orange-team.gif'/>
+				<img rel='preload' height='40rem' alt='A proud member of the orange team of 512KB club' src='https://512kb.club/assets/images/orange-team.gif'/>
 			</a>
 		</div>
 	{/if}
