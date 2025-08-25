@@ -4,8 +4,6 @@
 </svelte:head>
 
 <script lang='ts'>
-	import darkTopology from '$lib/assets/darkTopology.png?enhanced';
-	import lightTopology from '$lib/assets/lightTopology.png?enhanced';
 	import Accordion from '$lib/components/Accordion.svelte';
 	import CardGrid from '$lib/components/CardGrid.svelte';
 	import Services, { type ServiceData } from '$lib/components/Services.svelte';
@@ -81,23 +79,14 @@
 </style>
 
 <h1>Services</h1>
-<enhanced:img class='topology dark' alt='Services' src={darkTopology}/>
-<enhanced:img class='topology light' alt='Services' src={lightTopology}/>
 <p>
-	I host all my services as Docker containers on a VPS at
+	I host all my services on three VPSs at
 	<a data-umami-event='NetCup' href='https://netcup.eu' rel='noreferrer noopener'
 		target='_blank'>NetCup</a>.
-	Among these, only one is exposed to the public: Caddy. Because of that,
-	everything &mdash; UDP/TCP packets and HTTP(s) requests &mdash; is routed
+	Except for the Tor relay, no service is directly exposed to the public. Because of
+	that, everything &mdash; UDP/TCP packets and HTTP(s) requests &mdash; is routed
 	through Caddy, which either forwards the packets/requests to the appropriate
 	container or serves static files directly.
-</p>
-<p>
-	To facilitate this setup, the Caddy container is configured to share a network with
-	all service containers. However, for services requiring, e.g., a database (like
-	NextCloud), the database remains inaccessible to Caddy. Instead, it is connected
-	through a dedicated network shared exclusively between the service and the database
-	container.
 </p>
 <Accordion name='Services'>
 	{#snippet head()}
