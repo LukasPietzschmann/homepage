@@ -32,7 +32,7 @@
 		}, {
 			thing: 'Uptime',
 			desc: 'Uptime Kuma tracks the uptime of all services I host. There\'s also a public status page available.',
-			link: 'https://uptime.pietzschmann.org'
+			link: 'https://uptime.pietzschmann.org/status/public'
 		}, {
 			thing: 'Finances',
 			desc: 'I use Actual to track my finance stuff (now I know that I spend way to much on sweets lol)',
