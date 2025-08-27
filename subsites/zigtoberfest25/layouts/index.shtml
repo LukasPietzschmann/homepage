@@ -50,7 +50,7 @@
 			vertical-align: top;
 		}
 	</style>
-	<script async src="https://analytics.pietzschmann.org/script.js" data-website-id="9704fd6a-b2e4-4183-b8dc-9f7503073090"></script>
+	<script defer src="https://analytics.pietzschmann.org/script.js" data-website-id="a5f865ea-b760-403b-8525-2fdce9397a84"></script>
 </head>
 <div id="content">
 	<h1 class="centered title">You shall not block</h1>
