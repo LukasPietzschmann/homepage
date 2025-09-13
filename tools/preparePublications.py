@@ -19,6 +19,7 @@ with open("publications.bib") as bibtex_file:
     parser = BibTexParser()
     parser.customization = customizations
     bib_database = bibtexparser.load(bibtex_file, parser=parser)
+    bib_database.entries.sort(key=lambda x: (x.get("year", "0"), x.get("month", "0")), reverse=True)
     json_output = json.dumps(bib_database.entries, indent=2)
     with open("src/lib/assets/publications.json", "w") as json_file:
         json_file.write(json_output)

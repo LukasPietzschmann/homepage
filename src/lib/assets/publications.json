@@ -1,37 +1,5 @@
 [
   {
-    "series": "MSR '24",
-    "location": "Lisbon, Portugal",
-    "keywords": "R programming language, large-scale static analysis, language feature usage",
-    "numpages": "12",
-    "pages": "619--630",
-    "booktitle": "Proceedings of the 21st International Conference on Mining Software Repositories",
-    "abstract": "Context The R programming language has a huge and active community, especially in the area of statistical computing. Its interpreted nature allows for several interesting constructs, like the manipulation of functions at run-time, that hinder the static analysis of R programs. At the same time, there is a lack of existing research regarding how these features, or even the R language as a whole are used in practice. Objective In this paper, we conduct a large-scale, static analysis of more than 50 million lines of real-world R programs and packages to identify their characteristics and the features that are actually used. Moreover, we compare the similarities and differences between the scripts of R users and the implementations of package authors. We provide insights for static analysis tools like the lintr package as well as potential interpreter optimizations and uncover areas for future research. Method We analyze 4 230 R scripts submitted alongside publications and the sources of 19 450 CRAN packages for over 350 000 R files, collecting and summarizing quantitative information for features of interest. Results We find a high frequency of name-based indexing operations, assignments, and loops, but a low frequency for most of R's reflective functions. Furthermore, we find neither testing functions nor many calls to R's foreign function interface (FFI) in the publication submissions. Conclusion R scripts and package sources differ, for example, in their size, the way they include other packages, and their usage of R's reflective capabilities. We provide features that are used frequently and should be prioritized by static analysis tools, like operator assignments, function calls, and certain reflective functions like load.",
-    "doi": "10.1145/3643991.3644911",
-    "url": "https://doi.org/10.1145/3643991.3644911",
-    "address": "New York, NY, USA",
-    "publisher": "Association for Computing Machinery",
-    "isbn": "9798400705878",
-    "year": "2024",
-    "title": "On the Anatomy of Real-World R Code for Static Analysis",
-    "author": [
-      "Sihler, Florian",
-      "Pietzschmann, Lukas",
-      "Straub, Raphael",
-      "Tichy, Matthias",
-      "Diera, Andor",
-      "Dahou, Abdelhalim"
-    ],
-    "ENTRYTYPE": "inproceedings",
-    "ID": "sihler2024",
-    "link": [
-      {
-        "url": "https://doi.org/10.1145/3643991.3644911",
-        "anchor": "doi"
-      }
-    ]
-  },
-  {
     "series": "NetSys '25",
     "url": "https://doi.org/10.22032/dbt.67112",
     "doi": "10.22032/dbt.67112",
@@ -83,6 +51,38 @@
     "link": [
       {
         "url": "https://doi.org/10.22032/dbt.67112",
+        "anchor": "doi"
+      }
+    ]
+  },
+  {
+    "series": "MSR '24",
+    "location": "Lisbon, Portugal",
+    "keywords": "R programming language, large-scale static analysis, language feature usage",
+    "numpages": "12",
+    "pages": "619--630",
+    "booktitle": "Proceedings of the 21st International Conference on Mining Software Repositories",
+    "abstract": "Context The R programming language has a huge and active community, especially in the area of statistical computing. Its interpreted nature allows for several interesting constructs, like the manipulation of functions at run-time, that hinder the static analysis of R programs. At the same time, there is a lack of existing research regarding how these features, or even the R language as a whole are used in practice. Objective In this paper, we conduct a large-scale, static analysis of more than 50 million lines of real-world R programs and packages to identify their characteristics and the features that are actually used. Moreover, we compare the similarities and differences between the scripts of R users and the implementations of package authors. We provide insights for static analysis tools like the lintr package as well as potential interpreter optimizations and uncover areas for future research. Method We analyze 4 230 R scripts submitted alongside publications and the sources of 19 450 CRAN packages for over 350 000 R files, collecting and summarizing quantitative information for features of interest. Results We find a high frequency of name-based indexing operations, assignments, and loops, but a low frequency for most of R's reflective functions. Furthermore, we find neither testing functions nor many calls to R's foreign function interface (FFI) in the publication submissions. Conclusion R scripts and package sources differ, for example, in their size, the way they include other packages, and their usage of R's reflective capabilities. We provide features that are used frequently and should be prioritized by static analysis tools, like operator assignments, function calls, and certain reflective functions like load.",
+    "doi": "10.1145/3643991.3644911",
+    "url": "https://doi.org/10.1145/3643991.3644911",
+    "address": "New York, NY, USA",
+    "publisher": "Association for Computing Machinery",
+    "isbn": "9798400705878",
+    "year": "2024",
+    "title": "On the Anatomy of Real-World R Code for Static Analysis",
+    "author": [
+      "Sihler, Florian",
+      "Pietzschmann, Lukas",
+      "Straub, Raphael",
+      "Tichy, Matthias",
+      "Diera, Andor",
+      "Dahou, Abdelhalim"
+    ],
+    "ENTRYTYPE": "inproceedings",
+    "ID": "sihler2024",
+    "link": [
+      {
+        "url": "https://doi.org/10.1145/3643991.3644911",
         "anchor": "doi"
       }
     ]
