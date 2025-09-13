@@ -30,5 +30,61 @@
         "anchor": "doi"
       }
     ]
+  },
+  {
+    "series": "NetSys '25",
+    "url": "https://doi.org/10.22032/dbt.67112",
+    "doi": "10.22032/dbt.67112",
+    "abstract": "Zero Trust Architectures have recently attracted a lot of interest in the network community. However, access control is often not extending into client devices. In this paper, we propose an extension of Zero Trust Policy Enforcement Points that integrates a device agent to expand the zero trust security model to client devices. We have developed a generalized framework that integrates with multiple compartmentalization technologies, ensuring the isolation of processes and enforcement of network policies while maintaining application and user authentication. This approach minimizes the attack surface of malicious processes, as our Zero Trust Device Agent manages compartment lifecycles based on their behaviour within the network and integrates into the global access control framework, thereby improving the overall security of zero trust architectures.",
+    "keywords": "zero trust device agent; policy enforcement point; access control",
+    "pages": "29--32",
+    "address": "Ilmenau",
+    "publisher": "ilmedia",
+    "day": "29",
+    "month": "Aug",
+    "year": "2025",
+    "journal": {
+      "name": "Proceedings of the International Conference on Networked Systems 2025 (NetSys 2025): Technische Universit{\\\"a}t Ilmenau, 1 -- 4 September 2025",
+      "ID": "ProceedingsoftheInternationalConferenceonNetworkedSystems2025(NetSys2025):TechnischeUniversit{\\\"a}tIlmenau1--4September2025"
+    },
+    "title": "Enhancing client security in zero trust architectures: A device-agent policy enforcement point for compartmentalized network management",
+    "editor": [
+      {
+        "name": "Koldehofe, Boris",
+        "ID": "KoldehofeBoris"
+      },
+      {
+        "name": "Klingler, Florian",
+        "ID": "KlinglerFlorian"
+      },
+      {
+        "name": "Sommer, Christoph",
+        "ID": "SommerChristoph"
+      },
+      {
+        "name": "Hummel, Karin Anna",
+        "ID": "HummelKarinAnna"
+      },
+      {
+        "name": "Amthor, Peter",
+        "ID": "AmthorPeter"
+      }
+    ],
+    "author": [
+      "Schoffit, Janek",
+      "Pietzschmann, Lukas",
+      "Prechtel, Paul",
+      "Eisermann, Dennis",
+      "Wendzel, Steffen",
+      "Kargl, Frank"
+    ],
+    "ENTRYTYPE": "article",
+    "ID": "schoffit2025",
+    "link": [
+      {
+        "url": "https://doi.org/10.22032/dbt.67112",
+        "anchor": "doi"
+      }
+    ]
   }
 ]
