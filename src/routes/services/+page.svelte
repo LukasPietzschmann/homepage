@@ -53,31 +53,6 @@
 	];
 </script>
 
-<style>
-	.topology {
-		width: 100%;
-		height: auto;
-	}
-
-	.light {
-		display: block;
-	}
-
-	.dark {
-		display: none;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		.light {
-			display: none;
-		}
-
-		.dark {
-			display: block;
-		}
-	}
-</style>
-
 <h1>Services</h1>
 <p>
 	I host all my services on three VPSs at
