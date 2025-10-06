@@ -49,6 +49,10 @@
 			thing: 'RSS Reader',
 			desc: 'I use MiniFlux to keep up with all the news I care about.',
 			link: 'https://news.pietzschmann.org'
+		}, {
+			thing: 'RSS Bridge',
+			desc: 'To make more websites RSS compatible, I run my own instance of RSS Bridge.',
+			link: 'https://rss.pietzschmann.org/'
 		}
 	];
 </script>
