@@ -132,7 +132,7 @@
 		<!-- 	<FontAwesomeIcon icon={faLinkedin}/> -->
 		<!-- 	LinkedIn -->
 		<!-- </a> -->
-		<a class='nav-link' data-umami-event='LinkedIn' href='https://www.uni-ulm.de/in/vs/inst/team/lukas-pietzschmann/' rel='noopener noreferrer'
+		<a class='nav-link' data-umami-event='LinkedIn' href='https://www.uni-ulm.de/in/vs/pietzschmann' rel='noopener noreferrer'
 			target='_blank'>
 			<FontAwesomeIcon icon={faGraduationCap}/>
 			Work
