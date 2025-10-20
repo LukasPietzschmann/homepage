@@ -1,10 +1,12 @@
 <script lang='ts'>
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
-	import { faGraduationCap, faBars, faEnvelope, faHome, faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
+	import { faGraduationCap, faBars, faCloud, faCloudBolt, faEnvelope, faHome, faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
 	import { slide } from 'svelte/transition';
+	import { MediaQuery } from 'svelte/reactivity';
 	import '@fortawesome/fontawesome-svg-core/styles.css';
 	import Card from '$lib/components/Card.svelte';
+	import Flashlight from '$lib/components/Flashlight.svelte';
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 	import type { Snippet } from 'svelte';
 
@@ -14,9 +16,13 @@
 
 	let { children }: Props = $props();
 
+	let flashlightDesired = $state(false);
 	let responsive = $state(false);
 	let sage = $state(false);
 	let club = $state(false);
+
+	const darkMode = new MediaQuery('(prefers-color-scheme: dark)');
+	const flashlightOn = $derived(!responsive && darkMode.current && flashlightDesired);
 </script>
 
 <style>
@@ -141,6 +147,15 @@
 			<FontAwesomeIcon icon={faEnvelope}/>
 			Email
 		</a>
+		{#if darkMode.current && !responsive}
+			<a class='nav-link' data-umami-event='Email' href='#' onmousedown={() => flashlightDesired = !flashlightDesired}>
+				{#if flashlightDesired}
+					<FontAwesomeIcon icon={faCloudBolt}/>
+				{:else}
+					<FontAwesomeIcon icon={faCloud}/>
+				{/if}
+			</a>
+		{/if}
 	</nav>
 </header>
 
@@ -149,6 +164,10 @@
 		Whoops! It looks like you disabled JavaScript. Turn it back on for this site to function properly.
 	</Card>
 </noscript>
+
+{#if flashlightOn}
+	<Flashlight />
+{/if}
 
 {@render children()}
 
@@ -185,14 +204,14 @@
 	{#if sage}
 		<div transition:slide>
 			<a data-umami-event='Sage site' href='https://ipv6.he.net' rel='noopener noreferrer' target='_blank'>
-				<img rel='preload' alt='IPv6 Sage Certificate' src='https://ipv6.he.net/certification/create_badge.php?pass_name=AwesomeLuke&badge=1'/>
+				<img alt='IPv6 Sage Certificate' rel='preload' src='https://ipv6.he.net/certification/create_badge.php?pass_name=AwesomeLuke&badge=1'/>
 			</a>
 		</div>
 	{/if}
 	{#if club}
 		<div transition:slide>
 			<a data-umami-event='512kb site' href='https://512kb.club' rel='noopener noreferrer' target='_blank'>
-				<img rel='preload' height='40rem' alt='A proud member of the orange team of 512KB club' src='https://512kb.club/assets/images/orange-team.gif'/>
+				<img alt='A proud member of the orange team of 512KB club' height='40rem' rel='preload' src='https://512kb.club/assets/images/orange-team.gif'/>
 			</a>
 		</div>
 	{/if}
