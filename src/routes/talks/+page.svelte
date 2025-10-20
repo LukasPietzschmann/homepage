@@ -4,17 +4,6 @@
 
 	const talks: TalkData[] = [
 		{
-			title: 'Don’t Take the Bait — How to Escape Online Lures',
-			location: 'ZAWiW Academic Week 2025',
-			desc: 'This workshop is part of Ulm Universitiy\'s Academic Week, a program that\
-			       targets elders and gives them the chance to discuss current trends and continue\
-			       their general education. We offer a workshop, where we convey practical tips on\
-			       how to spot fake emails and websites, recognize online scams, and protect your\
-			       personal data.',
-			link: 'https://www.uni-ulm.de/en/einrichtungen/zawiw/programmlinien-und-themen/academy-weeks/',
-			newTab: true,
-		},
-		{
 			title: 'You Shall Not Block',
 			location: 'Zigtoberfest 2025',
 			desc: 'Locks are common in concurrent programming but can introduce performance\
@@ -24,6 +13,17 @@
                    and also touch on concepts like progress guarantees and levels of “freeness”.',
 			link: '/talks/zigtoberfest25',
 			reload: true,
+		},
+		{
+			title: 'Don’t Take the Bait — How to Escape Online Lures',
+			location: 'ZAWiW Academic Week 2025',
+			desc: 'This workshop is part of Ulm Universitiy\'s Academic Week, a program that\
+			       targets elders and gives them the chance to discuss current trends and continue\
+			       their general education. A colleague and I offered a workshop, where we convey practical tips on\
+			       how to spot fake emails and websites, recognize online scams, and protect your\
+			       personal data.',
+			link: '/zawiw_24_workshop.pdf',
+			newTab: true,
 		},
 		{
 			title: 'On huge commits and Cthulhu\'s merge',
