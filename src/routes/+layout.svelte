@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
-	import { faGraduationCap, faBars, faCloud, faCloudBolt, faEnvelope, faHome, faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
+	import { faGraduationCap, faBars, faEye, faEyeLowVision, faEnvelope, faHome, faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
 	import { slide } from 'svelte/transition';
 	import { MediaQuery } from 'svelte/reactivity';
 	import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -150,9 +150,9 @@
 		{#if darkMode.current && !responsive}
 			<a class='nav-link' data-umami-event='Email' href='#' onmousedown={() => flashlightDesired = !flashlightDesired}>
 				{#if flashlightDesired}
-					<FontAwesomeIcon icon={faCloudBolt}/>
+					<FontAwesomeIcon icon={faEyeLowVision}/>
 				{:else}
-					<FontAwesomeIcon icon={faCloud}/>
+					<FontAwesomeIcon icon={faEye}/>
 				{/if}
 			</a>
 		{/if}
