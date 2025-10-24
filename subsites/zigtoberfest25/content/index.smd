@@ -1,9 +1,10 @@
 ---
-.title = "You Shall Not Block",
+.title = "Un-locking Zig",
 .date = @date("2024-10-25T00:00:00"),
 .author = "Lukas Pietzschmann",
 .layout = "index.shtml",
 .draft = false,
 ---
 
-This website is still being built. It will be ready in time for the event :)
+This website is still being built. Some (short) time after the event, I will post a
+write up about it here :)

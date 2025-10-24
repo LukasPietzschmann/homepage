@@ -4,7 +4,7 @@
 
 	const talks: TalkData[] = [
 		{
-			title: 'You Shall Not Block',
+			title: 'Un-locking Zig',
 			location: 'Zigtoberfest 2025',
 			desc: 'Locks are common in concurrent programming but can introduce performance\
                    issues, deadlocks, and complexity. Lock-free data structures use atomic\

@@ -1,5 +1,5 @@
 Site {
-    .title = "You shall not block",
+    .title = "Un-locking Zig",
     .host_url = "https://lukas.pietzschmann.org",
     .url_path_prefix = "talks/zigtoberfest25",
     .content_dir_path = "content",
