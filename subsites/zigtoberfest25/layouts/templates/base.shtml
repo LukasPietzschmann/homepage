@@ -10,7 +10,7 @@
   </head>
   <body>
     <nav id="menu" class="centered">
-      <a href="/talks">Go Back</a> • <a href="/">Main Site</a>
+      <a href="/talks">Go Back</a> • <a href="/">Main Site</a> • <a href="/unlockedzig.pdf" target="_blank">Slides</a>
     </nav>
     <div id="content">
       <super>
