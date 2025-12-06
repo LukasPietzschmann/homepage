@@ -92,6 +92,24 @@
 <h1>Academic Work</h1>
 
 <p>
+	I work as a research assistant at the <a target='_blank'
+	href='https://www.uni-ulm.de/en/in/vs/'>Institute of Distributed Systems</a> at Ulm
+	University.
+</p>
+<p>
+	I explore potential privacy risks associated with public datasets stemming from
+	empirical research. I'm currently particularly interested in possible attack vectors
+	and the potential for re-identification of individuals in these datasets.
+</p>
+<p style='margin-top: 0;'>
+	Besides that, I'm also working on the <a data-umami-event='BwNet' rel='noopener
+	noreferrer' target='_blank' href="https://bwnet2.belwue.de/">bwNET2.0</a> project,
+	which is concerned with the development of various parts of the <a
+	data-umami-event='BelWü' rel='noopener noreferrer' target='_blank'
+	href="https://www.belwue.de/">BelWü</a> network. My main focus is in the monitoring,
+	collection, and provision of network data for the purpose of research and analysis.
+</p>
+<p>
 	This page contains most of the artifacts I created at university, both during my
 	studies and as a research assistant.
 </p>

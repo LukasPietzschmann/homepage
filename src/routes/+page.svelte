@@ -70,30 +70,21 @@
 	<enhanced:img class='avatar-img' alt='Avatar' src={avatar}/>
 </div>
 
-<p>Hey! Welcome to my little corner on the internet :)</p>
+<p>Hey, I'm Lukas! Welcome to my little corner on the internet :)</p>
 <p>
-	I'm Lukas, a research assistant at the
-	<a target='_blank' href='https://www.uni-ulm.de/en/in/vs/'>Institute of Distributed Systems</a>
-	at Ulm University.
+	A lot of what I love involves staring at a screen for hours on end. Whether that's
+	<a href='/projects'>programming</a>, fiddling with some self-hosted <a
+	href='/services'> services</a>, or even looking at the tiny screen of my camera as I
+	try to get <s>the perfect</s> a <a data-umami-event='Pixelfed Portfolio'
+	rel='noopener noreferrer' target='_blank'
+	href="https://portfolio.pixelfed.social/luke.jpeg">decent shot</a>.
 </p>
 <p>
-	Research-wise, I'm exploring potential privacy risks associated with public datasets
-	stemming from empirical research. I'm currently particularly interested in possible
-	attack vectors and the potential for re-identification of individuals in these
-	datasets.
-</p>
-<p style='margin-top: 0;'>
-	Besides that, I'm also working on the <a data-umami-event='BwNet' rel='noopener
-	noreferrer' target='_blank' href="https://bwnet2.belwue.de/">bwNET2.0</a> project,
-	which is concerned with the development of various parts of the <a
-	data-umami-event='BelWü' rel='noopener noreferrer' target='_blank'
-	href="https://www.belwue.de/">BelWü</a> network. My main focus is in the monitoring,
-	collection, and provision of network data for the purpose of research and analysis.
+	This site covers some of the things I think are worth sharing, including both
+	artifacts from my work as a PhD student as well as stuff I do in my free time.
 </p>
 <p>
-	Outside of work, I'm interested in a lot of different things, but I definitely won't
-	miss any chance to nerd about functional programming and typesetting. Check out my
-	personal and university projects to see what I'm up to!
+	Have fun poking around!
 </p>
 <p class='button-container'>
 	<a href='/projects'>Personal Projects</a>

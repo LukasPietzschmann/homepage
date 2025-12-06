@@ -19,14 +19,15 @@
 <h1>Personal Projects</h1>
 
 <p>
-	Outside of my <a data-umami-event='Uni' href='/uni'>research</a>, I like to
-	implement fun little things, hack on some LaTeX code, or dump way too many hours
-	into my <a data-umami-event='NVim Config'
+	I like to implement fun little things, hack on some LaTeX code, or dump way too many
+	hours into my <a data-umami-event='NVim Config'
 		href='https://github.com/LukasPietzschmann/nvim-config' rel='noopener noreferrer'
 		target='_blank'>NeoVim config</a>. I also open-source most of my personal work,
-	so check out my <a data-umami-event='GitHub' href='https://github.com/LukasPietzschmann'
-		rel='noopener noreferrer' target='_blank'>GitHub</a>! Some of my projects even
-	attracted contributions from others, which I’m way too excited about 😆.
+	so check out my <a data-umami-event='Codeberg' href='https://codeberg.org/LukasPietzschmann'
+		rel='noopener noreferrer' target='_blank'>Codeberg</a>
+	or <a data-umami-event='GitHub' href='https://github.com/LukasPietzschmann'
+		rel='noopener noreferrer' target='_blank'>GitHub</a> page! Some of my projects
+	even attracted contributions from others, which I’m way too excited about 😆.
 </p>
 <p>
 	Additionally, I like to tinker with self-hosted services, like my Nextcloud instance
