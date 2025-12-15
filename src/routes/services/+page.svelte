@@ -37,46 +37,40 @@
 			thing: 'Finances',
 			desc: 'I use Actual to track my finance stuff (now I know that I spend way to much on sweets lol)',
 			link: 'https://actual.pietzschmann.org'
-		}, {
+		}, /* {
 			thing: 'Minecraft',
 			desc: 'From time to time I play some good old minecraft with a friend of mine. If you wanna join, mail me :)',
 			link: 'https://pietzschmann.org'
-		}, {
-			thing: 'Tor Relay',
-			desc: 'I run a Tor relay to help the Tor network stay healthy and fast.',
-			link: 'https://metrics.torproject.org/rs.html#details/661F7F281A1A4658C570BA1DCBA5D4373DEF93D1'
+		}, */ {
+			thing: 'RSS Bridge',
+			desc: 'To make more websites RSS compatible, I run my own instance of RSS Bridge.',
+			link: 'https://rss.pietzschmann.org/'
 		}, {
 			thing: 'RSS Reader',
 			desc: 'I use MiniFlux to keep up with all the news I care about.',
 			link: 'https://news.pietzschmann.org'
 		}, {
-			thing: 'RSS Bridge',
-			desc: 'To make more websites RSS compatible, I run my own instance of RSS Bridge.',
-			link: 'https://rss.pietzschmann.org/'
+			thing: 'Tor Relay',
+			desc: 'I run a Tor relay to help the Tor network stay healthy and fast.',
+			link: 'https://metrics.torproject.org/rs.html#details/661F7F281A1A4658C570BA1DCBA5D4373DEF93D1'
 		}
 	];
 </script>
 
 <h1>Services</h1>
 <p>
-	I host all my services on three VPSs at
+	I host everything on three VPSs at
 	<a data-umami-event='NetCup' href='https://netcup.eu' rel='noreferrer noopener'
 		target='_blank'>NetCup</a>.
-	Except for the Tor relay, no service is directly exposed to the public. Because of
-	that, everything &mdash; UDP/TCP packets and HTTP(s) requests &mdash; is routed
-	through Caddy, which either forwards the packets/requests to the appropriate
-	container or serves static files directly.
+	I recently switched from using Docker Compose for everything to a NixOS-based setup.
+	Having a version-controlled declarative configuration for the entire system is really
+	nice when you want to tinker with stuff and thus need to rollback changes sometimes.
 </p>
-<Accordion name='Services'>
-	{#snippet head()}
-		Services
-	{/snippet}
-	{#snippet details()}
-		<div style='margin-bottom: 1rem'>
-			Here is a collections of services I'm currently hosting:
-		</div>
-		<CardGrid>
-			<Services data={services}/>
-		</CardGrid>
-	{/snippet}
-</Accordion>
+<p>
+	Please don't (D)DoS my services though 😅
+</p>
+<p>
+	<CardGrid>
+		<Services data={services}/>
+	</CardGrid>
+</p>

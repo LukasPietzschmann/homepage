@@ -30,9 +30,9 @@
 	even attracted contributions from others, which I’m way too excited about 😆.
 </p>
 <p>
-	Additionally, I like to tinker with self-hosted services, like my Nextcloud instance
-	or a Minecraft server. I wrote a little bit about what I host and how I host it
-	<a data-umami-event='Self hosting' href='/services'>here</a>.
+	Additionally, I like to tinker with self-hosted services. I wrote a little bit about
+	what I host and how I host it <a data-umami-event='Self hosting'
+	href='/services'>here</a>.
 </p>
 <p>
 	Since there was no way I could decide on less favorites, here's a selection of
