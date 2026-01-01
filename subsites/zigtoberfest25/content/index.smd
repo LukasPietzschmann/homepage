@@ -6,8 +6,9 @@
 .draft = false,
 ---
 
-For the [Zigtoberfest 2025](https://zigtoberfest.de/) I gave a talk about lock-free ---
-or non-blocking --- data structures. This page provides a small summary of the talk.
+For the [Zigtoberfest 2025](https://web.archive.org/web/20251208200114/https://zigtoberfest.de/)
+I gave a talk about lock-free --- or non-blocking --- data structures. This page
+provides a small summary of the talk.
 
 Not in a reading mood? Let me do the talking over on YouTube:
 ```=html
