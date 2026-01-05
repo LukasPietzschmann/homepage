@@ -131,3 +131,36 @@ pre > code {
 button {
   cursor: pointer;
 }
+
+/* ====================================== */
+/*              Cursor Styles             */
+/* ====================================== */
+
+:root {
+  --cursor-default: url("/cursor/default.png") 0 0, auto;
+  --cursor-pointer: url("/cursor/pointer.png") 6 0, pointer;
+  --cursor-text: url("/cursor/text.png") 10 10, text;
+  --cursor-not-allowed: url("/cursor/not-allowed.png") 6 0, not-allowed;
+}
+
+body {
+  cursor: var(--cursor-default);
+}
+
+a,
+input[type="checkbox"],
+input[type="radio"],
+button,
+[role="button"] {
+  cursor: var(--cursor-pointer);
+}
+
+input[type="text"],
+textarea,
+[contenteditable="true"] {
+  cursor: var(--cursor-text);
+}
+
+[disabled] {
+  cursor: var(--cursor-not-allowed);
+}

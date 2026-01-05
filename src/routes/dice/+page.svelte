@@ -109,7 +109,6 @@
 	button {
 		padding: 10px 20px;
 		font-size: 1rem;
-		cursor: pointer;
 		background: var(--accent);
 		color: white;
 		border: none;
@@ -121,7 +120,6 @@
 
 	button:disabled {
 		opacity: 0.5;
-		cursor: not-allowed;
 		box-shadow: none;
 		transition: none;
 	}
@@ -136,7 +134,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		cursor: pointer;
+		cursor: var(--cursor-pointer);
 	}
 </style>
 

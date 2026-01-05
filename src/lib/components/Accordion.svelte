@@ -51,7 +51,6 @@
 		background: none;
 		border: none;
 		color: var(--text);
-		cursor: pointer;
 		margin-left: auto;
 	}
 </style>
