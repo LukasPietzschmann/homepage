@@ -12,7 +12,7 @@
 	}
 
 	.avatar-img {
-		background-color: var(--background-200);
+		background: linear-gradient(0deg,var(--highlight) 0%, var(--background-200) 100%);
 		border: var(--border);
 		border-radius: 100%;
 		box-shadow: var(--box-shadow);
