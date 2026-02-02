@@ -97,9 +97,9 @@
 	University.
 </p>
 <p>
-	I explore potential privacy risks associated with public datasets stemming from
-	empirical research. I'm currently particularly interested in possible attack vectors
-	and the potential for re-identification of individuals in these datasets.
+	I explore privacy-preserving measures in empirical research. I'm currently
+	particularly interested in quantifying unintended information leakage from research
+	datasets.
 </p>
 <p style='margin-top: 0;'>
 	Besides that, I'm also working on the <a data-umami-event='BwNet' rel='noopener
